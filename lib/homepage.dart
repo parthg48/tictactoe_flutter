@@ -193,7 +193,7 @@ class _HomePageState extends State<HomePage> {
     return new Scaffold(
         appBar: new AppBar(
           title: new Text(
-            "X and 0",
+            "X and 0 (Tic Tac Toe)",
           ),
         ),
         body: new Column(
