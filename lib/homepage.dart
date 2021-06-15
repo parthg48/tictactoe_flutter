@@ -14,6 +14,7 @@ class _HomePageState extends State<HomePage> {
   var player1;
   var player2;
   var activePlayer;
+  var flag = 0;
 
   @override
   void initState() {
@@ -62,7 +63,7 @@ class _HomePageState extends State<HomePage> {
               builder: (_) => new DialogClass("Game Tied",
                   "Press the restart button to start again", resetGame));
         } else {
-          activePlayer == 2 ? autoPlay() : null;
+          if (flag == 1) activePlayer == 2 ? autoPlay() : null;
         }
       }
     });
@@ -144,8 +145,20 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  void switchPlayer() {
+    if (flag == 0)
+      flag = 1;
+    else
+      flag = 0;
+    resetGame();
+  }
+
   @override
   Widget build(BuildContext context) {
+    var text2 = new Text(
+      flag == 1 ? "1 Player mode" : "2 Player mode ",
+      style: new TextStyle(color: Colors.white, fontSize: 20.0),
+    );
     return new Scaffold(
         appBar: new AppBar(
           title: new Text(
@@ -183,6 +196,12 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
+            ),
+            new RaisedButton(
+              child: text2,
+              color: Colors.indigo,
+              padding: const EdgeInsets.all(20.0),
+              onPressed: switchPlayer,
             ),
             new RaisedButton(
               child: new Text(
