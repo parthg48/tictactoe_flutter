@@ -1,367 +1,556 @@
-define(['dart_sdk', 'packages/flutter/src/foundation/object.dart', 'packages/flutter/src/physics/tolerance.dart', 'packages/flutter/src/physics/utils.dart', 'packages/flutter/src/physics/simulation.dart'], (function load__packages__flutter__src__physics__spring_simulation_dart(dart_sdk, packages__flutter__src__foundation__object$46dart, packages__flutter__src__physics__tolerance$46dart, packages__flutter__src__physics__utils$46dart, packages__flutter__src__physics__simulation$46dart) {
+define(['dart_sdk', 'packages/flutter/src/scheduler/ticker.dart', 'packages/flutter/src/rendering/sliver_persistent_header.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/rendering/layer.dart'], (function load__packages__flutter__src__widgets__sliver_persistent_header_dart(dart_sdk, packages__flutter__src__scheduler__ticker$46dart, packages__flutter__src__rendering__sliver_persistent_header$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__rendering__layer$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const math = dart_sdk.math;
+  const _interceptors = dart_sdk._interceptors;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const object = packages__flutter__src__foundation__object$46dart.src__foundation__object;
-  const tolerance = packages__flutter__src__physics__tolerance$46dart.src__physics__tolerance;
-  const utils = packages__flutter__src__physics__utils$46dart.src__physics__utils;
-  const simulation = packages__flutter__src__physics__simulation$46dart.src__physics__simulation;
-  var spring_simulation = Object.create(dart.library);
-  var $toStringAsFixed = dartx.toStringAsFixed;
+  const ticker = packages__flutter__src__scheduler__ticker$46dart.src__scheduler__ticker;
+  const sliver_persistent_header = packages__flutter__src__rendering__sliver_persistent_header$46dart.src__rendering__sliver_persistent_header;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
+  const box = packages__flutter__src__rendering__layer$46dart.src__rendering__box;
+  const object = packages__flutter__src__rendering__layer$46dart.src__rendering__object;
+  var sliver_persistent_header$ = Object.create(dart.library);
+  var $add = dartx.add;
+  var $isEmpty = dartx.isEmpty;
+  var $_equals = dartx._equals;
+  var $runtimeType = dartx.runtimeType;
   dart._checkModuleNullSafetyMode(true);
+  var T = {
+    DiagnosticsPropertyOfSliverPersistentHeaderDelegate: () => (T.DiagnosticsPropertyOfSliverPersistentHeaderDelegate = dart.constFn(diagnostics.DiagnosticsProperty$(sliver_persistent_header$.SliverPersistentHeaderDelegate)))(),
+    JSArrayOfString: () => (T.JSArrayOfString = dart.constFn(_interceptors.JSArray$(core.String)))(),
+    IterablePropertyOfString: () => (T.IterablePropertyOfString = dart.constFn(diagnostics.IterableProperty$(core.String)))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))()
+  };
   const CT = Object.create({
     _: () => (C, CT)
   });
   dart.defineLazy(CT, {
-    get C0() {
-      return C[0] = dart.const({
-        __proto__: spring_simulation.SpringType.prototype,
-        [_name$]: "SpringType.criticallyDamped",
-        index: 0
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "delegate",
+        [_Location_column]: 52,
+        [_Location_line]: 161,
+        [_Location_file]: null
       });
     },
     get C1() {
-      return C[1] = dart.const({
-        __proto__: spring_simulation.SpringType.prototype,
-        [_name$]: "SpringType.underDamped",
-        index: 1
+      return C[1] = dart.constList([C[2] || CT.C2], widget_inspector._Location);
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 161,
+        [_Location_file]: "file:///C:/flutter_windows_2.2.1-stable/flutter/packages/flutter/lib/src/widgets/sliver_persistent_header.dart"
       });
     },
-    get C2() {
-      return C[2] = dart.const({
-        __proto__: spring_simulation.SpringType.prototype,
-        [_name$]: "SpringType.overDamped",
-        index: 2
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "delegate",
+        [_Location_column]: 44,
+        [_Location_line]: 163,
+        [_Location_file]: null
       });
-    },
-    get C3() {
-      return C[3] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2], spring_simulation.SpringType);
     },
     get C4() {
-      return C[4] = dart.const({
-        __proto__: tolerance.Tolerance.prototype,
-        [Tolerance_velocity]: 0.001,
-        [Tolerance_time]: 0.001,
-        [Tolerance_distance]: 0.001
+      return C[4] = dart.constList([C[5] || CT.C5], widget_inspector._Location);
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[4] || CT.C4,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 163,
+        [_Location_file]: "file:///C:/flutter_windows_2.2.1-stable/flutter/packages/flutter/lib/src/widgets/sliver_persistent_header.dart"
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "delegate",
+        [_Location_column]: 46,
+        [_Location_line]: 165,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.constList([C[8] || CT.C8], widget_inspector._Location);
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[7] || CT.C7,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 165,
+        [_Location_file]: "file:///C:/flutter_windows_2.2.1-stable/flutter/packages/flutter/lib/src/widgets/sliver_persistent_header.dart"
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "delegate",
+        [_Location_column]: 45,
+        [_Location_line]: 166,
+        [_Location_file]: null
+      });
+    },
+    get C10() {
+      return C[10] = dart.constList([C[11] || CT.C11], widget_inspector._Location);
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[10] || CT.C10,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 166,
+        [_Location_file]: "file:///C:/flutter_windows_2.2.1-stable/flutter/packages/flutter/lib/src/widgets/sliver_persistent_header.dart"
       });
     }
   }, false);
-  var C = Array(5).fill(void 0);
+  var C = Array(12).fill(void 0);
   var I = [
-    "package:flutter/src/physics/spring_simulation.dart",
-    "file:///C:/flutter_windows_2.2.1-stable/flutter/packages/flutter/lib/src/physics/spring_simulation.dart"
+    "package:flutter/src/widgets/sliver_persistent_header.dart",
+    "file:///C:/flutter_windows_2.2.1-stable/flutter/packages/flutter/lib/src/widgets/sliver_persistent_header.dart"
   ];
-  var mass$ = dart.privateName(spring_simulation, "SpringDescription.mass");
-  var stiffness$ = dart.privateName(spring_simulation, "SpringDescription.stiffness");
-  var damping$ = dart.privateName(spring_simulation, "SpringDescription.damping");
-  spring_simulation.SpringDescription = class SpringDescription extends core.Object {
-    get mass() {
-      return this[mass$];
+  sliver_persistent_header$.SliverPersistentHeaderDelegate = class SliverPersistentHeaderDelegate extends core.Object {
+    get vsync() {
+      return null;
     }
-    set mass(value) {
-      super.mass = value;
+    get snapConfiguration() {
+      return null;
     }
-    get stiffness() {
-      return this[stiffness$];
+    get stretchConfiguration() {
+      return null;
     }
-    set stiffness(value) {
-      super.stiffness = value;
-    }
-    get damping() {
-      return this[damping$];
-    }
-    set damping(value) {
-      super.damping = value;
-    }
-    toString() {
-      return object.objectRuntimeType(this, "SpringDescription") + "(mass: " + this.mass[$toStringAsFixed](1) + ", stiffness: " + this.stiffness[$toStringAsFixed](1) + ", damping: " + this.damping[$toStringAsFixed](1) + ")";
+    get showOnScreenConfiguration() {
+      return null;
     }
   };
-  (spring_simulation.SpringDescription.new = function(opts) {
-    let mass = opts && 'mass' in opts ? opts.mass : null;
-    let stiffness = opts && 'stiffness' in opts ? opts.stiffness : null;
-    let damping = opts && 'damping' in opts ? opts.damping : null;
-    this[mass$] = mass;
-    this[stiffness$] = stiffness;
-    this[damping$] = damping;
+  (sliver_persistent_header$.SliverPersistentHeaderDelegate.new = function() {
     ;
-  }).prototype = spring_simulation.SpringDescription.prototype;
-  (spring_simulation.SpringDescription.withDampingRatio = function(opts) {
-    let mass = opts && 'mass' in opts ? opts.mass : null;
-    let stiffness = opts && 'stiffness' in opts ? opts.stiffness : null;
-    let ratio = opts && 'ratio' in opts ? opts.ratio : 1;
-    this[mass$] = mass;
-    this[stiffness$] = stiffness;
-    this[damping$] = ratio * 2.0 * math.sqrt(mass * stiffness);
-    ;
-  }).prototype = spring_simulation.SpringDescription.prototype;
-  dart.addTypeTests(spring_simulation.SpringDescription);
-  dart.addTypeCaches(spring_simulation.SpringDescription);
-  dart.setLibraryUri(spring_simulation.SpringDescription, I[0]);
-  dart.setFieldSignature(spring_simulation.SpringDescription, () => ({
-    __proto__: dart.getFields(spring_simulation.SpringDescription.__proto__),
-    mass: dart.finalFieldType(core.double),
-    stiffness: dart.finalFieldType(core.double),
-    damping: dart.finalFieldType(core.double)
+  }).prototype = sliver_persistent_header$.SliverPersistentHeaderDelegate.prototype;
+  dart.addTypeTests(sliver_persistent_header$.SliverPersistentHeaderDelegate);
+  dart.addTypeCaches(sliver_persistent_header$.SliverPersistentHeaderDelegate);
+  dart.setGetterSignature(sliver_persistent_header$.SliverPersistentHeaderDelegate, () => ({
+    __proto__: dart.getGetters(sliver_persistent_header$.SliverPersistentHeaderDelegate.__proto__),
+    vsync: dart.nullable(ticker.TickerProvider),
+    snapConfiguration: dart.nullable(sliver_persistent_header.FloatingHeaderSnapConfiguration),
+    stretchConfiguration: dart.nullable(sliver_persistent_header.OverScrollHeaderStretchConfiguration),
+    showOnScreenConfiguration: dart.nullable(sliver_persistent_header.PersistentHeaderShowOnScreenConfiguration)
   }));
-  dart.defineExtensionMethods(spring_simulation.SpringDescription, ['toString']);
-  var _name$ = dart.privateName(spring_simulation, "_name");
-  spring_simulation.SpringType = class SpringType extends core.Object {
-    toString() {
-      return this[_name$];
+  dart.setLibraryUri(sliver_persistent_header$.SliverPersistentHeaderDelegate, I[0]);
+  var delegate$ = dart.privateName(sliver_persistent_header$, "SliverPersistentHeader.delegate");
+  var pinned$ = dart.privateName(sliver_persistent_header$, "SliverPersistentHeader.pinned");
+  var floating$ = dart.privateName(sliver_persistent_header$, "SliverPersistentHeader.floating");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  sliver_persistent_header$.SliverPersistentHeader = class SliverPersistentHeader extends framework.StatelessWidget {
+    get delegate() {
+      return this[delegate$];
+    }
+    set delegate(value) {
+      super.delegate = value;
+    }
+    get pinned() {
+      return this[pinned$];
+    }
+    set pinned(value) {
+      super.pinned = value;
+    }
+    get floating() {
+      return this[floating$];
+    }
+    set floating(value) {
+      super.floating = value;
+    }
+    build(context) {
+      if (this.floating && this.pinned) return new sliver_persistent_header$._SliverFloatingPinnedPersistentHeader.new({delegate: this.delegate, $creationLocationd_0dea112b090073317d4: C[0] || CT.C0});
+      if (this.pinned) return new sliver_persistent_header$._SliverPinnedPersistentHeader.new({delegate: this.delegate, $creationLocationd_0dea112b090073317d4: C[3] || CT.C3});
+      if (this.floating) return new sliver_persistent_header$._SliverFloatingPersistentHeader.new({delegate: this.delegate, $creationLocationd_0dea112b090073317d4: C[6] || CT.C6});
+      return new sliver_persistent_header$._SliverScrollingPersistentHeader.new({delegate: this.delegate, $creationLocationd_0dea112b090073317d4: C[9] || CT.C9});
+    }
+    debugFillProperties(properties) {
+      super.debugFillProperties(properties);
+      properties.add(new (T.DiagnosticsPropertyOfSliverPersistentHeaderDelegate()).new("delegate", this.delegate));
+      let flags = (() => {
+        let t0 = T.JSArrayOfString().of([]);
+        if (this.pinned) t0[$add]("pinned");
+        if (this.floating) t0[$add]("floating");
+        return t0;
+      })();
+      if (flags[$isEmpty]) flags[$add]("normal");
+      properties.add(new (T.IterablePropertyOfString()).new("mode", flags));
     }
   };
-  (spring_simulation.SpringType.new = function(index, _name) {
-    this.index = index;
-    this[_name$] = _name;
+  (sliver_persistent_header$.SliverPersistentHeader.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let delegate = opts && 'delegate' in opts ? opts.delegate : null;
+    let pinned = opts && 'pinned' in opts ? opts.pinned : false;
+    let floating = opts && 'floating' in opts ? opts.floating : false;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[delegate$] = delegate;
+    this[pinned$] = pinned;
+    this[floating$] = floating;
+    if (!(delegate !== null)) dart.assertFailed(null, I[1], 125, 15, "delegate != null");
+    if (!(pinned !== null)) dart.assertFailed(null, I[1], 126, 15, "pinned != null");
+    if (!(floating !== null)) dart.assertFailed(null, I[1], 127, 15, "floating != null");
+    sliver_persistent_header$.SliverPersistentHeader.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
     ;
-  }).prototype = spring_simulation.SpringType.prototype;
-  dart.addTypeTests(spring_simulation.SpringType);
-  dart.addTypeCaches(spring_simulation.SpringType);
-  dart.setLibraryUri(spring_simulation.SpringType, I[0]);
-  dart.setFieldSignature(spring_simulation.SpringType, () => ({
-    __proto__: dart.getFields(spring_simulation.SpringType.__proto__),
-    index: dart.finalFieldType(core.int),
-    [_name$]: dart.finalFieldType(core.String)
+  }).prototype = sliver_persistent_header$.SliverPersistentHeader.prototype;
+  dart.addTypeTests(sliver_persistent_header$.SliverPersistentHeader);
+  dart.addTypeCaches(sliver_persistent_header$.SliverPersistentHeader);
+  dart.setMethodSignature(sliver_persistent_header$.SliverPersistentHeader, () => ({
+    __proto__: dart.getMethods(sliver_persistent_header$.SliverPersistentHeader.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.defineExtensionMethods(spring_simulation.SpringType, ['toString']);
-  spring_simulation.SpringType.criticallyDamped = C[0] || CT.C0;
-  spring_simulation.SpringType.underDamped = C[1] || CT.C1;
-  spring_simulation.SpringType.overDamped = C[2] || CT.C2;
-  spring_simulation.SpringType.values = C[3] || CT.C3;
-  var Tolerance_velocity = dart.privateName(tolerance, "Tolerance.velocity");
-  var Tolerance_time = dart.privateName(tolerance, "Tolerance.time");
-  var Tolerance_distance = dart.privateName(tolerance, "Tolerance.distance");
-  var _endPosition = dart.privateName(spring_simulation, "_endPosition");
-  var _solution = dart.privateName(spring_simulation, "_solution");
-  spring_simulation.SpringSimulation = class SpringSimulation extends simulation.Simulation {
-    get type() {
-      return this[_solution].type;
+  dart.setLibraryUri(sliver_persistent_header$.SliverPersistentHeader, I[0]);
+  dart.setFieldSignature(sliver_persistent_header$.SliverPersistentHeader, () => ({
+    __proto__: dart.getFields(sliver_persistent_header$.SliverPersistentHeader.__proto__),
+    delegate: dart.finalFieldType(sliver_persistent_header$.SliverPersistentHeaderDelegate),
+    pinned: dart.finalFieldType(core.bool),
+    floating: dart.finalFieldType(core.bool)
+  }));
+  var _element = dart.privateName(sliver_persistent_header$, "_element");
+  var _build = dart.privateName(sliver_persistent_header$, "_build");
+  sliver_persistent_header$._SliverPersistentHeaderElement = class _SliverPersistentHeaderElement extends framework.RenderObjectElement {
+    get widget() {
+      return sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget.as(super.widget);
     }
-    x(time) {
-      return this[_endPosition] + this[_solution].x(time);
+    get renderObject() {
+      return sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin.as(super.renderObject);
     }
-    dx(time) {
-      return this[_solution].dx(time);
+    mount(parent, newSlot) {
+      super.mount(parent, newSlot);
+      this.renderObject[_element] = this;
     }
-    isDone(time) {
-      return utils.nearZero(this[_solution].x(time), this.tolerance.distance) && utils.nearZero(this[_solution].dx(time), this.tolerance.velocity);
+    unmount() {
+      super.unmount();
+      this.renderObject[_element] = null;
     }
-    toString() {
-      return object.objectRuntimeType(this, "SpringSimulation") + "(end: " + dart.str(this[_endPosition]) + ", " + dart.str(this.type) + ")";
+    update(newWidget) {
+      sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget.as(newWidget);
+      let oldWidget = this.widget;
+      super.update(newWidget);
+      let newDelegate = newWidget.delegate;
+      let oldDelegate = oldWidget.delegate;
+      if (!newDelegate[$_equals](oldDelegate) && (!newDelegate[$runtimeType]._equals(oldDelegate[$runtimeType]) || newDelegate.shouldRebuild(oldDelegate))) this.renderObject.triggerRebuild();
+    }
+    performRebuild() {
+      super.performRebuild();
+      this.renderObject.triggerRebuild();
+    }
+    [_build](shrinkOffset, overlapsContent) {
+      dart.nullCheck(this.owner).buildScope(this, dart.fn(() => {
+        this.child = this.updateChild(this.child, this.widget.delegate.build(this, shrinkOffset, overlapsContent), null);
+      }, T.VoidTovoid()));
+    }
+    forgetChild(child) {
+      if (!child._equals(this.child)) dart.assertFailed(null, I[1], 244, 12, "child == this.child");
+      this.child = null;
+      super.forgetChild(child);
+    }
+    insertRenderObjectChild(child, slot) {
+      box.RenderBox.as(child);
+      if (!this.renderObject.debugValidateChild(child)) dart.assertFailed(null, I[1], 251, 12, "renderObject.debugValidateChild(child)");
+      this.renderObject.child = child;
+    }
+    moveRenderObjectChild(child, oldSlot, newSlot) {
+      object.RenderObject.as(child);
+      if (!false) dart.assertFailed(null, I[1], 257, 12, "false");
+    }
+    removeRenderObjectChild(child, slot) {
+      object.RenderObject.as(child);
+      this.renderObject.child = null;
+    }
+    visitChildren(visitor) {
+      if (this.child != null) visitor(dart.nullCheck(this.child));
     }
   };
-  (spring_simulation.SpringSimulation.new = function(spring, start, end, velocity, opts) {
-    let tolerance = opts && 'tolerance' in opts ? opts.tolerance : C[4] || CT.C4;
-    this[_endPosition] = end;
-    this[_solution] = spring_simulation._SpringSolution.new(spring, start - end, velocity);
-    spring_simulation.SpringSimulation.__proto__.new.call(this, {tolerance: tolerance});
+  (sliver_persistent_header$._SliverPersistentHeaderElement.new = function(widget) {
+    this.child = null;
+    sliver_persistent_header$._SliverPersistentHeaderElement.__proto__.new.call(this, widget);
     ;
-  }).prototype = spring_simulation.SpringSimulation.prototype;
-  dart.addTypeTests(spring_simulation.SpringSimulation);
-  dart.addTypeCaches(spring_simulation.SpringSimulation);
-  dart.setMethodSignature(spring_simulation.SpringSimulation, () => ({
-    __proto__: dart.getMethods(spring_simulation.SpringSimulation.__proto__),
-    x: dart.fnType(core.double, [core.double]),
-    dx: dart.fnType(core.double, [core.double]),
-    isDone: dart.fnType(core.bool, [core.double])
+  }).prototype = sliver_persistent_header$._SliverPersistentHeaderElement.prototype;
+  dart.addTypeTests(sliver_persistent_header$._SliverPersistentHeaderElement);
+  dart.addTypeCaches(sliver_persistent_header$._SliverPersistentHeaderElement);
+  dart.setMethodSignature(sliver_persistent_header$._SliverPersistentHeaderElement, () => ({
+    __proto__: dart.getMethods(sliver_persistent_header$._SliverPersistentHeaderElement.__proto__),
+    [_build]: dart.fnType(dart.void, [core.double, core.bool])
   }));
-  dart.setGetterSignature(spring_simulation.SpringSimulation, () => ({
-    __proto__: dart.getGetters(spring_simulation.SpringSimulation.__proto__),
-    type: spring_simulation.SpringType
+  dart.setGetterSignature(sliver_persistent_header$._SliverPersistentHeaderElement, () => ({
+    __proto__: dart.getGetters(sliver_persistent_header$._SliverPersistentHeaderElement.__proto__),
+    widget: sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget,
+    renderObject: sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin
   }));
-  dart.setLibraryUri(spring_simulation.SpringSimulation, I[0]);
-  dart.setFieldSignature(spring_simulation.SpringSimulation, () => ({
-    __proto__: dart.getFields(spring_simulation.SpringSimulation.__proto__),
-    [_endPosition]: dart.finalFieldType(core.double),
-    [_solution]: dart.finalFieldType(spring_simulation._SpringSolution)
+  dart.setLibraryUri(sliver_persistent_header$._SliverPersistentHeaderElement, I[0]);
+  dart.setFieldSignature(sliver_persistent_header$._SliverPersistentHeaderElement, () => ({
+    __proto__: dart.getFields(sliver_persistent_header$._SliverPersistentHeaderElement.__proto__),
+    child: dart.fieldType(dart.nullable(framework.Element))
   }));
-  dart.defineExtensionMethods(spring_simulation.SpringSimulation, ['toString']);
-  spring_simulation.ScrollSpringSimulation = class ScrollSpringSimulation extends spring_simulation.SpringSimulation {
-    x(time) {
-      return this.isDone(time) ? this[_endPosition] : super.x(time);
+  var delegate$0 = dart.privateName(sliver_persistent_header$, "_SliverPersistentHeaderRenderObjectWidget.delegate");
+  sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget = class _SliverPersistentHeaderRenderObjectWidget extends framework.RenderObjectWidget {
+    get delegate() {
+      return this[delegate$0];
+    }
+    set delegate(value) {
+      super.delegate = value;
+    }
+    createElement() {
+      return new sliver_persistent_header$._SliverPersistentHeaderElement.new(this);
+    }
+    debugFillProperties(description) {
+      super.debugFillProperties(description);
+      description.add(new (T.DiagnosticsPropertyOfSliverPersistentHeaderDelegate()).new("delegate", this.delegate));
     }
   };
-  (spring_simulation.ScrollSpringSimulation.new = function(spring, start, end, velocity, opts) {
-    let tolerance = opts && 'tolerance' in opts ? opts.tolerance : C[4] || CT.C4;
-    spring_simulation.ScrollSpringSimulation.__proto__.new.call(this, spring, start, end, velocity, {tolerance: tolerance});
+  (sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let delegate = opts && 'delegate' in opts ? opts.delegate : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[delegate$0] = delegate;
+    if (!(delegate !== null)) dart.assertFailed(null, I[1], 276, 15, "delegate != null");
+    sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
     ;
-  }).prototype = spring_simulation.ScrollSpringSimulation.prototype;
-  dart.addTypeTests(spring_simulation.ScrollSpringSimulation);
-  dart.addTypeCaches(spring_simulation.ScrollSpringSimulation);
-  dart.setLibraryUri(spring_simulation.ScrollSpringSimulation, I[0]);
-  spring_simulation._SpringSolution = class _SpringSolution extends core.Object {
-    static new(spring, initialPosition, initialVelocity) {
-      if (!(spring !== null)) dart.assertFailed(null, I[1], 156, 12, "spring != null");
-      if (!(spring.mass !== null)) dart.assertFailed(null, I[1], 157, 12, "spring.mass != null");
-      if (!(spring.stiffness !== null)) dart.assertFailed(null, I[1], 158, 12, "spring.stiffness != null");
-      if (!(spring.damping !== null)) dart.assertFailed(null, I[1], 159, 12, "spring.damping != null");
-      if (!(initialPosition !== null)) dart.assertFailed(null, I[1], 160, 12, "initialPosition != null");
-      if (!(initialVelocity !== null)) dart.assertFailed(null, I[1], 161, 12, "initialVelocity != null");
-      let cmk = spring.damping * spring.damping - 4 * spring.mass * spring.stiffness;
-      if (cmk === 0.0) return spring_simulation._CriticalSolution.new(spring, initialPosition, initialVelocity);
-      if (cmk > 0.0) return spring_simulation._OverdampedSolution.new(spring, initialPosition, initialVelocity);
-      return spring_simulation._UnderdampedSolution.new(spring, initialPosition, initialVelocity);
+  }).prototype = sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget.prototype;
+  dart.addTypeTests(sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget);
+  dart.addTypeCaches(sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget);
+  dart.setMethodSignature(sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget, () => ({
+    __proto__: dart.getMethods(sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget.__proto__),
+    createElement: dart.fnType(sliver_persistent_header$._SliverPersistentHeaderElement, [])
+  }));
+  dart.setLibraryUri(sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget, I[0]);
+  dart.setFieldSignature(sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget, () => ({
+    __proto__: dart.getFields(sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget.__proto__),
+    delegate: dart.finalFieldType(sliver_persistent_header$.SliverPersistentHeaderDelegate)
+  }));
+  var _element$ = dart.privateName(sliver_persistent_header$, "_RenderSliverPersistentHeaderForWidgetsMixin._element");
+  sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin = class _RenderSliverPersistentHeaderForWidgetsMixin extends sliver_persistent_header.RenderSliverPersistentHeader {};
+  sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin[dart.mixinOn] = RenderSliverPersistentHeader => class _RenderSliverPersistentHeaderForWidgetsMixin extends RenderSliverPersistentHeader {
+    get [_element]() {
+      return this[_element$];
+    }
+    set [_element](value) {
+      this[_element$] = value;
+    }
+    get minExtent() {
+      return dart.nullCheck(this[_element]).widget.delegate.minExtent;
+    }
+    get maxExtent() {
+      return dart.nullCheck(this[_element]).widget.delegate.maxExtent;
+    }
+    updateChild(shrinkOffset, overlapsContent) {
+      if (!(this[_element] != null)) dart.assertFailed(null, I[1], 310, 12, "_element != null");
+      dart.nullCheck(this[_element])[_build](shrinkOffset, overlapsContent);
+    }
+    triggerRebuild() {
+      this.markNeedsLayout();
     }
   };
-  (spring_simulation._SpringSolution[dart.mixinNew] = function() {
-  }).prototype = spring_simulation._SpringSolution.prototype;
-  dart.addTypeTests(spring_simulation._SpringSolution);
-  dart.addTypeCaches(spring_simulation._SpringSolution);
-  dart.setLibraryUri(spring_simulation._SpringSolution, I[0]);
-  var _r = dart.privateName(spring_simulation, "_r");
-  var _c1 = dart.privateName(spring_simulation, "_c1");
-  var _c2 = dart.privateName(spring_simulation, "_c2");
-  spring_simulation._CriticalSolution = class _CriticalSolution extends core.Object {
-    static new(spring, distance, velocity) {
-      let r = -spring.damping / (2.0 * spring.mass);
-      let c1 = distance;
-      let c2 = velocity / (r * distance);
-      return new spring_simulation._CriticalSolution.withArgs(r, c1, c2);
-    }
-    x(time) {
-      return (this[_c1] + this[_c2] * time) * math.pow(2.718281828459045, this[_r] * time);
-    }
-    dx(time) {
-      let power = math.pow(2.718281828459045, this[_r] * time);
-      return this[_r] * (this[_c1] + this[_c2] * time) * power + this[_c2] * power;
-    }
-    get type() {
-      return spring_simulation.SpringType.criticallyDamped;
+  (sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin[dart.mixinNew] = function() {
+    this[_element$] = null;
+  }).prototype = sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin.prototype;
+  dart.addTypeTests(sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin);
+  dart.addTypeCaches(sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin);
+  sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin[dart.implements] = () => [sliver_persistent_header.RenderSliverPersistentHeader];
+  dart.setMethodSignature(sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin, () => ({
+    __proto__: dart.getMethods(sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin.__proto__),
+    triggerRebuild: dart.fnType(dart.void, [])
+  }));
+  dart.setGetterSignature(sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin, () => ({
+    __proto__: dart.getGetters(sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin.__proto__),
+    minExtent: core.double,
+    maxExtent: core.double
+  }));
+  dart.setLibraryUri(sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin, I[0]);
+  dart.setFieldSignature(sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin, () => ({
+    __proto__: dart.getFields(sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin.__proto__),
+    [_element]: dart.fieldType(dart.nullable(sliver_persistent_header$._SliverPersistentHeaderElement))
+  }));
+  sliver_persistent_header$._SliverScrollingPersistentHeader = class _SliverScrollingPersistentHeader extends sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget {
+    createRenderObject(context) {
+      return new sliver_persistent_header$._RenderSliverScrollingPersistentHeaderForWidgets.new({stretchConfiguration: this.delegate.stretchConfiguration});
     }
   };
-  (spring_simulation._CriticalSolution.withArgs = function(r, c1, c2) {
-    this[_r] = r;
-    this[_c1] = c1;
-    this[_c2] = c2;
+  (sliver_persistent_header$._SliverScrollingPersistentHeader.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let delegate = opts && 'delegate' in opts ? opts.delegate : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    sliver_persistent_header$._SliverScrollingPersistentHeader.__proto__.new.call(this, {key: key, delegate: delegate, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
     ;
-  }).prototype = spring_simulation._CriticalSolution.prototype;
-  dart.addTypeTests(spring_simulation._CriticalSolution);
-  dart.addTypeCaches(spring_simulation._CriticalSolution);
-  spring_simulation._CriticalSolution[dart.implements] = () => [spring_simulation._SpringSolution];
-  dart.setMethodSignature(spring_simulation._CriticalSolution, () => ({
-    __proto__: dart.getMethods(spring_simulation._CriticalSolution.__proto__),
-    x: dart.fnType(core.double, [core.double]),
-    dx: dart.fnType(core.double, [core.double])
+  }).prototype = sliver_persistent_header$._SliverScrollingPersistentHeader.prototype;
+  dart.addTypeTests(sliver_persistent_header$._SliverScrollingPersistentHeader);
+  dart.addTypeCaches(sliver_persistent_header$._SliverScrollingPersistentHeader);
+  dart.setMethodSignature(sliver_persistent_header$._SliverScrollingPersistentHeader, () => ({
+    __proto__: dart.getMethods(sliver_persistent_header$._SliverScrollingPersistentHeader.__proto__),
+    createRenderObject: dart.fnType(sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin, [framework.BuildContext])
   }));
-  dart.setGetterSignature(spring_simulation._CriticalSolution, () => ({
-    __proto__: dart.getGetters(spring_simulation._CriticalSolution.__proto__),
-    type: spring_simulation.SpringType
-  }));
-  dart.setLibraryUri(spring_simulation._CriticalSolution, I[0]);
-  dart.setFieldSignature(spring_simulation._CriticalSolution, () => ({
-    __proto__: dart.getFields(spring_simulation._CriticalSolution.__proto__),
-    [_r]: dart.finalFieldType(core.double),
-    [_c1]: dart.finalFieldType(core.double),
-    [_c2]: dart.finalFieldType(core.double)
-  }));
-  var _r1 = dart.privateName(spring_simulation, "_r1");
-  var _r2 = dart.privateName(spring_simulation, "_r2");
-  spring_simulation._OverdampedSolution = class _OverdampedSolution extends core.Object {
-    static new(spring, distance, velocity) {
-      let cmk = spring.damping * spring.damping - 4 * spring.mass * spring.stiffness;
-      let r1 = (-spring.damping - math.sqrt(cmk)) / (2.0 * spring.mass);
-      let r2 = (-spring.damping + math.sqrt(cmk)) / (2.0 * spring.mass);
-      let c2 = (velocity - r1 * distance) / (r2 - r1);
-      let c1 = distance - c2;
-      return new spring_simulation._OverdampedSolution.withArgs(r1, r2, c1, c2);
-    }
-    x(time) {
-      return this[_c1] * math.pow(2.718281828459045, this[_r1] * time) + this[_c2] * math.pow(2.718281828459045, this[_r2] * time);
-    }
-    dx(time) {
-      return this[_c1] * this[_r1] * math.pow(2.718281828459045, this[_r1] * time) + this[_c2] * this[_r2] * math.pow(2.718281828459045, this[_r2] * time);
-    }
-    get type() {
-      return spring_simulation.SpringType.overDamped;
+  dart.setLibraryUri(sliver_persistent_header$._SliverScrollingPersistentHeader, I[0]);
+  const RenderSliverScrollingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36 = class RenderSliverScrollingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin extends sliver_persistent_header.RenderSliverScrollingPersistentHeader {};
+  (RenderSliverScrollingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36.new = function(opts) {
+    sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin[dart.mixinNew].call(this);
+    RenderSliverScrollingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36.__proto__.new.call(this, opts);
+  }).prototype = RenderSliverScrollingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36.prototype;
+  dart.applyMixin(RenderSliverScrollingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36, sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin);
+  sliver_persistent_header$._RenderSliverScrollingPersistentHeaderForWidgets = class _RenderSliverScrollingPersistentHeaderForWidgets extends RenderSliverScrollingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36 {};
+  (sliver_persistent_header$._RenderSliverScrollingPersistentHeaderForWidgets.new = function(opts) {
+    let child = opts && 'child' in opts ? opts.child : null;
+    let stretchConfiguration = opts && 'stretchConfiguration' in opts ? opts.stretchConfiguration : null;
+    sliver_persistent_header$._RenderSliverScrollingPersistentHeaderForWidgets.__proto__.new.call(this, {child: child, stretchConfiguration: stretchConfiguration});
+    ;
+  }).prototype = sliver_persistent_header$._RenderSliverScrollingPersistentHeaderForWidgets.prototype;
+  dart.addTypeTests(sliver_persistent_header$._RenderSliverScrollingPersistentHeaderForWidgets);
+  dart.addTypeCaches(sliver_persistent_header$._RenderSliverScrollingPersistentHeaderForWidgets);
+  dart.setLibraryUri(sliver_persistent_header$._RenderSliverScrollingPersistentHeaderForWidgets, I[0]);
+  sliver_persistent_header$._SliverPinnedPersistentHeader = class _SliverPinnedPersistentHeader extends sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget {
+    createRenderObject(context) {
+      return new sliver_persistent_header$._RenderSliverPinnedPersistentHeaderForWidgets.new({stretchConfiguration: this.delegate.stretchConfiguration, showOnScreenConfiguration: this.delegate.showOnScreenConfiguration});
     }
   };
-  (spring_simulation._OverdampedSolution.withArgs = function(r1, r2, c1, c2) {
-    this[_r1] = r1;
-    this[_r2] = r2;
-    this[_c1] = c1;
-    this[_c2] = c2;
+  (sliver_persistent_header$._SliverPinnedPersistentHeader.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let delegate = opts && 'delegate' in opts ? opts.delegate : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    sliver_persistent_header$._SliverPinnedPersistentHeader.__proto__.new.call(this, {key: key, delegate: delegate, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
     ;
-  }).prototype = spring_simulation._OverdampedSolution.prototype;
-  dart.addTypeTests(spring_simulation._OverdampedSolution);
-  dart.addTypeCaches(spring_simulation._OverdampedSolution);
-  spring_simulation._OverdampedSolution[dart.implements] = () => [spring_simulation._SpringSolution];
-  dart.setMethodSignature(spring_simulation._OverdampedSolution, () => ({
-    __proto__: dart.getMethods(spring_simulation._OverdampedSolution.__proto__),
-    x: dart.fnType(core.double, [core.double]),
-    dx: dart.fnType(core.double, [core.double])
+  }).prototype = sliver_persistent_header$._SliverPinnedPersistentHeader.prototype;
+  dart.addTypeTests(sliver_persistent_header$._SliverPinnedPersistentHeader);
+  dart.addTypeCaches(sliver_persistent_header$._SliverPinnedPersistentHeader);
+  dart.setMethodSignature(sliver_persistent_header$._SliverPinnedPersistentHeader, () => ({
+    __proto__: dart.getMethods(sliver_persistent_header$._SliverPinnedPersistentHeader.__proto__),
+    createRenderObject: dart.fnType(sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin, [framework.BuildContext])
   }));
-  dart.setGetterSignature(spring_simulation._OverdampedSolution, () => ({
-    __proto__: dart.getGetters(spring_simulation._OverdampedSolution.__proto__),
-    type: spring_simulation.SpringType
-  }));
-  dart.setLibraryUri(spring_simulation._OverdampedSolution, I[0]);
-  dart.setFieldSignature(spring_simulation._OverdampedSolution, () => ({
-    __proto__: dart.getFields(spring_simulation._OverdampedSolution.__proto__),
-    [_r1]: dart.finalFieldType(core.double),
-    [_r2]: dart.finalFieldType(core.double),
-    [_c1]: dart.finalFieldType(core.double),
-    [_c2]: dart.finalFieldType(core.double)
-  }));
-  var _w = dart.privateName(spring_simulation, "_w");
-  spring_simulation._UnderdampedSolution = class _UnderdampedSolution extends core.Object {
-    static new(spring, distance, velocity) {
-      let w = math.sqrt(4.0 * spring.mass * spring.stiffness - spring.damping * spring.damping) / (2.0 * spring.mass);
-      let r = -(spring.damping / 2.0 * spring.mass);
-      let c1 = distance;
-      let c2 = (velocity - r * distance) / w;
-      return new spring_simulation._UnderdampedSolution.withArgs(w, r, c1, c2);
+  dart.setLibraryUri(sliver_persistent_header$._SliverPinnedPersistentHeader, I[0]);
+  const RenderSliverPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36 = class RenderSliverPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin extends sliver_persistent_header.RenderSliverPinnedPersistentHeader {};
+  (RenderSliverPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36.new = function(opts) {
+    sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin[dart.mixinNew].call(this);
+    RenderSliverPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36.__proto__.new.call(this, opts);
+  }).prototype = RenderSliverPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36.prototype;
+  dart.applyMixin(RenderSliverPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36, sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin);
+  sliver_persistent_header$._RenderSliverPinnedPersistentHeaderForWidgets = class _RenderSliverPinnedPersistentHeaderForWidgets extends RenderSliverPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36 {};
+  (sliver_persistent_header$._RenderSliverPinnedPersistentHeaderForWidgets.new = function(opts) {
+    let child = opts && 'child' in opts ? opts.child : null;
+    let stretchConfiguration = opts && 'stretchConfiguration' in opts ? opts.stretchConfiguration : null;
+    let showOnScreenConfiguration = opts && 'showOnScreenConfiguration' in opts ? opts.showOnScreenConfiguration : null;
+    sliver_persistent_header$._RenderSliverPinnedPersistentHeaderForWidgets.__proto__.new.call(this, {child: child, stretchConfiguration: stretchConfiguration, showOnScreenConfiguration: showOnScreenConfiguration});
+    ;
+  }).prototype = sliver_persistent_header$._RenderSliverPinnedPersistentHeaderForWidgets.prototype;
+  dart.addTypeTests(sliver_persistent_header$._RenderSliverPinnedPersistentHeaderForWidgets);
+  dart.addTypeCaches(sliver_persistent_header$._RenderSliverPinnedPersistentHeaderForWidgets);
+  dart.setLibraryUri(sliver_persistent_header$._RenderSliverPinnedPersistentHeaderForWidgets, I[0]);
+  sliver_persistent_header$._SliverFloatingPersistentHeader = class _SliverFloatingPersistentHeader extends sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget {
+    createRenderObject(context) {
+      return new sliver_persistent_header$._RenderSliverFloatingPersistentHeaderForWidgets.new({vsync: this.delegate.vsync, snapConfiguration: this.delegate.snapConfiguration, stretchConfiguration: this.delegate.stretchConfiguration, showOnScreenConfiguration: this.delegate.showOnScreenConfiguration});
     }
-    x(time) {
-      return math.pow(2.718281828459045, this[_r] * time) * (this[_c1] * math.cos(this[_w] * time) + this[_c2] * math.sin(this[_w] * time));
-    }
-    dx(time) {
-      let power = math.pow(2.718281828459045, this[_r] * time);
-      let cosine = math.cos(this[_w] * time);
-      let sine = math.sin(this[_w] * time);
-      return power * (this[_c2] * this[_w] * cosine - this[_c1] * this[_w] * sine) + this[_r] * power * (this[_c2] * sine + this[_c1] * cosine);
-    }
-    get type() {
-      return spring_simulation.SpringType.underDamped;
+    updateRenderObject(context, renderObject) {
+      sliver_persistent_header$._RenderSliverFloatingPersistentHeaderForWidgets.as(renderObject);
+      renderObject.vsync = this.delegate.vsync;
+      renderObject.snapConfiguration = this.delegate.snapConfiguration;
+      renderObject.stretchConfiguration = this.delegate.stretchConfiguration;
+      renderObject.showOnScreenConfiguration = this.delegate.showOnScreenConfiguration;
     }
   };
-  (spring_simulation._UnderdampedSolution.withArgs = function(w, r, c1, c2) {
-    this[_w] = w;
-    this[_r] = r;
-    this[_c1] = c1;
-    this[_c2] = c2;
+  (sliver_persistent_header$._SliverFloatingPersistentHeader.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let delegate = opts && 'delegate' in opts ? opts.delegate : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    sliver_persistent_header$._SliverFloatingPersistentHeader.__proto__.new.call(this, {key: key, delegate: delegate, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
     ;
-  }).prototype = spring_simulation._UnderdampedSolution.prototype;
-  dart.addTypeTests(spring_simulation._UnderdampedSolution);
-  dart.addTypeCaches(spring_simulation._UnderdampedSolution);
-  spring_simulation._UnderdampedSolution[dart.implements] = () => [spring_simulation._SpringSolution];
-  dart.setMethodSignature(spring_simulation._UnderdampedSolution, () => ({
-    __proto__: dart.getMethods(spring_simulation._UnderdampedSolution.__proto__),
-    x: dart.fnType(core.double, [core.double]),
-    dx: dart.fnType(core.double, [core.double])
+  }).prototype = sliver_persistent_header$._SliverFloatingPersistentHeader.prototype;
+  dart.addTypeTests(sliver_persistent_header$._SliverFloatingPersistentHeader);
+  dart.addTypeCaches(sliver_persistent_header$._SliverFloatingPersistentHeader);
+  dart.setMethodSignature(sliver_persistent_header$._SliverFloatingPersistentHeader, () => ({
+    __proto__: dart.getMethods(sliver_persistent_header$._SliverFloatingPersistentHeader.__proto__),
+    createRenderObject: dart.fnType(sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin, [framework.BuildContext])
   }));
-  dart.setGetterSignature(spring_simulation._UnderdampedSolution, () => ({
-    __proto__: dart.getGetters(spring_simulation._UnderdampedSolution.__proto__),
-    type: spring_simulation.SpringType
+  dart.setLibraryUri(sliver_persistent_header$._SliverFloatingPersistentHeader, I[0]);
+  const RenderSliverFloatingPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36 = class RenderSliverFloatingPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin extends sliver_persistent_header.RenderSliverFloatingPinnedPersistentHeader {};
+  (RenderSliverFloatingPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36.new = function(opts) {
+    sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin[dart.mixinNew].call(this);
+    RenderSliverFloatingPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36.__proto__.new.call(this, opts);
+  }).prototype = RenderSliverFloatingPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36.prototype;
+  dart.applyMixin(RenderSliverFloatingPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36, sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin);
+  sliver_persistent_header$._RenderSliverFloatingPinnedPersistentHeaderForWidgets = class _RenderSliverFloatingPinnedPersistentHeaderForWidgets extends RenderSliverFloatingPinnedPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36 {};
+  (sliver_persistent_header$._RenderSliverFloatingPinnedPersistentHeaderForWidgets.new = function(opts) {
+    let child = opts && 'child' in opts ? opts.child : null;
+    let vsync = opts && 'vsync' in opts ? opts.vsync : null;
+    let snapConfiguration = opts && 'snapConfiguration' in opts ? opts.snapConfiguration : null;
+    let stretchConfiguration = opts && 'stretchConfiguration' in opts ? opts.stretchConfiguration : null;
+    let showOnScreenConfiguration = opts && 'showOnScreenConfiguration' in opts ? opts.showOnScreenConfiguration : null;
+    sliver_persistent_header$._RenderSliverFloatingPinnedPersistentHeaderForWidgets.__proto__.new.call(this, {child: child, vsync: vsync, snapConfiguration: snapConfiguration, stretchConfiguration: stretchConfiguration, showOnScreenConfiguration: showOnScreenConfiguration});
+    ;
+  }).prototype = sliver_persistent_header$._RenderSliverFloatingPinnedPersistentHeaderForWidgets.prototype;
+  dart.addTypeTests(sliver_persistent_header$._RenderSliverFloatingPinnedPersistentHeaderForWidgets);
+  dart.addTypeCaches(sliver_persistent_header$._RenderSliverFloatingPinnedPersistentHeaderForWidgets);
+  dart.setLibraryUri(sliver_persistent_header$._RenderSliverFloatingPinnedPersistentHeaderForWidgets, I[0]);
+  sliver_persistent_header$._SliverFloatingPinnedPersistentHeader = class _SliverFloatingPinnedPersistentHeader extends sliver_persistent_header$._SliverPersistentHeaderRenderObjectWidget {
+    createRenderObject(context) {
+      return new sliver_persistent_header$._RenderSliverFloatingPinnedPersistentHeaderForWidgets.new({vsync: this.delegate.vsync, snapConfiguration: this.delegate.snapConfiguration, stretchConfiguration: this.delegate.stretchConfiguration, showOnScreenConfiguration: this.delegate.showOnScreenConfiguration});
+    }
+    updateRenderObject(context, renderObject) {
+      sliver_persistent_header$._RenderSliverFloatingPinnedPersistentHeaderForWidgets.as(renderObject);
+      renderObject.vsync = this.delegate.vsync;
+      renderObject.snapConfiguration = this.delegate.snapConfiguration;
+      renderObject.stretchConfiguration = this.delegate.stretchConfiguration;
+      renderObject.showOnScreenConfiguration = this.delegate.showOnScreenConfiguration;
+    }
+  };
+  (sliver_persistent_header$._SliverFloatingPinnedPersistentHeader.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let delegate = opts && 'delegate' in opts ? opts.delegate : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    sliver_persistent_header$._SliverFloatingPinnedPersistentHeader.__proto__.new.call(this, {key: key, delegate: delegate, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = sliver_persistent_header$._SliverFloatingPinnedPersistentHeader.prototype;
+  dart.addTypeTests(sliver_persistent_header$._SliverFloatingPinnedPersistentHeader);
+  dart.addTypeCaches(sliver_persistent_header$._SliverFloatingPinnedPersistentHeader);
+  dart.setMethodSignature(sliver_persistent_header$._SliverFloatingPinnedPersistentHeader, () => ({
+    __proto__: dart.getMethods(sliver_persistent_header$._SliverFloatingPinnedPersistentHeader.__proto__),
+    createRenderObject: dart.fnType(sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin, [framework.BuildContext])
   }));
-  dart.setLibraryUri(spring_simulation._UnderdampedSolution, I[0]);
-  dart.setFieldSignature(spring_simulation._UnderdampedSolution, () => ({
-    __proto__: dart.getFields(spring_simulation._UnderdampedSolution.__proto__),
-    [_w]: dart.finalFieldType(core.double),
-    [_r]: dart.finalFieldType(core.double),
-    [_c1]: dart.finalFieldType(core.double),
-    [_c2]: dart.finalFieldType(core.double)
-  }));
-  dart.trackLibraries("packages/flutter/src/physics/spring_simulation.dart", {
-    "package:flutter/src/physics/spring_simulation.dart": spring_simulation
+  dart.setLibraryUri(sliver_persistent_header$._SliverFloatingPinnedPersistentHeader, I[0]);
+  const RenderSliverFloatingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36 = class RenderSliverFloatingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin extends sliver_persistent_header.RenderSliverFloatingPersistentHeader {};
+  (RenderSliverFloatingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36.new = function(opts) {
+    sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin[dart.mixinNew].call(this);
+    RenderSliverFloatingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36.__proto__.new.call(this, opts);
+  }).prototype = RenderSliverFloatingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36.prototype;
+  dart.applyMixin(RenderSliverFloatingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36, sliver_persistent_header$._RenderSliverPersistentHeaderForWidgetsMixin);
+  sliver_persistent_header$._RenderSliverFloatingPersistentHeaderForWidgets = class _RenderSliverFloatingPersistentHeaderForWidgets extends RenderSliverFloatingPersistentHeader__RenderSliverPersistentHeaderForWidgetsMixin$36 {};
+  (sliver_persistent_header$._RenderSliverFloatingPersistentHeaderForWidgets.new = function(opts) {
+    let child = opts && 'child' in opts ? opts.child : null;
+    let vsync = opts && 'vsync' in opts ? opts.vsync : null;
+    let snapConfiguration = opts && 'snapConfiguration' in opts ? opts.snapConfiguration : null;
+    let stretchConfiguration = opts && 'stretchConfiguration' in opts ? opts.stretchConfiguration : null;
+    let showOnScreenConfiguration = opts && 'showOnScreenConfiguration' in opts ? opts.showOnScreenConfiguration : null;
+    sliver_persistent_header$._RenderSliverFloatingPersistentHeaderForWidgets.__proto__.new.call(this, {child: child, vsync: vsync, snapConfiguration: snapConfiguration, stretchConfiguration: stretchConfiguration, showOnScreenConfiguration: showOnScreenConfiguration});
+    ;
+  }).prototype = sliver_persistent_header$._RenderSliverFloatingPersistentHeaderForWidgets.prototype;
+  dart.addTypeTests(sliver_persistent_header$._RenderSliverFloatingPersistentHeaderForWidgets);
+  dart.addTypeCaches(sliver_persistent_header$._RenderSliverFloatingPersistentHeaderForWidgets);
+  dart.setLibraryUri(sliver_persistent_header$._RenderSliverFloatingPersistentHeaderForWidgets, I[0]);
+  dart.trackLibraries("packages/flutter/src/widgets/sliver_persistent_header.dart", {
+    "package:flutter/src/widgets/sliver_persistent_header.dart": sliver_persistent_header$
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["spring_simulation.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAwCe;;;;;;IAKA;;;;;;IAWA;;;;;;;AAGQ,YAAG,AAAoK,0BAAlJ,MAAM,uBAAqB,YAAS,AAAK,4BAAgB,KAAG,kBAAe,AAAU,iCAAgB,KAAG,gBAAa,AAAQ,+BAAgB,KAAG;IAAE;;;QAvC5K;QACA;QACA;IAFA;IACA;IACA;;EACd;;QAUc;QACA;QACP;IAFO;IACA;IAEH,iBAAE,AAAM,AAAM,KAAP,GAAG,MAAM,UAAU,AAAK,IAAD,GAAG,SAAS;;EAAC;;;;;;;;;;;;;;;IAwC1D;;sDAXK;;;;EAWL;;;;;;;;;;;;;;;;;;;;;AAgCyB,YAAA,AAAU;IAAI;MAGrB;AAAS,YAAA,AAAa,sBAAE,AAAU,kBAAE,IAAI;IAAC;OAGxC;AAAS,YAAA,AAAU,oBAAG,IAAI;IAAC;WAGzB;AACjB,YAAO,AAAgD,gBAAvC,AAAU,kBAAE,IAAI,GAAG,AAAU,4BACtC,eAAS,AAAU,mBAAG,IAAI,GAAG,AAAU;IAChD;;AAGqB,YAAG,AAAwE,0BAAtD,MAAM,sBAAoB,oBAAO,sBAAY,gBAAG,aAAI;IAAE;;qDA/B5E,QACX,OACA,KACA;QACG;IACM,qBAAE,GAAG;IACR,kBAAE,sCAAgB,MAAM,EAAE,AAAM,KAAD,GAAG,GAAG,EAAE,QAAQ;AACzD,4EAAiB,SAAS;;EAAC;;;;;;;;;;;;;;;;;;;;;MA4ChB;AAAS,yBAAO,IAAI,IAAI,qBAAqB,QAAE,IAAI;IAAC;;2DARhD,QACX,OACA,KACA;QACG;AACP,sEAAM,MAAM,EAAE,KAAK,EAAE,GAAG,EAAE,QAAQ,cAAa,SAAS;;EAAC;;;;;eAW1C,QACX,iBACA;AAEP,YAAO,AAAO,MAAD;AACb,YAAO,AAAO,AAAK,MAAN;AACb,YAAO,AAAO,AAAU,MAAX;AACb,YAAO,AAAO,AAAQ,MAAT;AACb,YAAO,AAAgB,eAAD;AACtB,YAAO,AAAgB,eAAD;AACT,gBAAM,AAAO,AAAQ,AAAiB,MAA1B,WAAW,AAAO,MAAD,WAAW,AAAE,AAAc,IAAZ,AAAO,MAAD,QAAQ,AAAO,MAAD;AAC7E,UAAI,AAAI,GAAD,KAAI,KACT,MAAO,yCAAkB,MAAM,EAAE,eAAe,EAAE,eAAe;AACnE,UAAI,AAAI,GAAD,GAAG,KACR,MAAO,2CAAoB,MAAM,EAAE,eAAe,EAAE,eAAe;AACrE,YAAO,4CAAqB,MAAM,EAAE,eAAe,EAAE,eAAe;IACtE;;;;;;;;;;;eASoB,QACX,UACA;AAEM,cAAI,AAAgB,CAAf,AAAO,MAAD,YAAY,AAAI,MAAE,AAAO,MAAD;AACnC,eAAK,QAAQ;AACb,eAAK,AAAS,QAAD,IAAI,AAAE,CAAD,GAAG,QAAQ;AAC1C,YAAyB,kDAAS,CAAC,EAAE,EAAE,EAAE,EAAE;IAC7C;MAUgB;AACd,YAA0B,EAAlB,AAAI,YAAE,AAAI,YAAE,IAAI,IAAI,4BAAiB,AAAG,WAAE,IAAI;IACxD;OAGiB;AACF,kBAAQ,4BAAiB,AAAG,WAAE,IAAI;AAC/C,YAAO,AAAG,AAAqB,AAAQ,aAA1B,AAAI,YAAE,AAAI,YAAE,IAAI,IAAI,KAAK,GAAG,AAAI,YAAE,KAAK;IACtD;;AAGuB,YAAW;IAAgB;;2DAnBhB,GAAU,IAAW;IAChD,WAAE,CAAC;IACF,YAAE,EAAE;IACJ,YAAE,EAAE;;;;;;;;;;;;;;;;;;;;;;;;;eAqBQ,QACX,UACA;AAEM,gBAAM,AAAO,AAAQ,AAAiB,MAA1B,WAAW,AAAO,MAAD,WAAW,AAAE,AAAc,IAAZ,AAAO,MAAD,QAAQ,AAAO,MAAD;AAChE,eAAwC,CAAlC,AAAgB,CAAf,AAAO,MAAD,WAAW,UAAU,GAAG,MAAM,AAAI,MAAE,AAAO,MAAD;AACvD,eAAwC,CAAlC,AAAgB,CAAf,AAAO,MAAD,WAAW,UAAU,GAAG,MAAM,AAAI,MAAE,AAAO,MAAD;AACvD,eAAgC,CAA1B,AAAS,QAAD,GAAG,AAAG,EAAD,GAAG,QAAQ,KAAK,AAAG,EAAD,GAAG,EAAE;AAC1C,eAAK,AAAS,QAAD,GAAG,EAAE;AAC/B,YAA2B,oDAAS,EAAE,EAAE,EAAE,EAAE,EAAE,EAAE,EAAE;IACpD;MAWgB;AACd,YAAO,AAAI,AAA+B,aAA7B,4BAAiB,AAAI,YAAE,IAAI,IACjC,AAAI,YAAE,4BAAiB,AAAI,YAAE,IAAI;IAC1C;OAGiB;AACf,YAAO,AAAI,AAAM,AAA+B,aAAnC,YAAM,4BAAiB,AAAI,YAAE,IAAI,IACvC,AAAI,AAAM,YAAJ,YAAM,4BAAiB,AAAI,YAAE,IAAI;IAChD;;AAGuB,YAAW;IAAU;;6DArBR,IAAW,IAAW,IAAW;IAC7D,YAAE,EAAE;IACJ,YAAE,EAAE;IACJ,YAAE,EAAE;IACJ,YAAE,EAAE;;;;;;;;;;;;;;;;;;;;;;;;;eAsBQ,QACX,UACA;AAEM,cAAI,AAAkF,UAAxE,AAAI,AAAc,AAAmB,MAA/B,AAAO,MAAD,QAAQ,AAAO,MAAD,aAAa,AAAO,AAAQ,MAAT,WAAW,AAAO,MAAD,aACpF,AAAI,MAAE,AAAO,MAAD;AACJ,cAAI,EAAE,AAAO,AAAQ,AAAM,MAAf,WAAW,MAAM,AAAO,MAAD;AACnC,eAAK,QAAQ;AACb,eAA+B,CAAzB,AAAS,QAAD,GAAG,AAAE,CAAD,GAAG,QAAQ,IAAI,CAAC;AAC/C,YAA4B,qDAAS,CAAC,EAAE,CAAC,EAAE,EAAE,EAAE,EAAE;IACnD;MAWgB;AACd,YAAQ,AAAuC,6BAAtB,AAAG,WAAE,IAAI,KAC1B,AAAI,AAAsB,YAApB,SAAS,AAAG,WAAE,IAAI,IAAI,AAAI,YAAE,SAAS,AAAG,WAAE,IAAI;IAC9D;OAGiB;AACF,kBAAQ,4BAAiB,AAAG,WAAE,IAAI;AAClC,mBAAS,SAAS,AAAG,WAAE,IAAI;AAC3B,iBAAO,SAAS,AAAG,WAAE,IAAI;AACtC,YAAO,AAAM,AAAwC,MAAzC,IAAI,AAAI,AAAK,AAAS,YAAZ,WAAK,MAAM,GAAG,AAAI,AAAK,YAAH,WAAK,IAAI,IAC5C,AAAG,AAAQ,WAAN,KAAK,IAAI,AAAI,AAAc,YAAP,IAAI,GAAK,AAAI,YAAO,MAAM;IAC5D;;AAGuB,YAAW;IAAW;;8DAxBR,GAAU,GAAU,IAAW;IAC7D,WAAE,CAAC;IACH,WAAE,CAAC;IACF,YAAE,EAAE;IACJ,YAAE,EAAE","file":"../../../../../../../packages/flutter/src/physics/spring_simulation.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["sliver_persistent_header.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/widgets/sliver_persistent_header.dart.lib.js"}');
   // Exports:
   return {
-    src__physics__spring_simulation: spring_simulation
+    src__widgets__sliver_persistent_header: sliver_persistent_header$
   };
 }));
 
-//# sourceMappingURL=spring_simulation.dart.lib.js.map
+//# sourceMappingURL=sliver_persistent_header.dart.lib.js.map

@@ -15,6 +15,7 @@ class _HomePageState extends State<HomePage> {
   var player2;
   var activePlayer;
   var flag = 0;
+  var flagSymbol = 0;
 
   @override
   void initState() {
@@ -44,12 +45,18 @@ class _HomePageState extends State<HomePage> {
   void playGame(Boxes gb) {
     setState(() {
       if (activePlayer == 1) {
-        gb.text = "X";
+        if (flagSymbol == 0)
+          gb.text = "X";
+        else
+          gb.text = "O";
         gb.bg = Colors.red;
         activePlayer = 2;
         player1.add(gb.id);
       } else {
-        gb.text = "O";
+        if (flagSymbol == 0)
+          gb.text = "O";
+        else
+          gb.text = "X";
         gb.bg = Colors.black;
         activePlayer = 1;
         player2.add(gb.id);
@@ -153,6 +160,16 @@ class _HomePageState extends State<HomePage> {
     resetGame();
   }
 
+  void x() {
+    flagSymbol = 0;
+    resetGame();
+  }
+
+  void o() {
+    flagSymbol = 1;
+    resetGame();
+  }
+
   @override
   Widget build(BuildContext context) {
     var text2 = new Text(
@@ -199,9 +216,45 @@ class _HomePageState extends State<HomePage> {
             ),
             new RaisedButton(
               child: text2,
-              color: Colors.indigo,
+              color: Colors.blueGrey,
               padding: const EdgeInsets.all(20.0),
               onPressed: switchPlayer,
+            ),
+            Row(
+              children: [
+                Padding(padding: 10.0)
+                Container(
+                  child: new FlatButton(
+                    child: new Text(
+                      "Select the player 1's Symbol :",
+                      style: new TextStyle(color: Colors.black, fontSize: 15.0),
+                    ),
+                    color: Colors.grey,
+                    padding: const EdgeInsets.all(20.0),
+                    onPressed: () {},
+                  ),
+                ),
+                Container(
+                  child: new RaisedButton(
+                    child: new Text("X",
+                        style:
+                            new TextStyle(color: Colors.white, fontSize: 20.0)),
+                    onPressed: x,
+                    padding: const EdgeInsets.all(20.0),
+                    color: Colors.red,
+                  ),
+                ),
+                Container(
+                  child: new RaisedButton(
+                    child: new Text("O",
+                        style:
+                            new TextStyle(color: Colors.white, fontSize: 20.0)),
+                    onPressed: o,
+                    padding: const EdgeInsets.all(20.0),
+                    color: Colors.black,
+                  ),
+                )
+              ],
             ),
             new RaisedButton(
               child: new Text(

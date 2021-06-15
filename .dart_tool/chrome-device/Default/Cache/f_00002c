@@ -1,27 +1,42 @@
-define(['dart_sdk', 'packages/flutter/src/painting/borders.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/foundation/object.dart', 'packages/flutter/src/painting/border_radius.dart'], (function load__packages__flutter__src__painting__box_border_dart(dart_sdk, packages__flutter__src__painting__borders$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__foundation__object$46dart, packages__flutter__src__painting__border_radius$46dart) {
+define(['dart_sdk', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/rendering/sliver.dart', 'packages/flutter/src/painting/basic_types.dart', 'packages/flutter/src/foundation/debug.dart'], (function load__packages__flutter__src__rendering__sliver_multi_box_adaptor_dart(dart_sdk, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__rendering__sliver$46dart, packages__flutter__src__painting__basic_types$46dart, packages__flutter__src__foundation__debug$46dart) {
   'use strict';
   const core = dart_sdk.core;
+  const _js_helper = dart_sdk._js_helper;
   const _interceptors = dart_sdk._interceptors;
+  const _internal = dart_sdk._internal;
   const ui = dart_sdk.ui;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const borders = packages__flutter__src__painting__borders$46dart.src__painting__borders;
-  const assertions = packages__flutter__src__foundation__debug$46dart.src__foundation__assertions;
+  const object = packages__flutter__src__rendering__layer$46dart.src__rendering__object;
+  const box = packages__flutter__src__rendering__layer$46dart.src__rendering__box;
+  const sliver = packages__flutter__src__rendering__sliver$46dart.src__rendering__sliver;
+  const basic_types = packages__flutter__src__painting__basic_types$46dart.src__painting__basic_types;
   const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
-  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
-  const object = packages__flutter__src__foundation__object$46dart.src__foundation__object;
-  const border_radius = packages__flutter__src__painting__border_radius$46dart.src__painting__border_radius;
-  var box_border = Object.create(dart.library);
-  var $runtimeType = dartx.runtimeType;
+  var sliver_multi_box_adaptor = Object.create(dart.library);
+  var $isEmpty = dartx.isEmpty;
+  var $containsValue = dartx.containsValue;
+  var $_get = dartx._get;
+  var $remove = dartx.remove;
+  var $containsKey = dartx.containsKey;
   var $add = dartx.add;
-  var $join = dartx.join;
+  var $_set = dartx._set;
+  var $values = dartx.values;
+  var $forEach = dartx.forEach;
+  var $clear = dartx.clear;
+  var $where = dartx.where;
+  var $toList = dartx.toList;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $keys = dartx.keys;
+  var $sort = dartx.sort;
   dart._checkModuleNullSafetyMode(true);
   var T = {
-    BorderN: () => (T.BorderN = dart.constFn(dart.nullable(box_border.Border)))(),
-    BorderDirectionalN: () => (T.BorderDirectionalN = dart.constFn(dart.nullable(box_border.BorderDirectional)))(),
-    JSArrayOfDiagnosticsNode: () => (T.JSArrayOfDiagnosticsNode = dart.constFn(_interceptors.JSArray$(diagnostics.DiagnosticsNode)))(),
+    IdentityMapOfint$RenderBox: () => (T.IdentityMapOfint$RenderBox = dart.constFn(_js_helper.IdentityMap$(core.int, box.RenderBox)))(),
+    JSArrayOfRenderBox: () => (T.JSArrayOfRenderBox = dart.constFn(_interceptors.JSArray$(box.RenderBox)))(),
     VoidTobool: () => (T.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))(),
-    JSArrayOfString: () => (T.JSArrayOfString = dart.constFn(_interceptors.JSArray$(core.String)))()
+    RenderBoxN: () => (T.RenderBoxN = dart.constFn(dart.nullable(box.RenderBox)))(),
+    SliverConstraintsTovoid: () => (T.SliverConstraintsTovoid = dart.constFn(dart.fnType(dart.void, [sliver.SliverConstraints])))(),
+    RenderBoxTobool: () => (T.RenderBoxTobool = dart.constFn(dart.fnType(core.bool, [box.RenderBox])))(),
+    JSArrayOfDiagnosticsNode: () => (T.JSArrayOfDiagnosticsNode = dart.constFn(_interceptors.JSArray$(diagnostics.DiagnosticsNode)))()
   };
   const CT = Object.create({
     _: () => (C, CT)
@@ -29,644 +44,637 @@ define(['dart_sdk', 'packages/flutter/src/painting/borders.dart', 'packages/flut
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: box_border.BoxShape.prototype,
-        [_name$]: "BoxShape.rectangle",
+        __proto__: basic_types.Axis.prototype,
+        [_name]: "Axis.horizontal",
         index: 0
       });
     },
     get C1() {
       return C[1] = dart.const({
-        __proto__: box_border.BoxShape.prototype,
-        [_name$]: "BoxShape.circle",
+        __proto__: basic_types.Axis.prototype,
+        [_name]: "Axis.vertical",
         index: 1
       });
     },
     get C2() {
-      return C[2] = dart.constList([C[0] || CT.C0, C[1] || CT.C1], box_border.BoxShape);
+      return C[2] = dart.const({
+        __proto__: ui.Offset.prototype,
+        [OffsetBase__dy]: -1,
+        [OffsetBase__dx]: 0
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: ui.Offset.prototype,
+        [OffsetBase__dy]: 0,
+        [OffsetBase__dx]: 1
+      });
     },
     get C4() {
       return C[4] = dart.const({
-        __proto__: borders.BorderStyle.prototype,
-        [_name]: "BorderStyle.none",
+        __proto__: basic_types.AxisDirection.prototype,
+        [_name]: "AxisDirection.up",
         index: 0
       });
     },
     get C5() {
       return C[5] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4278190080.0
-      });
-    },
-    get C3() {
-      return C[3] = dart.const({
-        __proto__: borders.BorderSide.prototype,
-        [BorderSide_style]: C[4] || CT.C4,
-        [BorderSide_width]: 0,
-        [BorderSide_color]: C[5] || CT.C5
+        __proto__: ui.Offset.prototype,
+        [OffsetBase__dy]: 1,
+        [OffsetBase__dx]: 0
       });
     },
     get C6() {
       return C[6] = dart.const({
-        __proto__: borders.BorderStyle.prototype,
-        [_name]: "BorderStyle.solid",
+        __proto__: basic_types.AxisDirection.prototype,
+        [_name]: "AxisDirection.right",
         index: 1
       });
     },
     get C7() {
       return C[7] = dart.const({
-        __proto__: ui.TextDirection.prototype,
-        [_name$0]: "TextDirection.rtl",
-        index: 0
+        __proto__: basic_types.AxisDirection.prototype,
+        [_name]: "AxisDirection.down",
+        index: 2
       });
     },
     get C8() {
       return C[8] = dart.const({
-        __proto__: ui.TextDirection.prototype,
-        [_name$0]: "TextDirection.ltr",
-        index: 1
+        __proto__: ui.Offset.prototype,
+        [OffsetBase__dy]: 0,
+        [OffsetBase__dx]: -1
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: basic_types.AxisDirection.prototype,
+        [_name]: "AxisDirection.left",
+        index: 3
       });
     }
   }, false);
-  var C = Array(9).fill(void 0);
+  var C = Array(10).fill(void 0);
   var I = [
-    "package:flutter/src/painting/box_border.dart",
-    "file:///C:/flutter_windows_2.2.1-stable/flutter/packages/flutter/lib/src/painting/box_border.dart"
+    "package:flutter/src/rendering/sliver_multi_box_adaptor.dart",
+    "file:///C:/flutter_windows_2.2.1-stable/flutter/packages/flutter/lib/src/rendering/sliver_multi_box_adaptor.dart"
   ];
-  var _name$ = dart.privateName(box_border, "_name");
-  box_border.BoxShape = class BoxShape extends core.Object {
-    toString() {
-      return this[_name$];
+  sliver_multi_box_adaptor.RenderSliverBoxChildManager = class RenderSliverBoxChildManager extends core.Object {
+    didStartLayout() {
     }
-  };
-  (box_border.BoxShape.new = function(index, _name) {
-    this.index = index;
-    this[_name$] = _name;
-    ;
-  }).prototype = box_border.BoxShape.prototype;
-  dart.addTypeTests(box_border.BoxShape);
-  dart.addTypeCaches(box_border.BoxShape);
-  dart.setLibraryUri(box_border.BoxShape, I[0]);
-  dart.setFieldSignature(box_border.BoxShape, () => ({
-    __proto__: dart.getFields(box_border.BoxShape.__proto__),
-    index: dart.finalFieldType(core.int),
-    [_name$]: dart.finalFieldType(core.String)
-  }));
-  dart.defineExtensionMethods(box_border.BoxShape, ['toString']);
-  box_border.BoxShape.rectangle = C[0] || CT.C0;
-  box_border.BoxShape.circle = C[1] || CT.C1;
-  box_border.BoxShape.values = C[2] || CT.C2;
-  box_border.BoxBorder = class BoxBorder extends borders.ShapeBorder {
-    add(other, opts) {
-      let reversed = opts && 'reversed' in opts ? opts.reversed : false;
-      return null;
+    didFinishLayout() {
     }
-    static lerp(a, b, t) {
-      if (!(t !== null)) dart.assertFailed(null, I[1], 106, 12, "t != null");
-      if (T.BorderN().is(a) && T.BorderN().is(b)) return box_border.Border.lerp(a, b, t);
-      if (T.BorderDirectionalN().is(a) && T.BorderDirectionalN().is(b)) return box_border.BorderDirectional.lerp(a, b, t);
-      if (box_border.Border.is(b) && box_border.BorderDirectional.is(a)) {
-        let c = b;
-        b = a;
-        a = c;
-        t = 1.0 - t;
-      }
-      if (box_border.Border.is(a) && box_border.BorderDirectional.is(b)) {
-        if (b.start._equals(borders.BorderSide.none) && b.end._equals(borders.BorderSide.none)) {
-          return new box_border.Border.new({top: borders.BorderSide.lerp(a.top, b.top, t), right: borders.BorderSide.lerp(a.right, borders.BorderSide.none, t), bottom: borders.BorderSide.lerp(a.bottom, b.bottom, t), left: borders.BorderSide.lerp(a.left, borders.BorderSide.none, t)});
-        }
-        if (a.left._equals(borders.BorderSide.none) && a.right._equals(borders.BorderSide.none)) {
-          return new box_border.BorderDirectional.new({top: borders.BorderSide.lerp(a.top, b.top, t), start: borders.BorderSide.lerp(borders.BorderSide.none, b.start, t), end: borders.BorderSide.lerp(borders.BorderSide.none, b.end, t), bottom: borders.BorderSide.lerp(a.bottom, b.bottom, t)});
-        }
-        if (t < 0.5) {
-          return new box_border.Border.new({top: borders.BorderSide.lerp(a.top, b.top, t), right: borders.BorderSide.lerp(a.right, borders.BorderSide.none, t * 2.0), bottom: borders.BorderSide.lerp(a.bottom, b.bottom, t), left: borders.BorderSide.lerp(a.left, borders.BorderSide.none, t * 2.0)});
-        }
-        return new box_border.BorderDirectional.new({top: borders.BorderSide.lerp(a.top, b.top, t), start: borders.BorderSide.lerp(borders.BorderSide.none, b.start, (t - 0.5) * 2.0), end: borders.BorderSide.lerp(borders.BorderSide.none, b.end, (t - 0.5) * 2.0), bottom: borders.BorderSide.lerp(a.bottom, b.bottom, t)});
-      }
-      dart.throw(new assertions.FlutterError.fromParts(T.JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("BoxBorder.lerp can only interpolate Border and BorderDirectional classes."), new assertions.ErrorDescription.new("BoxBorder.lerp() was called with two objects of type " + dart.str(dart.runtimeType(a)) + " and " + dart.str(dart.runtimeType(b)) + ":\n" + "  " + dart.str(a) + "\n" + "  " + dart.str(b) + "\n" + "However, only Border and BorderDirectional classes are supported by this method."), new assertions.ErrorHint.new("For a more general interpolation method, consider using ShapeBorder.lerp instead.")])));
-    }
-    getInnerPath(rect, opts) {
-      let t0;
-      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
-      if (!(textDirection != null)) dart.assertFailed("The textDirection argument to " + dart.str(this[$runtimeType]) + ".getInnerPath must not be null.", I[1], 169, 12, "textDirection != null");
-      t0 = ui.Path.new();
-      return (() => {
-        t0.addRect(this.dimensions.resolve(textDirection).deflateRect(rect));
-        return t0;
-      })();
-    }
-    getOuterPath(rect, opts) {
-      let t0;
-      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
-      if (!(textDirection != null)) dart.assertFailed("The textDirection argument to " + dart.str(this[$runtimeType]) + ".getOuterPath must not be null.", I[1], 176, 12, "textDirection != null");
-      t0 = ui.Path.new();
-      return (() => {
-        t0.addRect(rect);
-        return t0;
-      })();
-    }
-    static _paintUniformBorderWithRadius(canvas, rect, side, borderRadius) {
-      let t0, t0$;
-      if (!(side.style !== borders.BorderStyle.none)) dart.assertFailed(null, I[1], 210, 12, "side.style != BorderStyle.none");
-      let paint = (t0 = ui.Paint.new(), (() => {
-        t0.color = side.color;
-        return t0;
-      })());
-      let outer = borderRadius.toRRect(rect);
-      let width = side.width;
-      if (width === 0.0) {
-        t0$ = paint;
-        (() => {
-          t0$.style = ui.PaintingStyle.stroke;
-          t0$.strokeWidth = 0.0;
-          return t0$;
-        })();
-        canvas.drawRRect(outer, paint);
-      } else {
-        let inner = outer.deflate(width);
-        canvas.drawDRRect(outer, inner, paint);
-      }
-    }
-    static _paintUniformBorderWithCircle(canvas, rect, side) {
-      if (!(side.style !== borders.BorderStyle.none)) dart.assertFailed(null, I[1], 227, 12, "side.style != BorderStyle.none");
-      let width = side.width;
-      let paint = side.toPaint();
-      let radius = (rect.shortestSide - width) / 2.0;
-      canvas.drawCircle(rect.center, radius, paint);
-    }
-    static _paintUniformBorderWithRectangle(canvas, rect, side) {
-      if (!(side.style !== borders.BorderStyle.none)) dart.assertFailed(null, I[1], 235, 12, "side.style != BorderStyle.none");
-      let width = side.width;
-      let paint = side.toPaint();
-      canvas.drawRect(rect.deflate(width / 2.0), paint);
-    }
-  };
-  (box_border.BoxBorder.new = function() {
-    box_border.BoxBorder.__proto__.new.call(this);
-    ;
-  }).prototype = box_border.BoxBorder.prototype;
-  dart.addTypeTests(box_border.BoxBorder);
-  dart.addTypeCaches(box_border.BoxBorder);
-  dart.setMethodSignature(box_border.BoxBorder, () => ({
-    __proto__: dart.getMethods(box_border.BoxBorder.__proto__),
-    add: dart.fnType(dart.nullable(box_border.BoxBorder), [borders.ShapeBorder], {reversed: core.bool}, {}),
-    getInnerPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
-    getOuterPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {})
-  }));
-  dart.setLibraryUri(box_border.BoxBorder, I[0]);
-  var top$ = dart.privateName(box_border, "Border.top");
-  var right$ = dart.privateName(box_border, "Border.right");
-  var bottom$ = dart.privateName(box_border, "Border.bottom");
-  var left$ = dart.privateName(box_border, "Border.left");
-  var _name = dart.privateName(borders, "_name");
-  var BorderSide_style = dart.privateName(borders, "BorderSide.style");
-  var BorderSide_width = dart.privateName(borders, "BorderSide.width");
-  var Color_value = dart.privateName(ui, "Color.value");
-  var BorderSide_color = dart.privateName(borders, "BorderSide.color");
-  var _colorIsUniform = dart.privateName(box_border, "_colorIsUniform");
-  var _widthIsUniform = dart.privateName(box_border, "_widthIsUniform");
-  var _styleIsUniform = dart.privateName(box_border, "_styleIsUniform");
-  box_border.Border = class Border extends box_border.BoxBorder {
-    get top() {
-      return this[top$];
-    }
-    set top(value) {
-      super.top = value;
-    }
-    get right() {
-      return this[right$];
-    }
-    set right(value) {
-      super.right = value;
-    }
-    get bottom() {
-      return this[bottom$];
-    }
-    set bottom(value) {
-      super.bottom = value;
-    }
-    get left() {
-      return this[left$];
-    }
-    set left(value) {
-      super.left = value;
-    }
-    static all(opts) {
-      let color = opts && 'color' in opts ? opts.color : C[5] || CT.C5;
-      let width = opts && 'width' in opts ? opts.width : 1;
-      let style = opts && 'style' in opts ? opts.style : C[6] || CT.C6;
-      let side = new borders.BorderSide.new({color: color, width: width, style: style});
-      return new box_border.Border.fromBorderSide(side);
-    }
-    static merge(a, b) {
-      if (!(a !== null)) dart.assertFailed(null, I[1], 365, 12, "a != null");
-      if (!(b !== null)) dart.assertFailed(null, I[1], 366, 12, "b != null");
-      if (!borders.BorderSide.canMerge(a.top, b.top)) dart.assertFailed(null, I[1], 367, 12, "BorderSide.canMerge(a.top, b.top)");
-      if (!borders.BorderSide.canMerge(a.right, b.right)) dart.assertFailed(null, I[1], 368, 12, "BorderSide.canMerge(a.right, b.right)");
-      if (!borders.BorderSide.canMerge(a.bottom, b.bottom)) dart.assertFailed(null, I[1], 369, 12, "BorderSide.canMerge(a.bottom, b.bottom)");
-      if (!borders.BorderSide.canMerge(a.left, b.left)) dart.assertFailed(null, I[1], 370, 12, "BorderSide.canMerge(a.left, b.left)");
-      return new box_border.Border.new({top: borders.BorderSide.merge(a.top, b.top), right: borders.BorderSide.merge(a.right, b.right), bottom: borders.BorderSide.merge(a.bottom, b.bottom), left: borders.BorderSide.merge(a.left, b.left)});
-    }
-    get dimensions() {
-      return new edge_insets.EdgeInsets.fromLTRB(this.left.width, this.top.width, this.right.width, this.bottom.width);
-    }
-    get isUniform() {
-      return this[_colorIsUniform] && this[_widthIsUniform] && this[_styleIsUniform];
-    }
-    get [_colorIsUniform]() {
-      let topColor = this.top.color;
-      return this.right.color._equals(topColor) && this.bottom.color._equals(topColor) && this.left.color._equals(topColor);
-    }
-    get [_widthIsUniform]() {
-      let topWidth = this.top.width;
-      return this.right.width === topWidth && this.bottom.width === topWidth && this.left.width === topWidth;
-    }
-    get [_styleIsUniform]() {
-      let topStyle = this.top.style;
-      return this.right.style === topStyle && this.bottom.style === topStyle && this.left.style === topStyle;
-    }
-    add(other, opts) {
-      let reversed = opts && 'reversed' in opts ? opts.reversed : false;
-      if (box_border.Border.is(other) && borders.BorderSide.canMerge(this.top, other.top) && borders.BorderSide.canMerge(this.right, other.right) && borders.BorderSide.canMerge(this.bottom, other.bottom) && borders.BorderSide.canMerge(this.left, other.left)) {
-        return box_border.Border.merge(this, other);
-      }
-      return null;
-    }
-    scale(t) {
-      return new box_border.Border.new({top: this.top.scale(t), right: this.right.scale(t), bottom: this.bottom.scale(t), left: this.left.scale(t)});
-    }
-    lerpFrom(a, t) {
-      if (box_border.Border.is(a)) return box_border.Border.lerp(a, this, t);
-      return super.lerpFrom(a, t);
-    }
-    lerpTo(b, t) {
-      if (box_border.Border.is(b)) return box_border.Border.lerp(this, b, t);
-      return super.lerpTo(b, t);
-    }
-    static lerp(a, b, t) {
-      if (!(t !== null)) dart.assertFailed(null, I[1], 457, 12, "t != null");
-      if (a == null && b == null) return null;
-      if (a == null) return dart.nullCheck(b).scale(t);
-      if (b == null) return a.scale(1.0 - t);
-      return new box_border.Border.new({top: borders.BorderSide.lerp(a.top, b.top, t), right: borders.BorderSide.lerp(a.right, b.right, t), bottom: borders.BorderSide.lerp(a.bottom, b.bottom, t), left: borders.BorderSide.lerp(a.left, b.left, t)});
-    }
-    paint(canvas, rect, opts) {
-      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
-      let shape = opts && 'shape' in opts ? opts.shape : C[0] || CT.C0;
-      let borderRadius = opts && 'borderRadius' in opts ? opts.borderRadius : null;
-      if (this.isUniform) {
-        switch (this.top.style) {
-          case C[4] || CT.C4:
-          {
-            return;
-          }
-          case C[6] || CT.C6:
-          {
-            switch (shape) {
-              case C[1] || CT.C1:
-              {
-                if (!(borderRadius == null)) dart.assertFailed("A borderRadius can only be given for rectangular boxes.", I[1], 506, 22, "borderRadius == null");
-                box_border.BoxBorder._paintUniformBorderWithCircle(canvas, rect, this.top);
-                break;
-              }
-              case C[0] || CT.C0:
-              {
-                if (borderRadius != null) {
-                  box_border.BoxBorder._paintUniformBorderWithRadius(canvas, rect, this.top, borderRadius);
-                  return;
-                }
-                box_border.BoxBorder._paintUniformBorderWithRectangle(canvas, rect, this.top);
-                break;
-              }
-            }
-            return;
-          }
-        }
-      }
-      if (!dart.fn(() => {
-        if (borderRadius != null) {
-          dart.throw(new assertions.FlutterError.fromParts((() => {
-            let t0 = T.JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("A borderRadius can only be given for a uniform Border."), new assertions.ErrorDescription.new("The following is not uniform:")]);
-            if (!this[_colorIsUniform]) t0[$add](new assertions.ErrorDescription.new("BorderSide.color"));
-            if (!this[_widthIsUniform]) t0[$add](new assertions.ErrorDescription.new("BorderSide.width"));
-            if (!this[_styleIsUniform]) t0[$add](new assertions.ErrorDescription.new("BorderSide.style"));
-            return t0;
-          })()));
-        }
-        return true;
-      }, T.VoidTobool())()) dart.assertFailed(null, I[1], 521, 12, "() {\r\n      if (borderRadius != null) {\r\n        throw FlutterError.fromParts(<DiagnosticsNode>[\r\n          ErrorSummary('A borderRadius can only be given for a uniform Border.'),\r\n          ErrorDescription('The following is not uniform:'),\r\n          if (!_colorIsUniform) ErrorDescription('BorderSide.color'),\r\n          if (!_widthIsUniform) ErrorDescription('BorderSide.width'),\r\n          if (!_styleIsUniform) ErrorDescription('BorderSide.style'),\r\n        ]);\r\n      }\r\n      return true;\r\n    }()");
-      if (!dart.fn(() => {
-        if (shape !== box_border.BoxShape.rectangle) {
-          dart.throw(new assertions.FlutterError.fromParts((() => {
-            let t1 = T.JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("A Border can only be drawn as a circle if it is uniform"), new assertions.ErrorDescription.new("The following is not uniform:")]);
-            if (!this[_colorIsUniform]) t1[$add](new assertions.ErrorDescription.new("BorderSide.color"));
-            if (!this[_widthIsUniform]) t1[$add](new assertions.ErrorDescription.new("BorderSide.width"));
-            if (!this[_styleIsUniform]) t1[$add](new assertions.ErrorDescription.new("BorderSide.style"));
-            return t1;
-          })()));
-        }
-        return true;
-      }, T.VoidTobool())()) dart.assertFailed(null, I[1], 533, 12, "() {\r\n      if (shape != BoxShape.rectangle) {\r\n        throw FlutterError.fromParts(<DiagnosticsNode>[\r\n          ErrorSummary('A Border can only be drawn as a circle if it is uniform'),\r\n          ErrorDescription('The following is not uniform:'),\r\n          if (!_colorIsUniform) ErrorDescription('BorderSide.color'),\r\n          if (!_widthIsUniform) ErrorDescription('BorderSide.width'),\r\n          if (!_styleIsUniform) ErrorDescription('BorderSide.style'),\r\n        ]);\r\n      }\r\n      return true;\r\n    }()");
-      borders.paintBorder(canvas, rect, {top: this.top, right: this.right, bottom: this.bottom, left: this.left});
-    }
-    _equals(other) {
-      if (other == null) return false;
-      if (this === other) return true;
-      if (!other[$runtimeType]._equals(this[$runtimeType])) return false;
-      return box_border.Border.is(other) && other.top._equals(this.top) && other.right._equals(this.right) && other.bottom._equals(this.bottom) && other.left._equals(this.left);
-    }
-    get hashCode() {
-      return ui.hashValues(this.top, this.right, this.bottom, this.left);
-    }
-    toString() {
-      if (this.isUniform) return object.objectRuntimeType(this, "Border") + ".all(" + dart.str(this.top) + ")";
-      let $arguments = (() => {
-        let t2 = T.JSArrayOfString().of([]);
-        if (!this.top._equals(borders.BorderSide.none)) t2[$add]("top: " + dart.str(this.top));
-        if (!this.right._equals(borders.BorderSide.none)) t2[$add]("right: " + dart.str(this.right));
-        if (!this.bottom._equals(borders.BorderSide.none)) t2[$add]("bottom: " + dart.str(this.bottom));
-        if (!this.left._equals(borders.BorderSide.none)) t2[$add]("left: " + dart.str(this.left));
-        return t2;
-      })();
-      return object.objectRuntimeType(this, "Border") + "(" + $arguments[$join](", ") + ")";
-    }
-  };
-  (box_border.Border.new = function(opts) {
-    let top = opts && 'top' in opts ? opts.top : C[3] || CT.C3;
-    let right = opts && 'right' in opts ? opts.right : C[3] || CT.C3;
-    let bottom = opts && 'bottom' in opts ? opts.bottom : C[3] || CT.C3;
-    let left = opts && 'left' in opts ? opts.left : C[3] || CT.C3;
-    this[top$] = top;
-    this[right$] = right;
-    this[bottom$] = bottom;
-    this[left$] = left;
-    if (!(top !== null)) dart.assertFailed(null, I[1], 314, 15, "top != null");
-    if (!(right !== null)) dart.assertFailed(null, I[1], 315, 15, "right != null");
-    if (!(bottom !== null)) dart.assertFailed(null, I[1], 316, 15, "bottom != null");
-    if (!(left !== null)) dart.assertFailed(null, I[1], 317, 15, "left != null");
-    box_border.Border.__proto__.new.call(this);
-    ;
-  }).prototype = box_border.Border.prototype;
-  (box_border.Border.fromBorderSide = function(side) {
-    if (!(side !== null)) dart.assertFailed(null, I[1], 323, 16, "side != null");
-    this[top$] = side;
-    this[right$] = side;
-    this[bottom$] = side;
-    this[left$] = side;
-    box_border.Border.__proto__.new.call(this);
-    ;
-  }).prototype = box_border.Border.prototype;
-  (box_border.Border.symmetric = function(opts) {
-    let vertical = opts && 'vertical' in opts ? opts.vertical : C[3] || CT.C3;
-    let horizontal = opts && 'horizontal' in opts ? opts.horizontal : C[3] || CT.C3;
-    if (!(vertical !== null)) dart.assertFailed(null, I[1], 338, 15, "vertical != null");
-    if (!(horizontal !== null)) dart.assertFailed(null, I[1], 339, 15, "horizontal != null");
-    this[left$] = vertical;
-    this[top$] = horizontal;
-    this[right$] = vertical;
-    this[bottom$] = horizontal;
-    box_border.Border.__proto__.new.call(this);
-    ;
-  }).prototype = box_border.Border.prototype;
-  dart.addTypeTests(box_border.Border);
-  dart.addTypeCaches(box_border.Border);
-  dart.setMethodSignature(box_border.Border, () => ({
-    __proto__: dart.getMethods(box_border.Border.__proto__),
-    add: dart.fnType(dart.nullable(box_border.Border), [borders.ShapeBorder], {reversed: core.bool}, {}),
-    scale: dart.fnType(box_border.Border, [core.double]),
-    paint: dart.fnType(dart.void, [ui.Canvas, ui.Rect], {borderRadius: dart.nullable(border_radius.BorderRadius), shape: box_border.BoxShape, textDirection: dart.nullable(ui.TextDirection)}, {})
-  }));
-  dart.setGetterSignature(box_border.Border, () => ({
-    __proto__: dart.getGetters(box_border.Border.__proto__),
-    dimensions: edge_insets.EdgeInsetsGeometry,
-    isUniform: core.bool,
-    [_colorIsUniform]: core.bool,
-    [_widthIsUniform]: core.bool,
-    [_styleIsUniform]: core.bool
-  }));
-  dart.setLibraryUri(box_border.Border, I[0]);
-  dart.setFieldSignature(box_border.Border, () => ({
-    __proto__: dart.getFields(box_border.Border.__proto__),
-    top: dart.finalFieldType(borders.BorderSide),
-    right: dart.finalFieldType(borders.BorderSide),
-    bottom: dart.finalFieldType(borders.BorderSide),
-    left: dart.finalFieldType(borders.BorderSide)
-  }));
-  dart.defineExtensionMethods(box_border.Border, ['_equals', 'toString']);
-  dart.defineExtensionAccessors(box_border.Border, ['hashCode']);
-  var top$0 = dart.privateName(box_border, "BorderDirectional.top");
-  var start$ = dart.privateName(box_border, "BorderDirectional.start");
-  var end$ = dart.privateName(box_border, "BorderDirectional.end");
-  var bottom$0 = dart.privateName(box_border, "BorderDirectional.bottom");
-  var _name$0 = dart.privateName(ui, "_name");
-  box_border.BorderDirectional = class BorderDirectional extends box_border.BoxBorder {
-    get top() {
-      return this[top$0];
-    }
-    set top(value) {
-      super.top = value;
-    }
-    get start() {
-      return this[start$];
-    }
-    set start(value) {
-      super.start = value;
-    }
-    get end() {
-      return this[end$];
-    }
-    set end(value) {
-      super.end = value;
-    }
-    get bottom() {
-      return this[bottom$0];
-    }
-    set bottom(value) {
-      super.bottom = value;
-    }
-    static merge(a, b) {
-      if (!(a !== null)) dart.assertFailed(null, I[1], 626, 12, "a != null");
-      if (!(b !== null)) dart.assertFailed(null, I[1], 627, 12, "b != null");
-      if (!borders.BorderSide.canMerge(a.top, b.top)) dart.assertFailed(null, I[1], 628, 12, "BorderSide.canMerge(a.top, b.top)");
-      if (!borders.BorderSide.canMerge(a.start, b.start)) dart.assertFailed(null, I[1], 629, 12, "BorderSide.canMerge(a.start, b.start)");
-      if (!borders.BorderSide.canMerge(a.end, b.end)) dart.assertFailed(null, I[1], 630, 12, "BorderSide.canMerge(a.end, b.end)");
-      if (!borders.BorderSide.canMerge(a.bottom, b.bottom)) dart.assertFailed(null, I[1], 631, 12, "BorderSide.canMerge(a.bottom, b.bottom)");
-      return new box_border.BorderDirectional.new({top: borders.BorderSide.merge(a.top, b.top), start: borders.BorderSide.merge(a.start, b.start), end: borders.BorderSide.merge(a.end, b.end), bottom: borders.BorderSide.merge(a.bottom, b.bottom)});
-    }
-    get dimensions() {
-      return new edge_insets.EdgeInsetsDirectional.fromSTEB(this.start.width, this.top.width, this.end.width, this.bottom.width);
-    }
-    get isUniform() {
-      let topColor = this.top.color;
-      if (!this.start.color._equals(topColor) || !this.end.color._equals(topColor) || !this.bottom.color._equals(topColor)) return false;
-      let topWidth = this.top.width;
-      if (this.start.width !== topWidth || this.end.width !== topWidth || this.bottom.width !== topWidth) return false;
-      let topStyle = this.top.style;
-      if (this.start.style !== topStyle || this.end.style !== topStyle || this.bottom.style !== topStyle) return false;
+    debugAssertChildListLocked() {
       return true;
     }
-    add(other, opts) {
-      let reversed = opts && 'reversed' in opts ? opts.reversed : false;
-      if (box_border.BorderDirectional.is(other)) {
-        let typedOther = other;
-        if (borders.BorderSide.canMerge(this.top, typedOther.top) && borders.BorderSide.canMerge(this.start, typedOther.start) && borders.BorderSide.canMerge(this.end, typedOther.end) && borders.BorderSide.canMerge(this.bottom, typedOther.bottom)) {
-          return box_border.BorderDirectional.merge(this, typedOther);
-        }
-        return null;
-      }
-      if (box_border.Border.is(other)) {
-        let typedOther = other;
-        if (!borders.BorderSide.canMerge(typedOther.top, this.top) || !borders.BorderSide.canMerge(typedOther.bottom, this.bottom)) return null;
-        if (!this.start._equals(borders.BorderSide.none) || !this.end._equals(borders.BorderSide.none)) {
-          if (!typedOther.left._equals(borders.BorderSide.none) || !typedOther.right._equals(borders.BorderSide.none)) return null;
-          if (!typedOther.left._equals(borders.BorderSide.none)) dart.assertFailed(null, I[1], 716, 16, "typedOther.left == BorderSide.none");
-          if (!typedOther.right._equals(borders.BorderSide.none)) dart.assertFailed(null, I[1], 717, 16, "typedOther.right == BorderSide.none");
-          return new box_border.BorderDirectional.new({top: borders.BorderSide.merge(typedOther.top, this.top), start: this.start, end: this.end, bottom: borders.BorderSide.merge(typedOther.bottom, this.bottom)});
-        }
-        if (!this.start._equals(borders.BorderSide.none)) dart.assertFailed(null, I[1], 725, 14, "start == BorderSide.none");
-        if (!this.end._equals(borders.BorderSide.none)) dart.assertFailed(null, I[1], 726, 14, "end == BorderSide.none");
-        return new box_border.Border.new({top: borders.BorderSide.merge(typedOther.top, this.top), right: typedOther.right, bottom: borders.BorderSide.merge(typedOther.bottom, this.bottom), left: typedOther.left});
-      }
-      return null;
+  };
+  (sliver_multi_box_adaptor.RenderSliverBoxChildManager.new = function() {
+    ;
+  }).prototype = sliver_multi_box_adaptor.RenderSliverBoxChildManager.prototype;
+  dart.addTypeTests(sliver_multi_box_adaptor.RenderSliverBoxChildManager);
+  dart.addTypeCaches(sliver_multi_box_adaptor.RenderSliverBoxChildManager);
+  dart.setMethodSignature(sliver_multi_box_adaptor.RenderSliverBoxChildManager, () => ({
+    __proto__: dart.getMethods(sliver_multi_box_adaptor.RenderSliverBoxChildManager.__proto__),
+    didStartLayout: dart.fnType(dart.void, []),
+    didFinishLayout: dart.fnType(dart.void, []),
+    debugAssertChildListLocked: dart.fnType(core.bool, [])
+  }));
+  dart.setLibraryUri(sliver_multi_box_adaptor.RenderSliverBoxChildManager, I[0]);
+  var keepAlive = dart.privateName(sliver_multi_box_adaptor, "KeepAliveParentDataMixin.keepAlive");
+  sliver_multi_box_adaptor.KeepAliveParentDataMixin = class KeepAliveParentDataMixin extends core.Object {};
+  sliver_multi_box_adaptor.KeepAliveParentDataMixin[dart.mixinOn] = Object => class KeepAliveParentDataMixin extends Object {
+    get keepAlive() {
+      return this[keepAlive];
     }
-    scale(t) {
-      return new box_border.BorderDirectional.new({top: this.top.scale(t), start: this.start.scale(t), end: this.end.scale(t), bottom: this.bottom.scale(t)});
-    }
-    lerpFrom(a, t) {
-      if (box_border.BorderDirectional.is(a)) return box_border.BorderDirectional.lerp(a, this, t);
-      return super.lerpFrom(a, t);
-    }
-    lerpTo(b, t) {
-      if (box_border.BorderDirectional.is(b)) return box_border.BorderDirectional.lerp(this, b, t);
-      return super.lerpTo(b, t);
-    }
-    static lerp(a, b, t) {
-      if (!(t !== null)) dart.assertFailed(null, I[1], 768, 12, "t != null");
-      if (a == null && b == null) return null;
-      if (a == null) return dart.nullCheck(b).scale(t);
-      if (b == null) return a.scale(1.0 - t);
-      return new box_border.BorderDirectional.new({top: borders.BorderSide.lerp(a.top, b.top, t), end: borders.BorderSide.lerp(a.end, b.end, t), bottom: borders.BorderSide.lerp(a.bottom, b.bottom, t), start: borders.BorderSide.lerp(a.start, b.start, t)});
-    }
-    paint(canvas, rect, opts) {
-      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
-      let shape = opts && 'shape' in opts ? opts.shape : C[0] || CT.C0;
-      let borderRadius = opts && 'borderRadius' in opts ? opts.borderRadius : null;
-      if (this.isUniform) {
-        switch (this.top.style) {
-          case C[4] || CT.C4:
-          {
-            return;
-          }
-          case C[6] || CT.C6:
-          {
-            switch (shape) {
-              case C[1] || CT.C1:
-              {
-                if (!(borderRadius == null)) dart.assertFailed("A borderRadius can only be given for rectangular boxes.", I[1], 820, 22, "borderRadius == null");
-                box_border.BoxBorder._paintUniformBorderWithCircle(canvas, rect, this.top);
-                break;
-              }
-              case C[0] || CT.C0:
-              {
-                if (borderRadius != null) {
-                  box_border.BoxBorder._paintUniformBorderWithRadius(canvas, rect, this.top, borderRadius);
-                  return;
-                }
-                box_border.BoxBorder._paintUniformBorderWithRectangle(canvas, rect, this.top);
-                break;
-              }
-            }
-            return;
-          }
-        }
-      }
-      if (!(borderRadius == null)) dart.assertFailed("A borderRadius can only be given for uniform borders.", I[1], 835, 12, "borderRadius == null");
-      if (!(shape === box_border.BoxShape.rectangle)) dart.assertFailed("A border can only be drawn as a circle if it is uniform.", I[1], 836, 12, "shape == BoxShape.rectangle");
-      let left = null;
-      let right = null;
-      if (!(textDirection != null)) dart.assertFailed("Non-uniform BorderDirectional objects require a TextDirection when painting.", I[1], 839, 12, "textDirection != null");
-      switch (dart.nullCheck(textDirection)) {
-        case C[7] || CT.C7:
-        {
-          left = this.end;
-          right = this.start;
-          break;
-        }
-        case C[8] || CT.C8:
-        {
-          left = this.start;
-          right = this.end;
-          break;
-        }
-      }
-      borders.paintBorder(canvas, rect, {top: this.top, left: left, bottom: this.bottom, right: right});
-    }
-    _equals(other) {
-      if (other == null) return false;
-      if (this === other) return true;
-      if (!other[$runtimeType]._equals(this[$runtimeType])) return false;
-      return box_border.BorderDirectional.is(other) && other.top._equals(this.top) && other.start._equals(this.start) && other.end._equals(this.end) && other.bottom._equals(this.bottom);
-    }
-    get hashCode() {
-      return ui.hashValues(this.top, this.start, this.end, this.bottom);
-    }
-    toString() {
-      let $arguments = (() => {
-        let t3 = T.JSArrayOfString().of([]);
-        if (!this.top._equals(borders.BorderSide.none)) t3[$add]("top: " + dart.str(this.top));
-        if (!this.start._equals(borders.BorderSide.none)) t3[$add]("start: " + dart.str(this.start));
-        if (!this.end._equals(borders.BorderSide.none)) t3[$add]("end: " + dart.str(this.end));
-        if (!this.bottom._equals(borders.BorderSide.none)) t3[$add]("bottom: " + dart.str(this.bottom));
-        return t3;
-      })();
-      return object.objectRuntimeType(this, "BorderDirectional") + "(" + $arguments[$join](", ") + ")";
+    set keepAlive(value) {
+      this[keepAlive] = value;
     }
   };
-  (box_border.BorderDirectional.new = function(opts) {
-    let top = opts && 'top' in opts ? opts.top : C[3] || CT.C3;
-    let start = opts && 'start' in opts ? opts.start : C[3] || CT.C3;
-    let end = opts && 'end' in opts ? opts.end : C[3] || CT.C3;
-    let bottom = opts && 'bottom' in opts ? opts.bottom : C[3] || CT.C3;
-    this[top$0] = top;
-    this[start$] = start;
-    this[end$] = end;
-    this[bottom$0] = bottom;
-    if (!(top !== null)) dart.assertFailed(null, I[1], 613, 15, "top != null");
-    if (!(start !== null)) dart.assertFailed(null, I[1], 614, 15, "start != null");
-    if (!(end !== null)) dart.assertFailed(null, I[1], 615, 15, "end != null");
-    if (!(bottom !== null)) dart.assertFailed(null, I[1], 616, 15, "bottom != null");
-    box_border.BorderDirectional.__proto__.new.call(this);
+  (sliver_multi_box_adaptor.KeepAliveParentDataMixin[dart.mixinNew] = function() {
+    this[keepAlive] = false;
+  }).prototype = sliver_multi_box_adaptor.KeepAliveParentDataMixin.prototype;
+  dart.addTypeTests(sliver_multi_box_adaptor.KeepAliveParentDataMixin);
+  dart.addTypeCaches(sliver_multi_box_adaptor.KeepAliveParentDataMixin);
+  sliver_multi_box_adaptor.KeepAliveParentDataMixin[dart.implements] = () => [object.ParentData, core.Object];
+  dart.setLibraryUri(sliver_multi_box_adaptor.KeepAliveParentDataMixin, I[0]);
+  dart.setFieldSignature(sliver_multi_box_adaptor.KeepAliveParentDataMixin, () => ({
+    __proto__: dart.getFields(sliver_multi_box_adaptor.KeepAliveParentDataMixin.__proto__),
+    keepAlive: dart.fieldType(core.bool)
+  }));
+  sliver_multi_box_adaptor.RenderSliverWithKeepAliveMixin = class RenderSliverWithKeepAliveMixin extends core.Object {};
+  sliver_multi_box_adaptor.RenderSliverWithKeepAliveMixin[dart.mixinOn] = Object => class RenderSliverWithKeepAliveMixin extends Object {
+    setupParentData(child) {
+      object.RenderObject.as(child);
+      if (!sliver_multi_box_adaptor.KeepAliveParentDataMixin.is(child.parentData)) dart.assertFailed(null, I[1], 139, 12, "child.parentData is KeepAliveParentDataMixin");
+    }
+  };
+  (sliver_multi_box_adaptor.RenderSliverWithKeepAliveMixin[dart.mixinNew] = function() {
+  }).prototype = sliver_multi_box_adaptor.RenderSliverWithKeepAliveMixin.prototype;
+  dart.addTypeTests(sliver_multi_box_adaptor.RenderSliverWithKeepAliveMixin);
+  dart.addTypeCaches(sliver_multi_box_adaptor.RenderSliverWithKeepAliveMixin);
+  sliver_multi_box_adaptor.RenderSliverWithKeepAliveMixin[dart.implements] = () => [sliver.RenderSliver, core.Object];
+  dart.setMethodSignature(sliver_multi_box_adaptor.RenderSliverWithKeepAliveMixin, () => ({
+    __proto__: dart.getMethods(sliver_multi_box_adaptor.RenderSliverWithKeepAliveMixin.__proto__),
+    setupParentData: dart.fnType(dart.void, [dart.nullable(core.Object)])
+  }));
+  dart.setLibraryUri(sliver_multi_box_adaptor.RenderSliverWithKeepAliveMixin, I[0]);
+  var index = dart.privateName(sliver_multi_box_adaptor, "SliverMultiBoxAdaptorParentData.index");
+  var _keptAlive = dart.privateName(sliver_multi_box_adaptor, "_keptAlive");
+  const SliverLogicalParentData_ContainerParentDataMixin$36 = class SliverLogicalParentData_ContainerParentDataMixin extends sliver.SliverLogicalParentData {};
+  (SliverLogicalParentData_ContainerParentDataMixin$36.new = function() {
+    object.ContainerParentDataMixin$(box.RenderBox)[dart.mixinNew].call(this);
+    SliverLogicalParentData_ContainerParentDataMixin$36.__proto__.new.call(this);
+  }).prototype = SliverLogicalParentData_ContainerParentDataMixin$36.prototype;
+  dart.applyMixin(SliverLogicalParentData_ContainerParentDataMixin$36, object.ContainerParentDataMixin$(box.RenderBox));
+  const SliverLogicalParentData_KeepAliveParentDataMixin$36 = class SliverLogicalParentData_KeepAliveParentDataMixin extends SliverLogicalParentData_ContainerParentDataMixin$36 {};
+  (SliverLogicalParentData_KeepAliveParentDataMixin$36.new = function() {
+    sliver_multi_box_adaptor.KeepAliveParentDataMixin[dart.mixinNew].call(this);
+    SliverLogicalParentData_KeepAliveParentDataMixin$36.__proto__.new.call(this);
+  }).prototype = SliverLogicalParentData_KeepAliveParentDataMixin$36.prototype;
+  dart.applyMixin(SliverLogicalParentData_KeepAliveParentDataMixin$36, sliver_multi_box_adaptor.KeepAliveParentDataMixin);
+  sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData = class SliverMultiBoxAdaptorParentData extends SliverLogicalParentData_KeepAliveParentDataMixin$36 {
+    get index() {
+      return this[index];
+    }
+    set index(value) {
+      this[index] = value;
+    }
+    get keptAlive() {
+      return this[_keptAlive];
+    }
+    toString() {
+      return "index=" + dart.str(this.index) + "; " + (this.keepAlive === true ? "keepAlive; " : "") + super.toString();
+    }
+  };
+  (sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.new = function() {
+    this[index] = null;
+    this[_keptAlive] = false;
+    sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.__proto__.new.call(this);
     ;
-  }).prototype = box_border.BorderDirectional.prototype;
-  dart.addTypeTests(box_border.BorderDirectional);
-  dart.addTypeCaches(box_border.BorderDirectional);
-  dart.setMethodSignature(box_border.BorderDirectional, () => ({
-    __proto__: dart.getMethods(box_border.BorderDirectional.__proto__),
-    scale: dart.fnType(box_border.BorderDirectional, [core.double]),
-    paint: dart.fnType(dart.void, [ui.Canvas, ui.Rect], {borderRadius: dart.nullable(border_radius.BorderRadius), shape: box_border.BoxShape, textDirection: dart.nullable(ui.TextDirection)}, {})
+  }).prototype = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.prototype;
+  dart.addTypeTests(sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData);
+  dart.addTypeCaches(sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData);
+  dart.setGetterSignature(sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData, () => ({
+    __proto__: dart.getGetters(sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.__proto__),
+    keptAlive: core.bool
   }));
-  dart.setGetterSignature(box_border.BorderDirectional, () => ({
-    __proto__: dart.getGetters(box_border.BorderDirectional.__proto__),
-    dimensions: edge_insets.EdgeInsetsGeometry,
-    isUniform: core.bool
+  dart.setLibraryUri(sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData, I[0]);
+  dart.setFieldSignature(sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData, () => ({
+    __proto__: dart.getFields(sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.__proto__),
+    index: dart.fieldType(dart.nullable(core.int)),
+    [_keptAlive]: dart.fieldType(core.bool)
   }));
-  dart.setLibraryUri(box_border.BorderDirectional, I[0]);
-  dart.setFieldSignature(box_border.BorderDirectional, () => ({
-    __proto__: dart.getFields(box_border.BorderDirectional.__proto__),
-    top: dart.finalFieldType(borders.BorderSide),
-    start: dart.finalFieldType(borders.BorderSide),
-    end: dart.finalFieldType(borders.BorderSide),
-    bottom: dart.finalFieldType(borders.BorderSide)
+  dart.defineExtensionMethods(sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData, ['toString']);
+  var _keepAliveBucket = dart.privateName(sliver_multi_box_adaptor, "_keepAliveBucket");
+  var __RenderSliverMultiBoxAdaptor__debugDanglingKeepAlives = dart.privateName(sliver_multi_box_adaptor, "_#RenderSliverMultiBoxAdaptor#_debugDanglingKeepAlives");
+  var _debugChildIntegrityEnabled = dart.privateName(sliver_multi_box_adaptor, "_debugChildIntegrityEnabled");
+  var _childManager = dart.privateName(sliver_multi_box_adaptor, "_childManager");
+  var _debugDanglingKeepAlives = dart.privateName(sliver_multi_box_adaptor, "_debugDanglingKeepAlives");
+  var _debugVerifyChildOrder = dart.privateName(sliver_multi_box_adaptor, "_debugVerifyChildOrder");
+  var _debugAssertChildListLocked = dart.privateName(sliver_multi_box_adaptor, "_debugAssertChildListLocked");
+  var _createOrObtainChild = dart.privateName(sliver_multi_box_adaptor, "_createOrObtainChild");
+  var _destroyOrCacheChild = dart.privateName(sliver_multi_box_adaptor, "_destroyOrCacheChild");
+  var _name = dart.privateName(basic_types, "_name");
+  var OffsetBase__dy = dart.privateName(ui, "OffsetBase._dy");
+  var OffsetBase__dx = dart.privateName(ui, "OffsetBase._dx");
+  const RenderSliver_ContainerRenderObjectMixin$36 = class RenderSliver_ContainerRenderObjectMixin extends sliver.RenderSliver {};
+  (RenderSliver_ContainerRenderObjectMixin$36.new = function() {
+    object.ContainerRenderObjectMixin$(box.RenderBox, sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData)[dart.mixinNew].call(this);
+    RenderSliver_ContainerRenderObjectMixin$36.__proto__.new.call(this);
+  }).prototype = RenderSliver_ContainerRenderObjectMixin$36.prototype;
+  dart.applyMixin(RenderSliver_ContainerRenderObjectMixin$36, object.ContainerRenderObjectMixin$(box.RenderBox, sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData));
+  const RenderSliver_RenderSliverHelpers$36 = class RenderSliver_RenderSliverHelpers extends RenderSliver_ContainerRenderObjectMixin$36 {};
+  (RenderSliver_RenderSliverHelpers$36.new = function() {
+    RenderSliver_RenderSliverHelpers$36.__proto__.new.call(this);
+  }).prototype = RenderSliver_RenderSliverHelpers$36.prototype;
+  dart.applyMixin(RenderSliver_RenderSliverHelpers$36, sliver.RenderSliverHelpers);
+  const RenderSliver_RenderSliverWithKeepAliveMixin$36 = class RenderSliver_RenderSliverWithKeepAliveMixin extends RenderSliver_RenderSliverHelpers$36 {};
+  (RenderSliver_RenderSliverWithKeepAliveMixin$36.new = function() {
+    RenderSliver_RenderSliverWithKeepAliveMixin$36.__proto__.new.call(this);
+  }).prototype = RenderSliver_RenderSliverWithKeepAliveMixin$36.prototype;
+  dart.applyMixin(RenderSliver_RenderSliverWithKeepAliveMixin$36, sliver_multi_box_adaptor.RenderSliverWithKeepAliveMixin);
+  sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor = class RenderSliverMultiBoxAdaptor extends RenderSliver_RenderSliverWithKeepAliveMixin$36 {
+    setupParentData(child) {
+      object.RenderObject.as(child);
+      if (!sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.is(child.parentData)) child.parentData = new sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.new();
+    }
+    get childManager() {
+      return this[_childManager];
+    }
+    get [_debugDanglingKeepAlives]() {
+      let t0;
+      t0 = this[__RenderSliverMultiBoxAdaptor__debugDanglingKeepAlives];
+      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("_debugDanglingKeepAlives")) : t0;
+    }
+    set [_debugDanglingKeepAlives](t0) {
+      this[__RenderSliverMultiBoxAdaptor__debugDanglingKeepAlives] = t0;
+    }
+    get debugChildIntegrityEnabled() {
+      return this[_debugChildIntegrityEnabled];
+    }
+    set debugChildIntegrityEnabled(enabled) {
+      if (!(enabled !== null)) dart.assertFailed(null, I[1], 230, 12, "enabled != null");
+      if (!dart.fn(() => {
+        this[_debugChildIntegrityEnabled] = enabled;
+        return this[_debugVerifyChildOrder]() && (!this[_debugChildIntegrityEnabled] || this[_debugDanglingKeepAlives][$isEmpty]);
+      }, T.VoidTobool())()) dart.assertFailed(null, I[1], 231, 12, "() {\r\n      _debugChildIntegrityEnabled = enabled;\r\n      return _debugVerifyChildOrder() &&\r\n        (!_debugChildIntegrityEnabled || _debugDanglingKeepAlives.isEmpty);\r\n    }()");
+    }
+    adoptChild(child) {
+      object.RenderObject.as(child);
+      super.adoptChild(child);
+      let childParentData = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.as(dart.nullCheck(child.parentData));
+      if (!childParentData[_keptAlive]) this.childManager.didAdoptChild(box.RenderBox.as(child));
+    }
+    [_debugAssertChildListLocked]() {
+      return this.childManager.debugAssertChildListLocked();
+    }
+    [_debugVerifyChildOrder]() {
+      if (this[_debugChildIntegrityEnabled]) {
+        let child = this.firstChild;
+        let index = null;
+        while (child != null) {
+          index = this.indexOf(child);
+          child = this.childAfter(child);
+          if (!(child == null || this.indexOf(child) > index)) dart.assertFailed(null, I[1], 258, 16, "child == null || indexOf(child) > index");
+        }
+      }
+      return true;
+    }
+    insert(child, opts) {
+      box.RenderBox.as(child);
+      let after = opts && 'after' in opts ? opts.after : null;
+      T.RenderBoxN().as(after);
+      if (!!this[_keepAliveBucket][$containsValue](child)) dart.assertFailed(null, I[1], 266, 12, "!_keepAliveBucket.containsValue(child)");
+      super.insert(child, {after: after});
+      if (!(this.firstChild != null)) dart.assertFailed(null, I[1], 268, 12, "firstChild != null");
+      if (!this[_debugVerifyChildOrder]()) dart.assertFailed(null, I[1], 269, 12, "_debugVerifyChildOrder()");
+    }
+    move(child, opts) {
+      box.RenderBox.as(child);
+      let after = opts && 'after' in opts ? opts.after : null;
+      T.RenderBoxN().as(after);
+      let childParentData = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.as(dart.nullCheck(child.parentData));
+      if (!childParentData.keptAlive) {
+        super.move(child, {after: after});
+        this.childManager.didAdoptChild(child);
+        this.markNeedsLayout();
+      } else {
+        if (dart.equals(this[_keepAliveBucket][$_get](childParentData.index), child)) {
+          this[_keepAliveBucket][$remove](childParentData.index);
+        }
+        if (!dart.fn(() => {
+          this[_debugDanglingKeepAlives][$remove](child);
+          return true;
+        }, T.VoidTobool())()) dart.assertFailed(null, I[1], 296, 14, "() {\r\n        _debugDanglingKeepAlives.remove(child);\r\n        return true;\r\n      }()");
+        this.childManager.didAdoptChild(child);
+        if (!dart.fn(() => {
+          if (this[_keepAliveBucket][$containsKey](childParentData.index)) this[_debugDanglingKeepAlives][$add](dart.nullCheck(this[_keepAliveBucket][$_get](childParentData.index)));
+          return true;
+        }, T.VoidTobool())()) dart.assertFailed(null, I[1], 305, 14, "() {\r\n        if (_keepAliveBucket.containsKey(childParentData.index))\r\n          _debugDanglingKeepAlives.add(_keepAliveBucket[childParentData.index]!);\r\n        return true;\r\n      }()");
+        this[_keepAliveBucket][$_set](dart.nullCheck(childParentData.index), child);
+      }
+    }
+    remove(child) {
+      box.RenderBox.as(child);
+      let childParentData = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.as(dart.nullCheck(child.parentData));
+      if (!childParentData[_keptAlive]) {
+        super.remove(child);
+        return;
+      }
+      if (!dart.equals(this[_keepAliveBucket][$_get](childParentData.index), child)) dart.assertFailed(null, I[1], 321, 12, "_keepAliveBucket[childParentData.index] == child");
+      if (!dart.fn(() => {
+        this[_debugDanglingKeepAlives][$remove](child);
+        return true;
+      }, T.VoidTobool())()) dart.assertFailed(null, I[1], 322, 12, "() {\r\n      _debugDanglingKeepAlives.remove(child);\r\n      return true;\r\n    }()");
+      this[_keepAliveBucket][$remove](childParentData.index);
+      this.dropChild(child);
+    }
+    removeAll() {
+      super.removeAll();
+      this[_keepAliveBucket][$values][$forEach](dart.bind(this, 'dropChild'));
+      this[_keepAliveBucket][$clear]();
+    }
+    [_createOrObtainChild](index, opts) {
+      let after = opts && 'after' in opts ? opts.after : null;
+      this.invokeLayoutCallback(sliver.SliverConstraints, dart.fn(constraints => {
+        if (!constraints._equals(this.constraints)) dart.assertFailed(null, I[1], 339, 14, "constraints == this.constraints");
+        if (this[_keepAliveBucket][$containsKey](index)) {
+          let child = dart.nullCheck(this[_keepAliveBucket][$remove](index));
+          let childParentData = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.as(dart.nullCheck(child.parentData));
+          if (!childParentData[_keptAlive]) dart.assertFailed(null, I[1], 343, 16, "childParentData._keptAlive");
+          this.dropChild(child);
+          child.parentData = childParentData;
+          this.insert(child, {after: after});
+          childParentData[_keptAlive] = false;
+        } else {
+          this[_childManager].createChild(index, {after: after});
+        }
+      }, T.SliverConstraintsTovoid()));
+    }
+    [_destroyOrCacheChild](child) {
+      let childParentData = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.as(dart.nullCheck(child.parentData));
+      if (childParentData.keepAlive) {
+        if (!!childParentData[_keptAlive]) dart.assertFailed(null, I[1], 357, 14, "!childParentData._keptAlive");
+        this.remove(child);
+        this[_keepAliveBucket][$_set](dart.nullCheck(childParentData.index), child);
+        child.parentData = childParentData;
+        super.adoptChild(child);
+        childParentData[_keptAlive] = true;
+      } else {
+        if (!dart.equals(child.parent, this)) dart.assertFailed(null, I[1], 364, 14, "child.parent == this");
+        this[_childManager].removeChild(child);
+        if (!(child.parent == null)) dart.assertFailed(null, I[1], 366, 14, "child.parent == null");
+      }
+    }
+    attach(owner) {
+      object.PipelineOwner.as(owner);
+      super.attach(owner);
+      for (let child of this[_keepAliveBucket][$values])
+        child.attach(owner);
+    }
+    detach() {
+      super.detach();
+      for (let child of this[_keepAliveBucket][$values])
+        child.detach();
+    }
+    redepthChildren() {
+      super.redepthChildren();
+      this[_keepAliveBucket][$values][$forEach](dart.bind(this, 'redepthChild'));
+    }
+    visitChildren(visitor) {
+      super.visitChildren(visitor);
+      this[_keepAliveBucket][$values][$forEach](visitor);
+    }
+    visitChildrenForSemantics(visitor) {
+      super.visitChildren(visitor);
+    }
+    addInitialChild(opts) {
+      let index = opts && 'index' in opts ? opts.index : 0;
+      let layoutOffset = opts && 'layoutOffset' in opts ? opts.layoutOffset : 0;
+      if (!this[_debugAssertChildListLocked]()) dart.assertFailed(null, I[1], 420, 12, "_debugAssertChildListLocked()");
+      if (!(this.firstChild == null)) dart.assertFailed(null, I[1], 421, 12, "firstChild == null");
+      this[_createOrObtainChild](index, {after: null});
+      if (this.firstChild != null) {
+        if (!dart.equals(this.firstChild, this.lastChild)) dart.assertFailed(null, I[1], 424, 14, "firstChild == lastChild");
+        if (!(this.indexOf(dart.nullCheck(this.firstChild)) === index)) dart.assertFailed(null, I[1], 425, 14, "indexOf(firstChild!) == index");
+        let firstChildParentData = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.as(dart.nullCheck(dart.nullCheck(this.firstChild).parentData));
+        firstChildParentData.layoutOffset = layoutOffset;
+        return true;
+      }
+      this.childManager.setDidUnderflow(true);
+      return false;
+    }
+    insertAndLayoutLeadingChild(childConstraints, opts) {
+      let parentUsesSize = opts && 'parentUsesSize' in opts ? opts.parentUsesSize : false;
+      if (!this[_debugAssertChildListLocked]()) dart.assertFailed(null, I[1], 452, 12, "_debugAssertChildListLocked()");
+      let index = this.indexOf(dart.nullCheck(this.firstChild)) - 1;
+      this[_createOrObtainChild](index, {after: null});
+      if (this.indexOf(dart.nullCheck(this.firstChild)) === index) {
+        dart.nullCheck(this.firstChild).layout(childConstraints, {parentUsesSize: parentUsesSize});
+        return this.firstChild;
+      }
+      this.childManager.setDidUnderflow(true);
+      return null;
+    }
+    insertAndLayoutChild(childConstraints, opts) {
+      let after = opts && 'after' in opts ? opts.after : null;
+      let parentUsesSize = opts && 'parentUsesSize' in opts ? opts.parentUsesSize : false;
+      if (!this[_debugAssertChildListLocked]()) dart.assertFailed(null, I[1], 481, 12, "_debugAssertChildListLocked()");
+      if (!(after != null)) dart.assertFailed(null, I[1], 482, 12, "after != null");
+      let index = this.indexOf(dart.nullCheck(after)) + 1;
+      this[_createOrObtainChild](index, {after: after});
+      let child = this.childAfter(after);
+      if (child != null && this.indexOf(child) === index) {
+        child.layout(childConstraints, {parentUsesSize: parentUsesSize});
+        return child;
+      }
+      this.childManager.setDidUnderflow(true);
+      return null;
+    }
+    collectGarbage(leadingGarbage, trailingGarbage) {
+      if (!this[_debugAssertChildListLocked]()) dart.assertFailed(null, I[1], 505, 12, "_debugAssertChildListLocked()");
+      if (!(this.childCount >= leadingGarbage + trailingGarbage)) dart.assertFailed(null, I[1], 506, 12, "childCount >= leadingGarbage + trailingGarbage");
+      this.invokeLayoutCallback(sliver.SliverConstraints, dart.fn(constraints => {
+        while (leadingGarbage > 0) {
+          this[_destroyOrCacheChild](dart.nullCheck(this.firstChild));
+          leadingGarbage = leadingGarbage - 1;
+        }
+        while (trailingGarbage > 0) {
+          this[_destroyOrCacheChild](dart.nullCheck(this.lastChild));
+          trailingGarbage = trailingGarbage - 1;
+        }
+        this[_keepAliveBucket][$values][$where](dart.fn(child => {
+          let childParentData = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.as(dart.nullCheck(child.parentData));
+          return !childParentData.keepAlive;
+        }, T.RenderBoxTobool()))[$toList]()[$forEach](dart.bind(this[_childManager], 'removeChild'));
+        if (!this[_keepAliveBucket][$values][$where](dart.fn(child => {
+          let childParentData = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.as(dart.nullCheck(child.parentData));
+          return !childParentData.keepAlive;
+        }, T.RenderBoxTobool()))[$isEmpty]) dart.assertFailed(null, I[1], 523, 14, "_keepAliveBucket.values.where((RenderBox child) {\r\n        final SliverMultiBoxAdaptorParentData childParentData = child.parentData! as SliverMultiBoxAdaptorParentData;\r\n        return !childParentData.keepAlive;\r\n      }).isEmpty");
+      }, T.SliverConstraintsTovoid()));
+    }
+    indexOf(child) {
+      if (!(child !== null)) dart.assertFailed(null, I[1], 533, 12, "child != null");
+      let childParentData = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.as(dart.nullCheck(child.parentData));
+      if (!(childParentData.index != null)) dart.assertFailed(null, I[1], 535, 12, "childParentData.index != null");
+      return dart.nullCheck(childParentData.index);
+    }
+    paintExtentOf(child) {
+      if (!(child !== null)) dart.assertFailed(null, I[1], 543, 12, "child != null");
+      if (!child.hasSize) dart.assertFailed(null, I[1], 544, 12, "child.hasSize");
+      switch (this.constraints.axis) {
+        case C[0] || CT.C0:
+        {
+          return child.size.width;
+        }
+        case C[1] || CT.C1:
+        {
+          return child.size.height;
+        }
+      }
+    }
+    hitTestChildren(result, opts) {
+      let mainAxisPosition = opts && 'mainAxisPosition' in opts ? opts.mainAxisPosition : null;
+      let crossAxisPosition = opts && 'crossAxisPosition' in opts ? opts.crossAxisPosition : null;
+      let child = this.lastChild;
+      let boxResult = new box.BoxHitTestResult.wrap(result);
+      while (child != null) {
+        if (this.hitTestBoxChild(boxResult, child, {mainAxisPosition: mainAxisPosition, crossAxisPosition: crossAxisPosition})) return true;
+        child = this.childBefore(child);
+      }
+      return false;
+    }
+    childMainAxisPosition(child) {
+      box.RenderBox.as(child);
+      return dart.nullCheck(this.childScrollOffset(child)) - this.constraints.scrollOffset;
+    }
+    childScrollOffset(child) {
+      object.RenderObject.as(child);
+      if (!(child !== null)) dart.assertFailed(null, I[1], 572, 12, "child != null");
+      if (!dart.equals(child.parent, this)) dart.assertFailed(null, I[1], 573, 12, "child.parent == this");
+      let childParentData = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.as(dart.nullCheck(child.parentData));
+      return childParentData.layoutOffset;
+    }
+    applyPaintTransform(child, transform) {
+      box.RenderBox.as(child);
+      let childParentData = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.as(dart.nullCheck(child.parentData));
+      if (childParentData.index == null) {
+        transform.setZero();
+      } else if (this[_keepAliveBucket][$containsKey](childParentData.index)) {
+        transform.setZero();
+      } else {
+        this.applyPaintTransformForBoxChild(child, transform);
+      }
+    }
+    paint(context, offset) {
+      if (this.firstChild == null) return;
+      let mainAxisUnit = null;
+      let crossAxisUnit = null;
+      let originOffset = null;
+      let addExtent = null;
+      switch (sliver.applyGrowthDirectionToAxisDirection(this.constraints.axisDirection, this.constraints.growthDirection)) {
+        case C[4] || CT.C4:
+        {
+          mainAxisUnit = C[2] || CT.C2;
+          crossAxisUnit = C[3] || CT.C3;
+          originOffset = offset['+'](new ui.Offset.new(0.0, dart.nullCheck(this.geometry).paintExtent));
+          addExtent = true;
+          break;
+        }
+        case C[6] || CT.C6:
+        {
+          mainAxisUnit = C[3] || CT.C3;
+          crossAxisUnit = C[5] || CT.C5;
+          originOffset = offset;
+          addExtent = false;
+          break;
+        }
+        case C[7] || CT.C7:
+        {
+          mainAxisUnit = C[5] || CT.C5;
+          crossAxisUnit = C[3] || CT.C3;
+          originOffset = offset;
+          addExtent = false;
+          break;
+        }
+        case C[9] || CT.C9:
+        {
+          mainAxisUnit = C[8] || CT.C8;
+          crossAxisUnit = C[5] || CT.C5;
+          originOffset = offset['+'](new ui.Offset.new(dart.nullCheck(this.geometry).paintExtent, 0.0));
+          addExtent = true;
+          break;
+        }
+      }
+      if (!(mainAxisUnit !== null)) dart.assertFailed(null, I[1], 631, 12, "mainAxisUnit != null");
+      if (!(addExtent !== null)) dart.assertFailed(null, I[1], 632, 12, "addExtent != null");
+      let child = this.firstChild;
+      while (child != null) {
+        let mainAxisDelta = this.childMainAxisPosition(child);
+        let crossAxisDelta = this.childCrossAxisPosition(child);
+        let childOffset = new ui.Offset.new(originOffset.dx + mainAxisUnit.dx * mainAxisDelta + crossAxisUnit.dx * crossAxisDelta, originOffset.dy + mainAxisUnit.dy * mainAxisDelta + crossAxisUnit.dy * crossAxisDelta);
+        if (addExtent) childOffset = childOffset['+'](mainAxisUnit['*'](this.paintExtentOf(child)));
+        if (mainAxisDelta < this.constraints.remainingPaintExtent && mainAxisDelta + this.paintExtentOf(child) > 0) context.paintChild(child, childOffset);
+        child = this.childAfter(child);
+      }
+    }
+    debugFillProperties(properties) {
+      super.debugFillProperties(properties);
+      properties.add(diagnostics.DiagnosticsNode.message(this.firstChild != null ? "currently live children: " + dart.str(this.indexOf(dart.nullCheck(this.firstChild))) + " to " + dart.str(this.indexOf(dart.nullCheck(this.lastChild))) : "no children current live"));
+    }
+    debugAssertChildListIsNonEmptyAndContiguous() {
+      if (!dart.fn(() => {
+        if (!(this.firstChild != null)) dart.assertFailed(null, I[1], 665, 14, "firstChild != null");
+        let index = this.indexOf(dart.nullCheck(this.firstChild));
+        let child = this.childAfter(dart.nullCheck(this.firstChild));
+        while (child != null) {
+          index = index + 1;
+          if (!(this.indexOf(child) === index)) dart.assertFailed(null, I[1], 670, 16, "indexOf(child) == index");
+          child = this.childAfter(child);
+        }
+        return true;
+      }, T.VoidTobool())()) dart.assertFailed(null, I[1], 664, 12, "() {\r\n      assert(firstChild != null);\r\n      int index = indexOf(firstChild!);\r\n      RenderBox? child = childAfter(firstChild!);\r\n      while (child != null) {\r\n        index += 1;\r\n        assert(indexOf(child) == index);\r\n        child = childAfter(child);\r\n      }\r\n      return true;\r\n    }()");
+      return true;
+    }
+    debugDescribeChildren() {
+      let t1;
+      let children = T.JSArrayOfDiagnosticsNode().of([]);
+      if (this.firstChild != null) {
+        let child = this.firstChild;
+        while (true) {
+          let childParentData = sliver_multi_box_adaptor.SliverMultiBoxAdaptorParentData.as(dart.nullCheck(dart.nullCheck(child).parentData));
+          children[$add](child.toDiagnosticsNode({name: "child with index " + dart.str(childParentData.index)}));
+          if (dart.equals(child, this.lastChild)) break;
+          child = childParentData.nextSibling;
+        }
+      }
+      if (this[_keepAliveBucket][$isNotEmpty]) {
+        let indices = (t1 = this[_keepAliveBucket][$keys][$toList](), (() => {
+          t1[$sort]();
+          return t1;
+        })());
+        for (let index of indices) {
+          children[$add](dart.nullCheck(this[_keepAliveBucket][$_get](index)).toDiagnosticsNode({name: "child with index " + dart.str(index) + " (kept alive but not laid out)", style: diagnostics.DiagnosticsTreeStyle.offstage}));
+        }
+      }
+      return children;
+    }
+  };
+  (sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor.new = function(opts) {
+    let childManager = opts && 'childManager' in opts ? opts.childManager : null;
+    this[_keepAliveBucket] = new (T.IdentityMapOfint$RenderBox()).new();
+    this[__RenderSliverMultiBoxAdaptor__debugDanglingKeepAlives] = null;
+    this[_debugChildIntegrityEnabled] = true;
+    if (!(childManager !== null)) dart.assertFailed(null, I[1], 190, 15, "childManager != null");
+    this[_childManager] = childManager;
+    sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor.__proto__.new.call(this);
+    if (!dart.fn(() => {
+      this[_debugDanglingKeepAlives] = T.JSArrayOfRenderBox().of([]);
+      return true;
+    }, T.VoidTobool())()) dart.assertFailed(null, I[1], 192, 12, "() {\r\n      _debugDanglingKeepAlives = <RenderBox>[];\r\n      return true;\r\n    }()");
+  }).prototype = sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor.prototype;
+  dart.addTypeTests(sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor);
+  dart.addTypeCaches(sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor);
+  dart.setMethodSignature(sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor, () => ({
+    __proto__: dart.getMethods(sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor.__proto__),
+    [_debugAssertChildListLocked]: dart.fnType(core.bool, []),
+    [_debugVerifyChildOrder]: dart.fnType(core.bool, []),
+    [_createOrObtainChild]: dart.fnType(dart.void, [core.int], {}, {after: dart.nullable(box.RenderBox)}),
+    [_destroyOrCacheChild]: dart.fnType(dart.void, [box.RenderBox]),
+    addInitialChild: dart.fnType(core.bool, [], {index: core.int, layoutOffset: core.double}, {}),
+    insertAndLayoutLeadingChild: dart.fnType(dart.nullable(box.RenderBox), [box.BoxConstraints], {parentUsesSize: core.bool}, {}),
+    insertAndLayoutChild: dart.fnType(dart.nullable(box.RenderBox), [box.BoxConstraints], {parentUsesSize: core.bool}, {after: dart.nullable(box.RenderBox)}),
+    collectGarbage: dart.fnType(dart.void, [core.int, core.int]),
+    indexOf: dart.fnType(core.int, [box.RenderBox]),
+    paintExtentOf: dart.fnType(core.double, [box.RenderBox]),
+    debugAssertChildListIsNonEmptyAndContiguous: dart.fnType(core.bool, [])
   }));
-  dart.defineExtensionMethods(box_border.BorderDirectional, ['_equals', 'toString']);
-  dart.defineExtensionAccessors(box_border.BorderDirectional, ['hashCode']);
-  dart.trackLibraries("packages/flutter/src/painting/box_border.dart", {
-    "package:flutter/src/painting/box_border.dart": box_border
+  dart.setGetterSignature(sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor, () => ({
+    __proto__: dart.getGetters(sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor.__proto__),
+    childManager: sliver_multi_box_adaptor.RenderSliverBoxChildManager,
+    [_debugDanglingKeepAlives]: core.List$(box.RenderBox),
+    debugChildIntegrityEnabled: core.bool
+  }));
+  dart.setSetterSignature(sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor, () => ({
+    __proto__: dart.getSetters(sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor.__proto__),
+    [_debugDanglingKeepAlives]: core.List$(box.RenderBox),
+    debugChildIntegrityEnabled: core.bool
+  }));
+  dart.setLibraryUri(sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor, I[0]);
+  dart.setFieldSignature(sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor, () => ({
+    __proto__: dart.getFields(sliver_multi_box_adaptor.RenderSliverMultiBoxAdaptor.__proto__),
+    [_childManager]: dart.finalFieldType(sliver_multi_box_adaptor.RenderSliverBoxChildManager),
+    [_keepAliveBucket]: dart.finalFieldType(core.Map$(core.int, box.RenderBox)),
+    [__RenderSliverMultiBoxAdaptor__debugDanglingKeepAlives]: dart.fieldType(dart.nullable(core.List$(box.RenderBox))),
+    [_debugChildIntegrityEnabled]: dart.fieldType(core.bool)
+  }));
+  dart.trackLibraries("packages/flutter/src/rendering/sliver_multi_box_adaptor.dart", {
+    "package:flutter/src/rendering/sliver_multi_box_adaptor.dart": sliver_multi_box_adaptor
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["box_border.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAyCA;;6CArBK;;;;EAqBL;;;;;;;;;;;;;;QA4C6B;UAAc;AAAuB;IAAI;gBAmBlC,GAAc,GAAU;AACxD,YAAO,AAAE,CAAD;AACR,UAAO,eAAF,CAAC,KAAmB,eAAF,CAAC,GACtB,MAAc,wBAAK,CAAC,EAAE,CAAC,EAAE,CAAC;AAC5B,UAAO,0BAAF,CAAC,KAA8B,0BAAF,CAAC,GACjC,MAAyB,mCAAK,CAAC,EAAE,CAAC,EAAE,CAAC;AACvC,UAAM,qBAAF,CAAC,KAAgB,gCAAF,CAAC;AACF,gBAAI,CAAC;AAChB,QAAL,IAAI,CAAC;AACA,QAAL,IAAI,CAAC;AACM,QAAX,IAAI,AAAI,MAAE,CAAC;;AAGb,UAAM,qBAAF,CAAC,KAAgB,gCAAF,CAAC;AAClB,YAAI,AAAE,AAAM,CAAP,eAAqB,4BAAQ,AAAE,AAAI,CAAL,aAAmB;AAEpD,gBAAO,iCACW,wBAAK,AAAE,CAAD,MAAM,AAAE,CAAD,MAAM,CAAC,UAClB,wBAAK,AAAE,CAAD,QAAmB,yBAAM,CAAC,WAC/B,wBAAK,AAAE,CAAD,SAAS,AAAE,CAAD,SAAS,CAAC,SAC5B,wBAAK,AAAE,CAAD,OAAkB,yBAAM,CAAC;;AAGpD,YAAI,AAAE,AAAK,CAAN,cAAoB,4BAAQ,AAAE,AAAM,CAAP,eAAqB;AAErD,gBAAO,4CACW,wBAAK,AAAE,CAAD,MAAM,AAAE,CAAD,MAAM,CAAC,UAClB,wBAAgB,yBAAM,AAAE,CAAD,QAAQ,CAAC,QAClC,wBAAgB,yBAAM,AAAE,CAAD,MAAM,CAAC,WAC3B,wBAAK,AAAE,CAAD,SAAS,AAAE,CAAD,SAAS,CAAC;;AAMjD,YAAI,AAAE,CAAD,GAAG;AACN,gBAAO,iCACW,wBAAK,AAAE,CAAD,MAAM,AAAE,CAAD,MAAM,CAAC,UAClB,wBAAK,AAAE,CAAD,QAAmB,yBAAM,AAAE,CAAD,GAAG,cAClC,wBAAK,AAAE,CAAD,SAAS,AAAE,CAAD,SAAS,CAAC,SAC5B,wBAAK,AAAE,CAAD,OAAkB,yBAAM,AAAE,CAAD,GAAG;;AAGvD,cAAO,4CACW,wBAAK,AAAE,CAAD,MAAM,AAAE,CAAD,MAAM,CAAC,UAClB,wBAAgB,yBAAM,AAAE,CAAD,QAAkB,CAAT,AAAE,CAAD,GAAG,OAAO,WAC7C,wBAAgB,yBAAM,AAAE,CAAD,MAAgB,CAAT,AAAE,CAAD,GAAG,OAAO,cACtC,wBAAK,AAAE,CAAD,SAAS,AAAE,CAAD,SAAS,CAAC;;AAY/C,MATF,WAAmB,sCAA2B,iCAC5C,gCAAa,8EACb,oCAAgB,AACd,mEAA0D,iBAAF,CAAC,KAAa,mBAAS,iBAAF,CAAC,KAAa,QAC3F,gBAAI,CAAC,WACL,gBAAI,CAAC,WACL,qFAEF,6BAAU;IAEd;iBAGuB;;UAAuB;AAC5C,YAAO,AAAc,aAAD,6BAAU,AAA2E,4CAA3C,sBAAW;AACzE,WAAO;;AACH,mBAAQ,AAAW,AAAuB,wBAAf,aAAa,cAAc,IAAI;;;IAChE;iBAGuB;;UAAuB;AAC5C,YAAO,AAAc,aAAD,6BAAU,AAA2E,4CAA3C,sBAAW;AACzE,WAAO;;AACH,mBAAQ,IAAI;;;IAClB;yCA8BiD,QAAa,MAAiB,MAAmB;;AAChG,YAAO,AAAK,AAAM,IAAP,WAAsB;AACrB,wCAAQ;AAChB,mBAAQ,AAAK,IAAD;;;AACJ,kBAAQ,AAAa,YAAD,SAAS,IAAI;AAChC,kBAAQ,AAAK,IAAD;AACzB,UAAI,AAAM,KAAD,KAAI;AAGU,cAFrB,KAAK;QAAL;AACI,sBAAsB;AACtB,4BAAc;;;AACY,QAA9B,AAAO,MAAD,WAAW,KAAK,EAAE,KAAK;;AAEjB,oBAAQ,AAAM,KAAD,SAAS,KAAK;AACD,QAAtC,AAAO,MAAD,YAAY,KAAK,EAAE,KAAK,EAAE,KAAK;;IAEzC;yCAEiD,QAAa,MAAiB;AAC7E,YAAO,AAAK,AAAM,IAAP,WAAsB;AACpB,kBAAQ,AAAK,IAAD;AACb,kBAAQ,AAAK,IAAD;AACX,mBAAqC,CAA3B,AAAK,AAAa,IAAd,gBAAgB,KAAK,IAAI;AACP,MAA7C,AAAO,MAAD,YAAY,AAAK,IAAD,SAAS,MAAM,EAAE,KAAK;IAC9C;4CAEoD,QAAa,MAAiB;AAChF,YAAO,AAAK,AAAM,IAAP,WAAsB;AACpB,kBAAQ,AAAK,IAAD;AACb,kBAAQ,AAAK,IAAD;AACyB,MAAjD,AAAO,MAAD,UAAU,AAAK,IAAD,SAAS,AAAM,KAAD,GAAG,MAAM,KAAK;IAClD;;;AAhLM;;EAAW;;;;;;;;;;;;;;;;;;;;;;;IA6TA;;;;;;IAGA;;;;;;IAGA;;;;;;IAGA;;;;;;;UAxCT;UACC;UACK;AAEK,iBAAO,mCAAkB,KAAK,SAAS,KAAK,SAAS,KAAK;AAC3E,YAAc,sCAAe,IAAI;IACnC;iBAS2B,GAAU;AACnC,YAAO,AAAE,CAAD;AACR,YAAO,AAAE,CAAD;AACR,WAAkB,4BAAS,AAAE,CAAD,MAAM,AAAE,CAAD;AACnC,WAAkB,4BAAS,AAAE,CAAD,QAAQ,AAAE,CAAD;AACrC,WAAkB,4BAAS,AAAE,CAAD,SAAS,AAAE,CAAD;AACtC,WAAkB,4BAAS,AAAE,CAAD,OAAO,AAAE,CAAD;AACpC,YAAO,iCACW,yBAAM,AAAE,CAAD,MAAM,AAAE,CAAD,cACZ,yBAAM,AAAE,CAAD,QAAQ,AAAE,CAAD,iBACf,yBAAM,AAAE,CAAD,SAAS,AAAE,CAAD,gBACnB,yBAAM,AAAE,CAAD,OAAO,AAAE,CAAD;IAEpC;;AAgBE,YAAkB,qCAAS,AAAK,iBAAO,AAAI,gBAAO,AAAM,kBAAO,AAAO;IACxE;;AAGsB,YAAA,AAAmC,0BAAhB,yBAAmB;IAAe;;AAG7D,qBAAW,AAAI;AAC3B,YAAO,AAAM,AAAM,AAAwC,0BAArC,QAAQ,KAAI,AAAO,AAAM,0BAAG,QAAQ,KAAI,AAAK,AAAM,wBAAG,QAAQ;IACtF;;AAGe,qBAAW,AAAI;AAC5B,YAAO,AAAM,AAAM,AAAwC,sBAArC,QAAQ,IAAI,AAAO,AAAM,sBAAG,QAAQ,IAAI,AAAK,AAAM,oBAAG,QAAQ;IACtF;;AAGoB,qBAAW,AAAI;AACjC,YAAO,AAAM,AAAM,AAAwC,sBAArC,QAAQ,IAAI,AAAO,AAAM,sBAAG,QAAQ,IAAI,AAAK,AAAM,oBAAG,QAAQ;IACtF;QAGwB;UAAc;AACpC,UAAU,qBAAN,KAAK,KACM,4BAAS,UAAK,AAAM,KAAD,SACnB,4BAAS,YAAO,AAAM,KAAD,WACrB,4BAAS,aAAQ,AAAM,KAAD,YACtB,4BAAS,WAAM,AAAM,KAAD;AACjC,cAAc,yBAAM,MAAM,KAAK;;AAEjC,YAAO;IACT;UAGoB;AAClB,YAAO,iCACA,AAAI,eAAM,CAAC,UACT,AAAM,iBAAM,CAAC,WACZ,AAAO,kBAAM,CAAC,SAChB,AAAK,gBAAM,CAAC;IAEtB;aAGmC,GAAU;AAC3C,UAAM,qBAAF,CAAC,GACH,MAAc,wBAAK,CAAC,EAAE,MAAM,CAAC;AAC/B,YAAa,gBAAS,CAAC,EAAE,CAAC;IAC5B;WAGiC,GAAU;AACzC,UAAM,qBAAF,CAAC,GACH,MAAc,wBAAK,MAAM,CAAC,EAAE,CAAC;AAC/B,YAAa,cAAO,CAAC,EAAE,CAAC;IAC1B;gBAQ4B,GAAW,GAAU;AAC/C,YAAO,AAAE,CAAD;AACR,UAAI,AAAE,CAAD,YAAY,AAAE,CAAD,UAChB,MAAO;AACT,UAAI,AAAE,CAAD,UACH,MAAQ,AAAE,gBAAH,CAAC,QAAQ,CAAC;AACnB,UAAI,AAAE,CAAD,UACH,MAAO,AAAE,EAAD,OAAO,AAAI,MAAE,CAAC;AACxB,YAAO,iCACW,wBAAK,AAAE,CAAD,MAAM,AAAE,CAAD,MAAM,CAAC,UAClB,wBAAK,AAAE,CAAD,QAAQ,AAAE,CAAD,QAAQ,CAAC,WACvB,wBAAK,AAAE,CAAD,SAAS,AAAE,CAAD,SAAS,CAAC,SAC5B,wBAAK,AAAE,CAAD,OAAO,AAAE,CAAD,OAAO,CAAC;IAE3C;UAuBS,QACF;UACU;UACN;UACK;AAEd,UAAI;AACF,gBAAQ,AAAI;;;AAER;;;;AAEA,oBAAQ,KAAK;;;AAET,sBAAO,AAAa,YAAD,6BAAU;AAC6B,gBAAhD,mDAA8B,MAAM,EAAE,IAAI,EAAE;AACtD;;;;AAEA,oBAAI,YAAY;AAC0D,kBAA9D,mDAA8B,MAAM,EAAE,IAAI,EAAE,UAAK,YAAY;AACvE;;AAE2D,gBAAnD,sDAAiC,MAAM,EAAE,IAAI,EAAE;AACzD;;;AAEJ;;;;AAIN,WAAO,AAWN;AAVC,YAAI,YAAY;AAOZ,UANF,WAAmB,sCAA2B;sDAC5C,gCAAa,2DACb,oCAAiB;AACjB,iBAAK,uBAAiB,6CAAiB;AACvC,iBAAK,uBAAiB,6CAAiB;AACvC,iBAAK,uBAAiB,6CAAiB;;;;AAG3C,cAAO;;AAET,WAAO,AAWN;AAVC,YAAI,KAAK,KAAa;AAOlB,UANF,WAAmB,sCAA2B;sDAC5C,gCAAa,4DACb,oCAAiB;AACjB,iBAAK,uBAAiB,6CAAiB;AACvC,iBAAK,uBAAiB,6CAAiB;AACvC,iBAAK,uBAAiB,6CAAiB;;;;AAG3C,cAAO;;AAGoE,MAA7E,oBAAY,MAAM,EAAE,IAAI,QAAO,iBAAY,oBAAe,mBAAc;IAC1E;;UAGwB;AACtB,UAAI,AAAU,SAAM,KAAK,EACvB,MAAO;AACT,WAAI,AAAM,KAAD,uBAAgB,qBACvB,MAAO;AACT,YAAa,AAIT,sBAJG,KAAK,KACL,AAAM,AAAI,KAAL,aAAQ,aACb,AAAM,AAAM,KAAP,eAAU,eACf,AAAM,AAAO,KAAR,gBAAW,gBAChB,AAAM,AAAK,KAAN,cAAS;IACvB;;AAGoB,2BAAW,UAAK,YAAO,aAAQ;IAAK;;AAItD,UAAI,gBACF,MAAU,AAA6C,0BAA3B,MAAM,YAAU,mBAAM,YAAG;AACpC,uBAAoB;;AACrC,aAAI,iBAAkB,0BAAiB,SAAX,mBAAO;AACnC,aAAI,mBAAoB,0BAAqB,SAAf,qBAAS;AACvC,aAAI,oBAAqB,0BAAuB,SAAjB,sBAAU;AACzC,aAAI,kBAAmB,0BAAmB,SAAb,oBAAQ;;;AAEvC,YAAU,AAA4D,0BAA1C,MAAM,YAAU,MAAG,AAAU,kBAAK,QAAM;IACtE;;;QA1QO;QACA;QACA;QACA;IAHA;IACA;IACA;IACA;UACK,AAAI,GAAD;UACH,AAAM,KAAD;UACL,AAAO,MAAD;UACN,AAAK,IAAD;AARV;;EAQmB;+CAKc;UAC1B,AAAK,IAAD;IACP,aAAE,IAAI;IACJ,eAAE,IAAI;IACL,gBAAE,IAAI;IACR,cAAE,IAAI;AALX;;EAKW;;QASJ;QACA;UACD,AAAS,QAAD;UACR,AAAW,UAAD;IACZ,cAAE,QAAQ;IACX,aAAE,UAAU;IACV,eAAE,QAAQ;IACT,gBAAE,UAAU;AARlB;;EAQkB;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IA0SP;;;;;;IAUA;;;;;;IAUA;;;;;;IAGA;;;;;;iBAvCgC,GAAqB;AACpE,YAAO,AAAE,CAAD;AACR,YAAO,AAAE,CAAD;AACR,WAAkB,4BAAS,AAAE,CAAD,MAAM,AAAE,CAAD;AACnC,WAAkB,4BAAS,AAAE,CAAD,QAAQ,AAAE,CAAD;AACrC,WAAkB,4BAAS,AAAE,CAAD,MAAM,AAAE,CAAD;AACnC,WAAkB,4BAAS,AAAE,CAAD,SAAS,AAAE,CAAD;AACtC,YAAO,4CACW,yBAAM,AAAE,CAAD,MAAM,AAAE,CAAD,cACZ,yBAAM,AAAE,CAAD,QAAQ,AAAE,CAAD,cAClB,yBAAM,AAAE,CAAD,MAAM,AAAE,CAAD,eACX,yBAAM,AAAE,CAAD,SAAS,AAAE,CAAD;IAExC;;AA8BE,YAA6B,gDAAS,AAAM,kBAAO,AAAI,gBAAO,AAAI,gBAAO,AAAO;IAClF;;AAIc,qBAAW,AAAI;AAC3B,WAAI,AAAM,yBAAS,QAAQ,MACvB,AAAI,uBAAS,QAAQ,MACrB,AAAO,0BAAS,QAAQ,GAC1B,MAAO;AAEI,qBAAW,AAAI;AAC5B,UAAI,AAAM,qBAAS,QAAQ,IACvB,AAAI,mBAAS,QAAQ,IACrB,AAAO,sBAAS,QAAQ,EAC1B,MAAO;AAES,qBAAW,AAAI;AACjC,UAAI,AAAM,qBAAS,QAAQ,IACvB,AAAI,mBAAS,QAAQ,IACrB,AAAO,sBAAS,QAAQ,EAC1B,MAAO;AAET,YAAO;IACT;QAG2B;UAAc;AACvC,UAAU,gCAAN,KAAK;AACiB,yBAAa,KAAK;AAC1C,YAAe,4BAAS,UAAK,AAAW,UAAD,SACxB,4BAAS,YAAO,AAAW,UAAD,WAC1B,4BAAS,UAAK,AAAW,UAAD,SACxB,4BAAS,aAAQ,AAAW,UAAD;AACxC,gBAAyB,oCAAM,MAAM,UAAU;;AAEjD,cAAO;;AAET,UAAU,qBAAN,KAAK;AACM,yBAAa,KAAK;AAC/B,aAAgB,4BAAS,AAAW,UAAD,MAAM,cACzB,4BAAS,AAAW,UAAD,SAAS,cAC1C,MAAO;AACT,aAAI,mBAAoB,6BACpB,iBAAkB;AACpB,eAAI,AAAW,UAAD,cAAoB,6BAC9B,AAAW,UAAD,eAAqB,0BACjC,MAAO;AACT,eAAO,AAAW,AAAK,UAAN,cAAoB;AACrC,eAAO,AAAW,AAAM,UAAP,eAAqB;AACtC,gBAAO,4CACW,yBAAM,AAAW,UAAD,MAAM,kBAC/B,iBACF,kBACc,yBAAM,AAAW,UAAD,SAAS;;AAGhD,aAAO,AAAM,mBAAc;AAC3B,aAAO,AAAI,iBAAc;AACzB,cAAO,iCACW,yBAAM,AAAW,UAAD,MAAM,kBAC/B,AAAW,UAAD,gBACE,yBAAM,AAAW,UAAD,SAAS,oBACtC,AAAW,UAAD;;AAGpB,YAAO;IACT;UAG+B;AAC7B,YAAO,4CACA,AAAI,eAAM,CAAC,UACT,AAAM,iBAAM,CAAC,QACf,AAAI,eAAM,CAAC,WACR,AAAO,kBAAM,CAAC;IAE1B;aAGmC,GAAU;AAC3C,UAAM,gCAAF,CAAC,GACH,MAAyB,mCAAK,CAAC,EAAE,MAAM,CAAC;AAC1C,YAAa,gBAAS,CAAC,EAAE,CAAC;IAC5B;WAGiC,GAAU;AACzC,UAAM,gCAAF,CAAC,GACH,MAAyB,mCAAK,MAAM,CAAC,EAAE,CAAC;AAC1C,YAAa,cAAO,CAAC,EAAE,CAAC;IAC1B;gBAQkD,GAAsB,GAAU;AAChF,YAAO,AAAE,CAAD;AACR,UAAI,AAAE,CAAD,YAAY,AAAE,CAAD,UAChB,MAAO;AACT,UAAI,AAAE,CAAD,UACH,MAAQ,AAAE,gBAAH,CAAC,QAAQ,CAAC;AACnB,UAAI,AAAE,CAAD,UACH,MAAO,AAAE,EAAD,OAAO,AAAI,MAAE,CAAC;AACxB,YAAO,4CACW,wBAAK,AAAE,CAAD,MAAM,AAAE,CAAD,MAAM,CAAC,QACpB,wBAAK,AAAE,CAAD,MAAM,AAAE,CAAD,MAAM,CAAC,WACjB,wBAAK,AAAE,CAAD,SAAS,AAAE,CAAD,SAAS,CAAC,UAC3B,wBAAK,AAAE,CAAD,QAAQ,AAAE,CAAD,QAAQ,CAAC;IAE9C;UA0BS,QACF;UACU;UACN;UACK;AAEd,UAAI;AACF,gBAAQ,AAAI;;;AAER;;;;AAEA,oBAAQ,KAAK;;;AAET,sBAAO,AAAa,YAAD,6BAAU;AAC6B,gBAAhD,mDAA8B,MAAM,EAAE,IAAI,EAAE;AACtD;;;;AAEA,oBAAI,YAAY;AAC0D,kBAA9D,mDAA8B,MAAM,EAAE,IAAI,EAAE,UAAK,YAAY;AACvE;;AAE2D,gBAAnD,sDAAiC,MAAM,EAAE,IAAI,EAAE;AACzD;;;AAEJ;;;;AAIN,YAAO,AAAa,YAAD,6BAAU;AAC7B,YAAO,AAAM,KAAD,KAAa,kDAAW;AAEzB;AAAM;AACjB,YAAO,AAAc,aAAD,6BAAU;AAC9B,cAAqB,eAAb,aAAa;;;AAEP,UAAV,OAAO;AACM,UAAb,QAAQ;AACR;;;;AAEY,UAAZ,OAAO;AACI,UAAX,QAAQ;AACR;;;AAEyE,MAA7E,oBAAY,MAAM,EAAE,IAAI,QAAO,gBAAW,IAAI,UAAU,oBAAe,KAAK;IAC9E;;UAGwB;AACtB,UAAI,AAAU,SAAM,KAAK,EACvB,MAAO;AACT,WAAI,AAAM,KAAD,uBAAgB,qBACvB,MAAO;AACT,YAAa,AAIT,iCAJG,KAAK,KACL,AAAM,AAAI,KAAL,aAAQ,aACb,AAAM,AAAM,KAAP,eAAU,eACf,AAAM,AAAI,KAAL,aAAQ,aACb,AAAM,AAAO,KAAR,gBAAW;IACzB;;AAGoB,2BAAW,UAAK,YAAO,UAAK;IAAO;;AAIlC,uBAAoB;;AACrC,aAAI,iBAAkB,0BAAiB,SAAX,mBAAO;AACnC,aAAI,mBAAoB,0BAAqB,SAAf,qBAAS;AACvC,aAAI,iBAAkB,0BAAiB,SAAX,mBAAO;AACnC,aAAI,oBAAqB,0BAAuB,SAAjB,sBAAU;;;AAE3C,YAAU,AAAuE,0BAArD,MAAM,uBAAqB,MAAG,AAAU,kBAAK,QAAM;IACjF;;;QA7QO;QACA;QACA;QACA;IAHA;IACA;IACA;IACA;UACK,AAAI,GAAD;UACH,AAAM,KAAD;UACL,AAAI,GAAD;UACH,AAAO,MAAD;AARZ;;EAQqB","file":"../../../../../../../packages/flutter/src/painting/box_border.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["sliver_multi_box_adaptor.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/rendering/sliver_multi_box_adaptor.dart.lib.js"}');
   // Exports:
   return {
-    src__painting__box_border: box_border
+    src__rendering__sliver_multi_box_adaptor: sliver_multi_box_adaptor
   };
 }));
 
-//# sourceMappingURL=box_border.dart.lib.js.map
+//# sourceMappingURL=sliver_multi_box_adaptor.dart.lib.js.map

@@ -1,689 +1,442 @@
-define(['dart_sdk', 'packages/flutter/src/painting/basic_types.dart'], (function load__packages__flutter__src__painting__edge_insets_dart(dart_sdk, packages__flutter__src__painting__basic_types$46dart) {
+define(['dart_sdk', 'packages/flutter/src/foundation/object.dart', 'packages/flutter/src/foundation/collections.dart', 'packages/flutter/src/foundation/debug.dart'], (function load__packages__flutter__src__painting__colors_dart(dart_sdk, packages__flutter__src__foundation__object$46dart, packages__flutter__src__foundation__collections$46dart, packages__flutter__src__foundation__debug$46dart) {
   'use strict';
   const core = dart_sdk.core;
+  const math = dart_sdk.math;
   const ui = dart_sdk.ui;
+  const _js_helper = dart_sdk._js_helper;
+  const _internal = dart_sdk._internal;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const basic_types = packages__flutter__src__painting__basic_types$46dart.src__painting__basic_types;
-  var edge_insets = Object.create(dart.library);
-  var $clamp = dartx.clamp;
-  var $toStringAsFixed = dartx.toStringAsFixed;
-  var $truncate = dartx.truncate;
-  var $toDouble = dartx.toDouble;
+  const object = packages__flutter__src__foundation__object$46dart.src__foundation__object;
+  const collections = packages__flutter__src__foundation__collections$46dart.src__foundation__collections;
+  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
+  var colors = Object.create(dart.library);
   var $modulo = dartx['%'];
+  var $abs = dartx.abs;
+  var $clamp = dartx.clamp;
+  var $_get = dartx._get;
+  var $runtimeType = dartx.runtimeType;
+  var $_set = dartx._set;
+  var $isNaN = dartx.isNaN;
+  var $round = dartx.round;
   dart._checkModuleNullSafetyMode(true);
+  var T = {
+    IdentityMapOfString$Object: () => (T.IdentityMapOfString$Object = dart.constFn(_js_helper.IdentityMap$(core.String, core.Object)))(),
+    VoidTodouble: () => (T.VoidTodouble = dart.constFn(dart.fnType(core.double, [])))(),
+    doubleTodynamic: () => (T.doubleTodynamic = dart.constFn(dart.fnType(dart.dynamic, [core.double])))()
+  };
   const CT = Object.create({
     _: () => (C, CT)
   });
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: basic_types.Axis.prototype,
-        [_name]: "Axis.horizontal",
-        index: 0
+        __proto__: diagnostics._NoDefaultValue.prototype
       });
     },
     get C1() {
       return C[1] = dart.const({
-        __proto__: basic_types.Axis.prototype,
-        [_name]: "Axis.vertical",
-        index: 1
+        __proto__: diagnostics.DiagnosticsTreeStyle.prototype,
+        [_name]: "DiagnosticsTreeStyle.singleLine",
+        index: 8
       });
     },
     get C2() {
       return C[2] = dart.const({
-        __proto__: edge_insets._MixedEdgeInsets.prototype,
-        [_MixedEdgeInsets__bottom]: 1 / 0,
-        [_MixedEdgeInsets__top]: 1 / 0,
-        [_MixedEdgeInsets__end]: 1 / 0,
-        [_MixedEdgeInsets__start]: 1 / 0,
-        [_MixedEdgeInsets__right]: 1 / 0,
-        [_MixedEdgeInsets__left]: 1 / 0
-      });
-    },
-    get C3() {
-      return C[3] = dart.const({
-        __proto__: edge_insets.EdgeInsets.prototype,
-        [bottom$]: 0,
-        [right$]: 0,
-        [top$]: 0,
-        [left$]: 0
-      });
-    },
-    get C4() {
-      return C[4] = dart.const({
-        __proto__: ui.TextDirection.prototype,
-        [_name$]: "TextDirection.rtl",
-        index: 0
-      });
-    },
-    get C5() {
-      return C[5] = dart.const({
-        __proto__: ui.TextDirection.prototype,
-        [_name$]: "TextDirection.ltr",
-        index: 1
-      });
-    },
-    get C6() {
-      return C[6] = dart.const({
-        __proto__: edge_insets.EdgeInsetsDirectional.prototype,
-        [bottom$0]: 0,
-        [end$]: 0,
-        [top$0]: 0,
-        [start$]: 0
+        __proto__: diagnostics.DiagnosticLevel.prototype,
+        [_name]: "DiagnosticLevel.info",
+        index: 3
       });
     }
   }, false);
-  var C = Array(7).fill(void 0);
+  var C = Array(3).fill(void 0);
   var I = [
-    "file:///C:/flutter_windows_2.2.1-stable/flutter/packages/flutter/lib/src/painting/edge_insets.dart",
-    "package:flutter/src/painting/edge_insets.dart"
+    "file:///C:/flutter_windows_2.2.1-stable/flutter/packages/flutter/lib/src/painting/colors.dart",
+    "package:flutter/src/painting/colors.dart"
   ];
-  var _left = dart.privateName(edge_insets, "_left");
-  var _right = dart.privateName(edge_insets, "_right");
-  var _start = dart.privateName(edge_insets, "_start");
-  var _end = dart.privateName(edge_insets, "_end");
-  var _top = dart.privateName(edge_insets, "_top");
-  var _bottom = dart.privateName(edge_insets, "_bottom");
-  var _name = dart.privateName(basic_types, "_name");
-  var _MixedEdgeInsets__bottom = dart.privateName(edge_insets, "_MixedEdgeInsets._bottom");
-  var _MixedEdgeInsets__top = dart.privateName(edge_insets, "_MixedEdgeInsets._top");
-  var _MixedEdgeInsets__end = dart.privateName(edge_insets, "_MixedEdgeInsets._end");
-  var _MixedEdgeInsets__start = dart.privateName(edge_insets, "_MixedEdgeInsets._start");
-  var _MixedEdgeInsets__right = dart.privateName(edge_insets, "_MixedEdgeInsets._right");
-  var _MixedEdgeInsets__left = dart.privateName(edge_insets, "_MixedEdgeInsets._left");
-  edge_insets.EdgeInsetsGeometry = class EdgeInsetsGeometry extends core.Object {
-    get isNonNegative() {
-      return this[_left] >= 0.0 && this[_right] >= 0.0 && this[_start] >= 0.0 && this[_end] >= 0.0 && this[_top] >= 0.0 && this[_bottom] >= 0.0;
+  var alpha$ = dart.privateName(colors, "HSVColor.alpha");
+  var hue$ = dart.privateName(colors, "HSVColor.hue");
+  var saturation$ = dart.privateName(colors, "HSVColor.saturation");
+  var value$ = dart.privateName(colors, "HSVColor.value");
+  var _scaleAlpha = dart.privateName(colors, "_scaleAlpha");
+  colors.HSVColor = class HSVColor extends core.Object {
+    get alpha() {
+      return this[alpha$];
     }
-    get horizontal() {
-      return this[_left] + this[_right] + this[_start] + this[_end];
+    set alpha(value) {
+      super.alpha = value;
     }
-    get vertical() {
-      return this[_top] + this[_bottom];
+    get hue() {
+      return this[hue$];
     }
-    along(axis) {
-      if (!(axis !== null)) dart.assertFailed(null, I[0], 68, 12, "axis != null");
-      switch (axis) {
-        case C[0] || CT.C0:
-        {
-          return this.horizontal;
-        }
-        case C[1] || CT.C1:
-        {
-          return this.vertical;
-        }
-      }
+    set hue(value) {
+      super.hue = value;
     }
-    get collapsedSize() {
-      return new ui.Size.new(this.horizontal, this.vertical);
+    get saturation() {
+      return this[saturation$];
     }
-    get flipped() {
-      return new edge_insets._MixedEdgeInsets.fromLRSETB(this[_right], this[_left], this[_end], this[_start], this[_bottom], this[_top]);
+    set saturation(value) {
+      super.saturation = value;
     }
-    inflateSize(size) {
-      return new ui.Size.new(size.width + this.horizontal, size.height + this.vertical);
+    get value() {
+      return this[value$];
     }
-    deflateSize(size) {
-      return new ui.Size.new(size.width - this.horizontal, size.height - this.vertical);
+    set value(value) {
+      super.value = value;
     }
-    subtract(other) {
-      return new edge_insets._MixedEdgeInsets.fromLRSETB(this[_left] - other[_left], this[_right] - other[_right], this[_start] - other[_start], this[_end] - other[_end], this[_top] - other[_top], this[_bottom] - other[_bottom]);
+    static fromColor(color) {
+      let red = color.red / 255;
+      let green = color.green / 255;
+      let blue = color.blue / 255;
+      let max = math.max(core.double, red, math.max(core.double, green, blue));
+      let min = math.min(core.double, red, math.min(core.double, green, blue));
+      let delta = max - min;
+      let alpha = color.alpha / 255;
+      let hue = colors._getHue(red, green, blue, max, delta);
+      let saturation = max === 0.0 ? 0.0 : delta / max;
+      return new colors.HSVColor.fromAHSV(alpha, hue, saturation, max);
     }
-    add(other) {
-      return new edge_insets._MixedEdgeInsets.fromLRSETB(this[_left] + other[_left], this[_right] + other[_right], this[_start] + other[_start], this[_end] + other[_end], this[_top] + other[_top], this[_bottom] + other[_bottom]);
+    withAlpha(alpha) {
+      return new colors.HSVColor.fromAHSV(alpha, this.hue, this.saturation, this.value);
     }
-    clamp(min, max) {
-      return new edge_insets._MixedEdgeInsets.fromLRSETB(this[_left][$clamp](min[_left], max[_left]), this[_right][$clamp](min[_right], max[_right]), this[_start][$clamp](min[_start], max[_start]), this[_end][$clamp](min[_end], max[_end]), this[_top][$clamp](min[_top], max[_top]), this[_bottom][$clamp](min[_bottom], max[_bottom]));
+    withHue(hue) {
+      return new colors.HSVColor.fromAHSV(this.alpha, hue, this.saturation, this.value);
+    }
+    withSaturation(saturation) {
+      return new colors.HSVColor.fromAHSV(this.alpha, this.hue, saturation, this.value);
+    }
+    withValue(value) {
+      return new colors.HSVColor.fromAHSV(this.alpha, this.hue, this.saturation, value);
+    }
+    toColor() {
+      let chroma = this.saturation * this.value;
+      let secondary = chroma * (1.0 - ((this.hue / 60.0)[$modulo](2.0) - 1.0)[$abs]());
+      let match = this.value - chroma;
+      return colors._colorFromHue(this.alpha, this.hue, chroma, secondary, match);
+    }
+    [_scaleAlpha](factor) {
+      return this.withAlpha(this.alpha * factor);
     }
     static lerp(a, b, t) {
-      if (!(t !== null)) dart.assertFailed(null, I[0], 220, 12, "t != null");
+      if (!(t !== null)) dart.assertFailed(null, I[0], 202, 12, "t != null");
       if (a == null && b == null) return null;
-      if (a == null) return dart.nullCheck(b)['*'](t);
-      if (b == null) return a['*'](1.0 - t);
-      if (edge_insets.EdgeInsets.is(a) && edge_insets.EdgeInsets.is(b)) return edge_insets.EdgeInsets.lerp(a, b, t);
-      if (edge_insets.EdgeInsetsDirectional.is(a) && edge_insets.EdgeInsetsDirectional.is(b)) return edge_insets.EdgeInsetsDirectional.lerp(a, b, t);
-      return new edge_insets._MixedEdgeInsets.fromLRSETB(dart.nullCheck(ui.lerpDouble(a[_left], b[_left], t)), dart.nullCheck(ui.lerpDouble(a[_right], b[_right], t)), dart.nullCheck(ui.lerpDouble(a[_start], b[_start], t)), dart.nullCheck(ui.lerpDouble(a[_end], b[_end], t)), dart.nullCheck(ui.lerpDouble(a[_top], b[_top], t)), dart.nullCheck(ui.lerpDouble(a[_bottom], b[_bottom], t)));
-    }
-    toString() {
-      if (this[_start] === 0.0 && this[_end] === 0.0) {
-        if (this[_left] === 0.0 && this[_right] === 0.0 && this[_top] === 0.0 && this[_bottom] === 0.0) return "EdgeInsets.zero";
-        if (this[_left] === this[_right] && this[_right] === this[_top] && this[_top] === this[_bottom]) return "EdgeInsets.all(" + this[_left][$toStringAsFixed](1) + ")";
-        return "EdgeInsets(" + this[_left][$toStringAsFixed](1) + ", " + this[_top][$toStringAsFixed](1) + ", " + this[_right][$toStringAsFixed](1) + ", " + this[_bottom][$toStringAsFixed](1) + ")";
-      }
-      if (this[_left] === 0.0 && this[_right] === 0.0) {
-        return "EdgeInsetsDirectional(" + this[_start][$toStringAsFixed](1) + ", " + this[_top][$toStringAsFixed](1) + ", " + this[_end][$toStringAsFixed](1) + ", " + this[_bottom][$toStringAsFixed](1) + ")";
-      }
-      return "EdgeInsets(" + this[_left][$toStringAsFixed](1) + ", " + this[_top][$toStringAsFixed](1) + ", " + this[_right][$toStringAsFixed](1) + ", " + this[_bottom][$toStringAsFixed](1) + ")" + " + " + "EdgeInsetsDirectional(" + this[_start][$toStringAsFixed](1) + ", " + "0.0, " + this[_end][$toStringAsFixed](1) + ", " + "0.0)";
+      if (a == null) return dart.nullCheck(b)[_scaleAlpha](t);
+      if (b == null) return a[_scaleAlpha](1.0 - t);
+      return new colors.HSVColor.fromAHSV(dart.nullCheck(ui.lerpDouble(a.alpha, b.alpha, t))[$clamp](0.0, 1.0), dart.nullCheck(ui.lerpDouble(a.hue, b.hue, t))[$modulo](360.0), dart.nullCheck(ui.lerpDouble(a.saturation, b.saturation, t))[$clamp](0.0, 1.0), dart.nullCheck(ui.lerpDouble(a.value, b.value, t))[$clamp](0.0, 1.0));
     }
     _equals(other) {
       if (other == null) return false;
-      return edge_insets.EdgeInsetsGeometry.is(other) && other[_left] === this[_left] && other[_right] === this[_right] && other[_start] === this[_start] && other[_end] === this[_end] && other[_top] === this[_top] && other[_bottom] === this[_bottom];
+      if (this === other) return true;
+      return colors.HSVColor.is(other) && other.alpha === this.alpha && other.hue === this.hue && other.saturation === this.saturation && other.value === this.value;
     }
     get hashCode() {
-      return ui.hashValues(this[_left], this[_right], this[_start], this[_end], this[_top], this[_bottom]);
+      return ui.hashValues(this.alpha, this.hue, this.saturation, this.value);
+    }
+    toString() {
+      return object.objectRuntimeType(this, "HSVColor") + "(" + dart.str(this.alpha) + ", " + dart.str(this.hue) + ", " + dart.str(this.saturation) + ", " + dart.str(this.value) + ")";
     }
   };
-  (edge_insets.EdgeInsetsGeometry.new = function() {
+  (colors.HSVColor.fromAHSV = function(alpha, hue, saturation, value) {
+    this[alpha$] = alpha;
+    this[hue$] = hue;
+    this[saturation$] = saturation;
+    this[value$] = value;
+    if (!(alpha !== null)) dart.assertFailed(null, I[0], 93, 14, "alpha != null");
+    if (!(hue !== null)) dart.assertFailed(null, I[0], 94, 14, "hue != null");
+    if (!(saturation !== null)) dart.assertFailed(null, I[0], 95, 14, "saturation != null");
+    if (!(value !== null)) dart.assertFailed(null, I[0], 96, 14, "value != null");
+    if (!(alpha >= 0.0)) dart.assertFailed(null, I[0], 97, 14, "alpha >= 0.0");
+    if (!(alpha <= 1.0)) dart.assertFailed(null, I[0], 98, 14, "alpha <= 1.0");
+    if (!(hue >= 0.0)) dart.assertFailed(null, I[0], 99, 14, "hue >= 0.0");
+    if (!(hue <= 360.0)) dart.assertFailed(null, I[0], 100, 14, "hue <= 360.0");
+    if (!(saturation >= 0.0)) dart.assertFailed(null, I[0], 101, 14, "saturation >= 0.0");
+    if (!(saturation <= 1.0)) dart.assertFailed(null, I[0], 102, 14, "saturation <= 1.0");
+    if (!(value >= 0.0)) dart.assertFailed(null, I[0], 103, 14, "value >= 0.0");
+    if (!(value <= 1.0)) dart.assertFailed(null, I[0], 104, 14, "value <= 1.0");
     ;
-  }).prototype = edge_insets.EdgeInsetsGeometry.prototype;
-  dart.addTypeTests(edge_insets.EdgeInsetsGeometry);
-  dart.addTypeCaches(edge_insets.EdgeInsetsGeometry);
-  dart.setMethodSignature(edge_insets.EdgeInsetsGeometry, () => ({
-    __proto__: dart.getMethods(edge_insets.EdgeInsetsGeometry.__proto__),
-    along: dart.fnType(core.double, [basic_types.Axis]),
-    inflateSize: dart.fnType(ui.Size, [ui.Size]),
-    deflateSize: dart.fnType(ui.Size, [ui.Size]),
-    subtract: dart.fnType(edge_insets.EdgeInsetsGeometry, [edge_insets.EdgeInsetsGeometry]),
-    add: dart.fnType(edge_insets.EdgeInsetsGeometry, [edge_insets.EdgeInsetsGeometry]),
-    clamp: dart.fnType(edge_insets.EdgeInsetsGeometry, [edge_insets.EdgeInsetsGeometry, edge_insets.EdgeInsetsGeometry])
+  }).prototype = colors.HSVColor.prototype;
+  dart.addTypeTests(colors.HSVColor);
+  dart.addTypeCaches(colors.HSVColor);
+  dart.setMethodSignature(colors.HSVColor, () => ({
+    __proto__: dart.getMethods(colors.HSVColor.__proto__),
+    withAlpha: dart.fnType(colors.HSVColor, [core.double]),
+    withHue: dart.fnType(colors.HSVColor, [core.double]),
+    withSaturation: dart.fnType(colors.HSVColor, [core.double]),
+    withValue: dart.fnType(colors.HSVColor, [core.double]),
+    toColor: dart.fnType(ui.Color, []),
+    [_scaleAlpha]: dart.fnType(colors.HSVColor, [core.double])
   }));
-  dart.setGetterSignature(edge_insets.EdgeInsetsGeometry, () => ({
-    __proto__: dart.getGetters(edge_insets.EdgeInsetsGeometry.__proto__),
-    isNonNegative: core.bool,
-    horizontal: core.double,
-    vertical: core.double,
-    collapsedSize: ui.Size,
-    flipped: edge_insets.EdgeInsetsGeometry
+  dart.setLibraryUri(colors.HSVColor, I[1]);
+  dart.setFieldSignature(colors.HSVColor, () => ({
+    __proto__: dart.getFields(colors.HSVColor.__proto__),
+    alpha: dart.finalFieldType(core.double),
+    hue: dart.finalFieldType(core.double),
+    saturation: dart.finalFieldType(core.double),
+    value: dart.finalFieldType(core.double)
   }));
-  dart.setLibraryUri(edge_insets.EdgeInsetsGeometry, I[1]);
-  dart.defineExtensionMethods(edge_insets.EdgeInsetsGeometry, ['toString', '_equals']);
-  dart.defineExtensionAccessors(edge_insets.EdgeInsetsGeometry, ['hashCode']);
-  dart.defineLazy(edge_insets.EdgeInsetsGeometry, {
-    /*edge_insets.EdgeInsetsGeometry.infinity*/get infinity() {
-      return C[2] || CT.C2;
+  dart.defineExtensionMethods(colors.HSVColor, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(colors.HSVColor, ['hashCode']);
+  var alpha$0 = dart.privateName(colors, "HSLColor.alpha");
+  var hue$0 = dart.privateName(colors, "HSLColor.hue");
+  var saturation$0 = dart.privateName(colors, "HSLColor.saturation");
+  var lightness$ = dart.privateName(colors, "HSLColor.lightness");
+  colors.HSLColor = class HSLColor extends core.Object {
+    get alpha() {
+      return this[alpha$0];
     }
-  }, false);
-  var left$ = dart.privateName(edge_insets, "EdgeInsets.left");
-  var top$ = dart.privateName(edge_insets, "EdgeInsets.top");
-  var right$ = dart.privateName(edge_insets, "EdgeInsets.right");
-  var bottom$ = dart.privateName(edge_insets, "EdgeInsets.bottom");
-  edge_insets.EdgeInsets = class EdgeInsets extends edge_insets.EdgeInsetsGeometry {
-    get left() {
-      return this[left$];
+    set alpha(value) {
+      super.alpha = value;
     }
-    set left(value) {
-      super.left = value;
+    get hue() {
+      return this[hue$0];
     }
-    get top() {
-      return this[top$];
+    set hue(value) {
+      super.hue = value;
     }
-    set top(value) {
-      super.top = value;
+    get saturation() {
+      return this[saturation$0];
     }
-    get right() {
-      return this[right$];
+    set saturation(value) {
+      super.saturation = value;
     }
-    set right(value) {
-      super.right = value;
+    get lightness() {
+      return this[lightness$];
     }
-    get bottom() {
-      return this[bottom$];
+    set lightness(value) {
+      super.lightness = value;
     }
-    set bottom(value) {
-      super.bottom = value;
+    static fromColor(color) {
+      let red = color.red / 255;
+      let green = color.green / 255;
+      let blue = color.blue / 255;
+      let max = math.max(core.double, red, math.max(core.double, green, blue));
+      let min = math.min(core.double, red, math.min(core.double, green, blue));
+      let delta = max - min;
+      let alpha = color.alpha / 255;
+      let hue = colors._getHue(red, green, blue, max, delta);
+      let lightness = (max + min) / 2.0;
+      let saturation = lightness === 1.0 ? 0.0 : (delta / (1.0 - (2.0 * lightness - 1.0)[$abs]()))[$clamp](0.0, 1.0);
+      return new colors.HSLColor.fromAHSL(alpha, hue, saturation, lightness);
     }
-    get [_left]() {
-      return this.left;
+    withAlpha(alpha) {
+      return new colors.HSLColor.fromAHSL(alpha, this.hue, this.saturation, this.lightness);
     }
-    get [_top]() {
-      return this.top;
+    withHue(hue) {
+      return new colors.HSLColor.fromAHSL(this.alpha, hue, this.saturation, this.lightness);
     }
-    get [_right]() {
-      return this.right;
+    withSaturation(saturation) {
+      return new colors.HSLColor.fromAHSL(this.alpha, this.hue, saturation, this.lightness);
     }
-    get [_bottom]() {
-      return this.bottom;
+    withLightness(lightness) {
+      return new colors.HSLColor.fromAHSL(this.alpha, this.hue, this.saturation, lightness);
     }
-    get [_start]() {
-      return 0.0;
+    toColor() {
+      let chroma = (1.0 - (2.0 * this.lightness - 1.0)[$abs]()) * this.saturation;
+      let secondary = chroma * (1.0 - ((this.hue / 60.0)[$modulo](2.0) - 1.0)[$abs]());
+      let match = this.lightness - chroma / 2.0;
+      return colors._colorFromHue(this.alpha, this.hue, chroma, secondary, match);
     }
-    get [_end]() {
-      return 0.0;
-    }
-    get topLeft() {
-      return new ui.Offset.new(this.left, this.top);
-    }
-    get topRight() {
-      return new ui.Offset.new(-this.right, this.top);
-    }
-    get bottomLeft() {
-      return new ui.Offset.new(this.left, -this.bottom);
-    }
-    get bottomRight() {
-      return new ui.Offset.new(-this.right, -this.bottom);
-    }
-    get flipped() {
-      return new edge_insets.EdgeInsets.fromLTRB(this.right, this.bottom, this.left, this.top);
-    }
-    inflateRect(rect) {
-      return new ui.Rect.fromLTRB(rect.left - this.left, rect.top - this.top, rect.right + this.right, rect.bottom + this.bottom);
-    }
-    deflateRect(rect) {
-      return new ui.Rect.fromLTRB(rect.left + this.left, rect.top + this.top, rect.right - this.right, rect.bottom - this.bottom);
-    }
-    subtract(other) {
-      if (edge_insets.EdgeInsets.is(other)) return this['-'](other);
-      return super.subtract(other);
-    }
-    add(other) {
-      if (edge_insets.EdgeInsets.is(other)) return this['+'](other);
-      return super.add(other);
-    }
-    clamp(min, max) {
-      return new edge_insets.EdgeInsets.fromLTRB(this[_left][$clamp](min[_left], max[_left]), this[_top][$clamp](min[_top], max[_top]), this[_right][$clamp](min[_right], max[_right]), this[_bottom][$clamp](min[_bottom], max[_bottom]));
-    }
-    ['-'](other) {
-      return new edge_insets.EdgeInsets.fromLTRB(this.left - other.left, this.top - other.top, this.right - other.right, this.bottom - other.bottom);
-    }
-    ['+'](other) {
-      return new edge_insets.EdgeInsets.fromLTRB(this.left + other.left, this.top + other.top, this.right + other.right, this.bottom + other.bottom);
-    }
-    _negate() {
-      return new edge_insets.EdgeInsets.fromLTRB(-this.left, -this.top, -this.right, -this.bottom);
-    }
-    ['*'](other) {
-      return new edge_insets.EdgeInsets.fromLTRB(this.left * other, this.top * other, this.right * other, this.bottom * other);
-    }
-    ['/'](other) {
-      return new edge_insets.EdgeInsets.fromLTRB(this.left / other, this.top / other, this.right / other, this.bottom / other);
-    }
-    ['~/'](other) {
-      return new edge_insets.EdgeInsets.fromLTRB((this.left / other)[$truncate]()[$toDouble](), (this.top / other)[$truncate]()[$toDouble](), (this.right / other)[$truncate]()[$toDouble](), (this.bottom / other)[$truncate]()[$toDouble]());
-    }
-    ['%'](other) {
-      return new edge_insets.EdgeInsets.fromLTRB(this.left[$modulo](other), this.top[$modulo](other), this.right[$modulo](other), this.bottom[$modulo](other));
+    [_scaleAlpha](factor) {
+      return this.withAlpha(this.alpha * factor);
     }
     static lerp(a, b, t) {
-      if (!(t !== null)) dart.assertFailed(null, I[0], 599, 12, "t != null");
+      if (!(t !== null)) dart.assertFailed(null, I[0], 386, 12, "t != null");
       if (a == null && b == null) return null;
-      if (a == null) return dart.nullCheck(b)['*'](t);
-      if (b == null) return a['*'](1.0 - t);
-      return new edge_insets.EdgeInsets.fromLTRB(dart.nullCheck(ui.lerpDouble(a.left, b.left, t)), dart.nullCheck(ui.lerpDouble(a.top, b.top, t)), dart.nullCheck(ui.lerpDouble(a.right, b.right, t)), dart.nullCheck(ui.lerpDouble(a.bottom, b.bottom, t)));
+      if (a == null) return dart.nullCheck(b)[_scaleAlpha](t);
+      if (b == null) return a[_scaleAlpha](1.0 - t);
+      return new colors.HSLColor.fromAHSL(dart.nullCheck(ui.lerpDouble(a.alpha, b.alpha, t))[$clamp](0.0, 1.0), dart.nullCheck(ui.lerpDouble(a.hue, b.hue, t))[$modulo](360.0), dart.nullCheck(ui.lerpDouble(a.saturation, b.saturation, t))[$clamp](0.0, 1.0), dart.nullCheck(ui.lerpDouble(a.lightness, b.lightness, t))[$clamp](0.0, 1.0));
     }
-    resolve(direction) {
-      return this;
+    _equals(other) {
+      if (other == null) return false;
+      if (this === other) return true;
+      return colors.HSLColor.is(other) && other.alpha === this.alpha && other.hue === this.hue && other.saturation === this.saturation && other.lightness === this.lightness;
     }
-    copyWith(opts) {
-      let t0, t0$, t0$0, t0$1;
-      let left = opts && 'left' in opts ? opts.left : null;
-      let top = opts && 'top' in opts ? opts.top : null;
-      let right = opts && 'right' in opts ? opts.right : null;
-      let bottom = opts && 'bottom' in opts ? opts.bottom : null;
-      return new edge_insets.EdgeInsets.only({left: (t0 = left, t0 == null ? this.left : t0), top: (t0$ = top, t0$ == null ? this.top : t0$), right: (t0$0 = right, t0$0 == null ? this.right : t0$0), bottom: (t0$1 = bottom, t0$1 == null ? this.bottom : t0$1)});
+    get hashCode() {
+      return ui.hashValues(this.alpha, this.hue, this.saturation, this.lightness);
+    }
+    toString() {
+      return object.objectRuntimeType(this, "HSLColor") + "(" + dart.str(this.alpha) + ", " + dart.str(this.hue) + ", " + dart.str(this.saturation) + ", " + dart.str(this.lightness) + ")";
     }
   };
-  (edge_insets.EdgeInsets.fromLTRB = function(left, top, right, bottom) {
-    this[left$] = left;
-    this[top$] = top;
-    this[right$] = right;
-    this[bottom$] = bottom;
-    edge_insets.EdgeInsets.__proto__.new.call(this);
+  (colors.HSLColor.fromAHSL = function(alpha, hue, saturation, lightness) {
+    this[alpha$0] = alpha;
+    this[hue$0] = hue;
+    this[saturation$0] = saturation;
+    this[lightness$] = lightness;
+    if (!(alpha !== null)) dart.assertFailed(null, I[0], 262, 14, "alpha != null");
+    if (!(hue !== null)) dart.assertFailed(null, I[0], 263, 14, "hue != null");
+    if (!(saturation !== null)) dart.assertFailed(null, I[0], 264, 14, "saturation != null");
+    if (!(lightness !== null)) dart.assertFailed(null, I[0], 265, 14, "lightness != null");
+    if (!(alpha >= 0.0)) dart.assertFailed(null, I[0], 266, 14, "alpha >= 0.0");
+    if (!(alpha <= 1.0)) dart.assertFailed(null, I[0], 267, 14, "alpha <= 1.0");
+    if (!(hue >= 0.0)) dart.assertFailed(null, I[0], 268, 14, "hue >= 0.0");
+    if (!(hue <= 360.0)) dart.assertFailed(null, I[0], 269, 14, "hue <= 360.0");
+    if (!(saturation >= 0.0)) dart.assertFailed(null, I[0], 270, 14, "saturation >= 0.0");
+    if (!(saturation <= 1.0)) dart.assertFailed(null, I[0], 271, 14, "saturation <= 1.0");
+    if (!(lightness >= 0.0)) dart.assertFailed(null, I[0], 272, 14, "lightness >= 0.0");
+    if (!(lightness <= 1.0)) dart.assertFailed(null, I[0], 273, 14, "lightness <= 1.0");
     ;
-  }).prototype = edge_insets.EdgeInsets.prototype;
-  (edge_insets.EdgeInsets.all = function(value) {
-    this[left$] = value;
-    this[top$] = value;
-    this[right$] = value;
-    this[bottom$] = value;
-    edge_insets.EdgeInsets.__proto__.new.call(this);
-    ;
-  }).prototype = edge_insets.EdgeInsets.prototype;
-  (edge_insets.EdgeInsets.only = function(opts) {
-    let left = opts && 'left' in opts ? opts.left : 0;
-    let top = opts && 'top' in opts ? opts.top : 0;
-    let right = opts && 'right' in opts ? opts.right : 0;
-    let bottom = opts && 'bottom' in opts ? opts.bottom : 0;
-    this[left$] = left;
-    this[top$] = top;
-    this[right$] = right;
-    this[bottom$] = bottom;
-    edge_insets.EdgeInsets.__proto__.new.call(this);
-    ;
-  }).prototype = edge_insets.EdgeInsets.prototype;
-  (edge_insets.EdgeInsets.symmetric = function(opts) {
-    let vertical = opts && 'vertical' in opts ? opts.vertical : 0;
-    let horizontal = opts && 'horizontal' in opts ? opts.horizontal : 0;
-    this[left$] = horizontal;
-    this[top$] = vertical;
-    this[right$] = horizontal;
-    this[bottom$] = vertical;
-    edge_insets.EdgeInsets.__proto__.new.call(this);
-    ;
-  }).prototype = edge_insets.EdgeInsets.prototype;
-  (edge_insets.EdgeInsets.fromWindowPadding = function(padding, devicePixelRatio) {
-    this[left$] = padding.left / devicePixelRatio;
-    this[top$] = padding.top / devicePixelRatio;
-    this[right$] = padding.right / devicePixelRatio;
-    this[bottom$] = padding.bottom / devicePixelRatio;
-    edge_insets.EdgeInsets.__proto__.new.call(this);
-    ;
-  }).prototype = edge_insets.EdgeInsets.prototype;
-  dart.addTypeTests(edge_insets.EdgeInsets);
-  dart.addTypeCaches(edge_insets.EdgeInsets);
-  dart.setMethodSignature(edge_insets.EdgeInsets, () => ({
-    __proto__: dart.getMethods(edge_insets.EdgeInsets.__proto__),
-    inflateRect: dart.fnType(ui.Rect, [ui.Rect]),
-    deflateRect: dart.fnType(ui.Rect, [ui.Rect]),
-    '-': dart.fnType(edge_insets.EdgeInsets, [edge_insets.EdgeInsets]),
-    '+': dart.fnType(edge_insets.EdgeInsets, [edge_insets.EdgeInsets]),
-    _negate: dart.fnType(edge_insets.EdgeInsets, []),
-    '*': dart.fnType(edge_insets.EdgeInsets, [core.double]),
-    '/': dart.fnType(edge_insets.EdgeInsets, [core.double]),
-    '~/': dart.fnType(edge_insets.EdgeInsets, [core.double]),
-    '%': dart.fnType(edge_insets.EdgeInsets, [core.double]),
-    resolve: dart.fnType(edge_insets.EdgeInsets, [dart.nullable(ui.TextDirection)]),
-    copyWith: dart.fnType(edge_insets.EdgeInsets, [], {bottom: dart.nullable(core.double), left: dart.nullable(core.double), right: dart.nullable(core.double), top: dart.nullable(core.double)}, {})
+  }).prototype = colors.HSLColor.prototype;
+  dart.addTypeTests(colors.HSLColor);
+  dart.addTypeCaches(colors.HSLColor);
+  dart.setMethodSignature(colors.HSLColor, () => ({
+    __proto__: dart.getMethods(colors.HSLColor.__proto__),
+    withAlpha: dart.fnType(colors.HSLColor, [core.double]),
+    withHue: dart.fnType(colors.HSLColor, [core.double]),
+    withSaturation: dart.fnType(colors.HSLColor, [core.double]),
+    withLightness: dart.fnType(colors.HSLColor, [core.double]),
+    toColor: dart.fnType(ui.Color, []),
+    [_scaleAlpha]: dart.fnType(colors.HSLColor, [core.double])
   }));
-  dart.setGetterSignature(edge_insets.EdgeInsets, () => ({
-    __proto__: dart.getGetters(edge_insets.EdgeInsets.__proto__),
-    [_left]: core.double,
-    [_top]: core.double,
-    [_right]: core.double,
-    [_bottom]: core.double,
-    [_start]: core.double,
-    [_end]: core.double,
-    topLeft: ui.Offset,
-    topRight: ui.Offset,
-    bottomLeft: ui.Offset,
-    bottomRight: ui.Offset,
-    flipped: edge_insets.EdgeInsets
+  dart.setLibraryUri(colors.HSLColor, I[1]);
+  dart.setFieldSignature(colors.HSLColor, () => ({
+    __proto__: dart.getFields(colors.HSLColor.__proto__),
+    alpha: dart.finalFieldType(core.double),
+    hue: dart.finalFieldType(core.double),
+    saturation: dart.finalFieldType(core.double),
+    lightness: dart.finalFieldType(core.double)
   }));
-  dart.setLibraryUri(edge_insets.EdgeInsets, I[1]);
-  dart.setFieldSignature(edge_insets.EdgeInsets, () => ({
-    __proto__: dart.getFields(edge_insets.EdgeInsets.__proto__),
-    left: dart.finalFieldType(core.double),
-    top: dart.finalFieldType(core.double),
-    right: dart.finalFieldType(core.double),
-    bottom: dart.finalFieldType(core.double)
-  }));
-  dart.defineLazy(edge_insets.EdgeInsets, {
-    /*edge_insets.EdgeInsets.zero*/get zero() {
-      return C[3] || CT.C3;
-    }
-  }, false);
-  var start$ = dart.privateName(edge_insets, "EdgeInsetsDirectional.start");
-  var top$0 = dart.privateName(edge_insets, "EdgeInsetsDirectional.top");
-  var end$ = dart.privateName(edge_insets, "EdgeInsetsDirectional.end");
-  var bottom$0 = dart.privateName(edge_insets, "EdgeInsetsDirectional.bottom");
-  var _name$ = dart.privateName(ui, "_name");
-  edge_insets.EdgeInsetsDirectional = class EdgeInsetsDirectional extends edge_insets.EdgeInsetsGeometry {
-    get start() {
-      return this[start$];
-    }
-    set start(value) {
-      super.start = value;
-    }
-    get top() {
-      return this[top$0];
-    }
-    set top(value) {
-      super.top = value;
-    }
-    get end() {
-      return this[end$];
-    }
-    set end(value) {
-      super.end = value;
-    }
-    get bottom() {
-      return this[bottom$0];
-    }
-    set bottom(value) {
-      super.bottom = value;
-    }
-    get [_start]() {
-      return this.start;
-    }
-    get [_top]() {
-      return this.top;
-    }
-    get [_end]() {
-      return this.end;
-    }
-    get [_bottom]() {
-      return this.bottom;
-    }
-    get [_left]() {
-      return 0.0;
-    }
-    get [_right]() {
-      return 0.0;
-    }
-    get isNonNegative() {
-      return this.start >= 0.0 && this.top >= 0.0 && this.end >= 0.0 && this.bottom >= 0.0;
-    }
-    get flipped() {
-      return new edge_insets.EdgeInsetsDirectional.fromSTEB(this.end, this.bottom, this.start, this.top);
-    }
-    subtract(other) {
-      if (edge_insets.EdgeInsetsDirectional.is(other)) return this['-'](other);
-      return super.subtract(other);
-    }
-    add(other) {
-      if (edge_insets.EdgeInsetsDirectional.is(other)) return this['+'](other);
-      return super.add(other);
-    }
-    ['-'](other) {
-      return new edge_insets.EdgeInsetsDirectional.fromSTEB(this.start - other.start, this.top - other.top, this.end - other.end, this.bottom - other.bottom);
-    }
-    ['+'](other) {
-      return new edge_insets.EdgeInsetsDirectional.fromSTEB(this.start + other.start, this.top + other.top, this.end + other.end, this.bottom + other.bottom);
-    }
-    _negate() {
-      return new edge_insets.EdgeInsetsDirectional.fromSTEB(-this.start, -this.top, -this.end, -this.bottom);
-    }
-    ['*'](other) {
-      return new edge_insets.EdgeInsetsDirectional.fromSTEB(this.start * other, this.top * other, this.end * other, this.bottom * other);
-    }
-    ['/'](other) {
-      return new edge_insets.EdgeInsetsDirectional.fromSTEB(this.start / other, this.top / other, this.end / other, this.bottom / other);
-    }
-    ['~/'](other) {
-      return new edge_insets.EdgeInsetsDirectional.fromSTEB((this.start / other)[$truncate]()[$toDouble](), (this.top / other)[$truncate]()[$toDouble](), (this.end / other)[$truncate]()[$toDouble](), (this.bottom / other)[$truncate]()[$toDouble]());
-    }
-    ['%'](other) {
-      return new edge_insets.EdgeInsetsDirectional.fromSTEB(this.start[$modulo](other), this.top[$modulo](other), this.end[$modulo](other), this.bottom[$modulo](other));
-    }
-    static lerp(a, b, t) {
-      if (!(t !== null)) dart.assertFailed(null, I[0], 840, 12, "t != null");
-      if (a == null && b == null) return null;
-      if (a == null) return dart.nullCheck(b)['*'](t);
-      if (b == null) return a['*'](1.0 - t);
-      return new edge_insets.EdgeInsetsDirectional.fromSTEB(dart.nullCheck(ui.lerpDouble(a.start, b.start, t)), dart.nullCheck(ui.lerpDouble(a.top, b.top, t)), dart.nullCheck(ui.lerpDouble(a.end, b.end, t)), dart.nullCheck(ui.lerpDouble(a.bottom, b.bottom, t)));
-    }
-    resolve(direction) {
-      if (!(direction != null)) dart.assertFailed(null, I[0], 857, 12, "direction != null");
-      switch (dart.nullCheck(direction)) {
-        case C[4] || CT.C4:
-        {
-          return new edge_insets.EdgeInsets.fromLTRB(this.end, this.top, this.start, this.bottom);
-        }
-        case C[5] || CT.C5:
-        {
-          return new edge_insets.EdgeInsets.fromLTRB(this.start, this.top, this.end, this.bottom);
-        }
+  dart.defineExtensionMethods(colors.HSLColor, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(colors.HSLColor, ['hashCode']);
+  var _swatch$ = dart.privateName(colors, "ColorSwatch._swatch");
+  var _swatch = dart.privateName(colors, "_swatch");
+  const _is_ColorSwatch_default = Symbol('_is_ColorSwatch_default');
+  colors.ColorSwatch$ = dart.generic(T => {
+    var ColorSwatchOfT = () => (ColorSwatchOfT = dart.constFn(colors.ColorSwatch$(T)))();
+    class ColorSwatch extends ui.Color {
+      get [_swatch]() {
+        return this[_swatch$];
+      }
+      set [_swatch](value) {
+        super[_swatch] = value;
+      }
+      _get(index) {
+        T.as(index);
+        return this[_swatch][$_get](index);
+      }
+      _equals(other) {
+        if (other == null) return false;
+        if (this === other) return true;
+        if (!other[$runtimeType]._equals(this[$runtimeType])) return false;
+        return super._equals(other) && ColorSwatchOfT().is(other) && collections.mapEquals(T, ui.Color, other[_swatch], this[_swatch]);
+      }
+      get hashCode() {
+        return ui.hashValues(this[$runtimeType], this.value, this[_swatch]);
+      }
+      toString() {
+        return object.objectRuntimeType(this, "ColorSwatch") + "(primary value: " + super.toString() + ")";
       }
     }
-  };
-  (edge_insets.EdgeInsetsDirectional.fromSTEB = function(start, top, end, bottom) {
-    this[start$] = start;
-    this[top$0] = top;
-    this[end$] = end;
-    this[bottom$0] = bottom;
-    edge_insets.EdgeInsetsDirectional.__proto__.new.call(this);
-    ;
-  }).prototype = edge_insets.EdgeInsetsDirectional.prototype;
-  (edge_insets.EdgeInsetsDirectional.only = function(opts) {
-    let start = opts && 'start' in opts ? opts.start : 0;
-    let top = opts && 'top' in opts ? opts.top : 0;
-    let end = opts && 'end' in opts ? opts.end : 0;
-    let bottom = opts && 'bottom' in opts ? opts.bottom : 0;
-    this[start$] = start;
-    this[top$0] = top;
-    this[end$] = end;
-    this[bottom$0] = bottom;
-    edge_insets.EdgeInsetsDirectional.__proto__.new.call(this);
-    ;
-  }).prototype = edge_insets.EdgeInsetsDirectional.prototype;
-  (edge_insets.EdgeInsetsDirectional.all = function(value) {
-    this[start$] = value;
-    this[top$0] = value;
-    this[end$] = value;
-    this[bottom$0] = value;
-    edge_insets.EdgeInsetsDirectional.__proto__.new.call(this);
-    ;
-  }).prototype = edge_insets.EdgeInsetsDirectional.prototype;
-  dart.addTypeTests(edge_insets.EdgeInsetsDirectional);
-  dart.addTypeCaches(edge_insets.EdgeInsetsDirectional);
-  dart.setMethodSignature(edge_insets.EdgeInsetsDirectional, () => ({
-    __proto__: dart.getMethods(edge_insets.EdgeInsetsDirectional.__proto__),
-    '-': dart.fnType(edge_insets.EdgeInsetsDirectional, [edge_insets.EdgeInsetsDirectional]),
-    '+': dart.fnType(edge_insets.EdgeInsetsDirectional, [edge_insets.EdgeInsetsDirectional]),
-    _negate: dart.fnType(edge_insets.EdgeInsetsDirectional, []),
-    '*': dart.fnType(edge_insets.EdgeInsetsDirectional, [core.double]),
-    '/': dart.fnType(edge_insets.EdgeInsetsDirectional, [core.double]),
-    '~/': dart.fnType(edge_insets.EdgeInsetsDirectional, [core.double]),
-    '%': dart.fnType(edge_insets.EdgeInsetsDirectional, [core.double]),
-    resolve: dart.fnType(edge_insets.EdgeInsets, [dart.nullable(ui.TextDirection)])
-  }));
-  dart.setGetterSignature(edge_insets.EdgeInsetsDirectional, () => ({
-    __proto__: dart.getGetters(edge_insets.EdgeInsetsDirectional.__proto__),
-    [_start]: core.double,
-    [_top]: core.double,
-    [_end]: core.double,
-    [_bottom]: core.double,
-    [_left]: core.double,
-    [_right]: core.double,
-    flipped: edge_insets.EdgeInsetsDirectional
-  }));
-  dart.setLibraryUri(edge_insets.EdgeInsetsDirectional, I[1]);
-  dart.setFieldSignature(edge_insets.EdgeInsetsDirectional, () => ({
-    __proto__: dart.getFields(edge_insets.EdgeInsetsDirectional.__proto__),
-    start: dart.finalFieldType(core.double),
-    top: dart.finalFieldType(core.double),
-    end: dart.finalFieldType(core.double),
-    bottom: dart.finalFieldType(core.double)
-  }));
-  dart.defineLazy(edge_insets.EdgeInsetsDirectional, {
-    /*edge_insets.EdgeInsetsDirectional.zero*/get zero() {
-      return C[6] || CT.C6;
-    }
-  }, false);
-  const _left$ = _MixedEdgeInsets__left;
-  const _right$ = _MixedEdgeInsets__right;
-  const _start$ = _MixedEdgeInsets__start;
-  const _end$ = _MixedEdgeInsets__end;
-  const _top$ = _MixedEdgeInsets__top;
-  const _bottom$ = _MixedEdgeInsets__bottom;
-  edge_insets._MixedEdgeInsets = class _MixedEdgeInsets extends edge_insets.EdgeInsetsGeometry {
-    get [_left]() {
-      return this[_left$];
-    }
-    set [_left](value) {
-      super[_left] = value;
-    }
-    get [_right]() {
-      return this[_right$];
-    }
-    set [_right](value) {
-      super[_right] = value;
-    }
-    get [_start]() {
-      return this[_start$];
-    }
-    set [_start](value) {
-      super[_start] = value;
-    }
-    get [_end]() {
-      return this[_end$];
-    }
-    set [_end](value) {
-      super[_end] = value;
-    }
-    get [_top]() {
-      return this[_top$];
-    }
-    set [_top](value) {
-      super[_top] = value;
-    }
-    get [_bottom]() {
-      return this[_bottom$];
-    }
-    set [_bottom](value) {
-      super[_bottom] = value;
-    }
-    get isNonNegative() {
-      return this[_left] >= 0.0 && this[_right] >= 0.0 && this[_start] >= 0.0 && this[_end] >= 0.0 && this[_top] >= 0.0 && this[_bottom] >= 0.0;
-    }
-    _negate() {
-      return new edge_insets._MixedEdgeInsets.fromLRSETB(-this[_left], -this[_right], -this[_start], -this[_end], -this[_top], -this[_bottom]);
-    }
-    ['*'](other) {
-      return new edge_insets._MixedEdgeInsets.fromLRSETB(this[_left] * other, this[_right] * other, this[_start] * other, this[_end] * other, this[_top] * other, this[_bottom] * other);
-    }
-    ['/'](other) {
-      return new edge_insets._MixedEdgeInsets.fromLRSETB(this[_left] / other, this[_right] / other, this[_start] / other, this[_end] / other, this[_top] / other, this[_bottom] / other);
-    }
-    ['~/'](other) {
-      return new edge_insets._MixedEdgeInsets.fromLRSETB((this[_left] / other)[$truncate]()[$toDouble](), (this[_right] / other)[$truncate]()[$toDouble](), (this[_start] / other)[$truncate]()[$toDouble](), (this[_end] / other)[$truncate]()[$toDouble](), (this[_top] / other)[$truncate]()[$toDouble](), (this[_bottom] / other)[$truncate]()[$toDouble]());
-    }
-    ['%'](other) {
-      return new edge_insets._MixedEdgeInsets.fromLRSETB(this[_left][$modulo](other), this[_right][$modulo](other), this[_start][$modulo](other), this[_end][$modulo](other), this[_top][$modulo](other), this[_bottom][$modulo](other));
-    }
-    resolve(direction) {
-      if (!(direction != null)) dart.assertFailed(null, I[0], 960, 12, "direction != null");
-      switch (dart.nullCheck(direction)) {
-        case C[4] || CT.C4:
-        {
-          return new edge_insets.EdgeInsets.fromLTRB(this[_end] + this[_left], this[_top], this[_start] + this[_right], this[_bottom]);
-        }
-        case C[5] || CT.C5:
-        {
-          return new edge_insets.EdgeInsets.fromLTRB(this[_start] + this[_left], this[_top], this[_end] + this[_right], this[_bottom]);
-        }
+    (ColorSwatch.new = function(primary, _swatch) {
+      this[_swatch$] = _swatch;
+      ColorSwatch.__proto__.new.call(this, primary);
+      ;
+    }).prototype = ColorSwatch.prototype;
+    dart.addTypeTests(ColorSwatch);
+    ColorSwatch.prototype[_is_ColorSwatch_default] = true;
+    dart.addTypeCaches(ColorSwatch);
+    dart.setMethodSignature(ColorSwatch, () => ({
+      __proto__: dart.getMethods(ColorSwatch.__proto__),
+      _get: dart.fnType(dart.nullable(ui.Color), [dart.nullable(core.Object)])
+    }));
+    dart.setLibraryUri(ColorSwatch, I[1]);
+    dart.setFieldSignature(ColorSwatch, () => ({
+      __proto__: dart.getFields(ColorSwatch.__proto__),
+      [_swatch]: dart.finalFieldType(core.Map$(T, ui.Color))
+    }));
+    dart.defineExtensionMethods(ColorSwatch, ['_equals', 'toString']);
+    dart.defineExtensionAccessors(ColorSwatch, ['hashCode']);
+    return ColorSwatch;
+  });
+  colors.ColorSwatch = colors.ColorSwatch$();
+  dart.addTypeTests(colors.ColorSwatch, _is_ColorSwatch_default);
+  var _name = dart.privateName(diagnostics, "_name");
+  colors.ColorProperty = class ColorProperty extends diagnostics.DiagnosticsProperty$(ui.Color) {
+    toJsonMap(delegate) {
+      let json = super.toJsonMap(delegate);
+      if (this.value != null) {
+        json[$_set]("valueProperties", new (T.IdentityMapOfString$Object()).from(["red", dart.nullCheck(this.value).red, "green", dart.nullCheck(this.value).green, "blue", dart.nullCheck(this.value).blue, "alpha", dart.nullCheck(this.value).alpha]));
       }
+      return json;
     }
   };
-  (edge_insets._MixedEdgeInsets.fromLRSETB = function(_left, _right, _start, _end, _top, _bottom) {
-    this[_left$] = _left;
-    this[_right$] = _right;
-    this[_start$] = _start;
-    this[_end$] = _end;
-    this[_top$] = _top;
-    this[_bottom$] = _bottom;
-    edge_insets._MixedEdgeInsets.__proto__.new.call(this);
+  (colors.ColorProperty.new = function(name, value, opts) {
+    let showName = opts && 'showName' in opts ? opts.showName : true;
+    let defaultValue = opts && 'defaultValue' in opts ? opts.defaultValue : C[0] || CT.C0;
+    let style = opts && 'style' in opts ? opts.style : C[1] || CT.C1;
+    let level = opts && 'level' in opts ? opts.level : C[2] || CT.C2;
+    if (!(showName !== null)) dart.assertFailed(null, I[0], 475, 15, "showName != null");
+    if (!(style !== null)) dart.assertFailed(null, I[0], 476, 15, "style != null");
+    if (!(level !== null)) dart.assertFailed(null, I[0], 477, 15, "level != null");
+    colors.ColorProperty.__proto__.new.call(this, name, value, {defaultValue: defaultValue, showName: showName, style: style, level: level});
     ;
-  }).prototype = edge_insets._MixedEdgeInsets.prototype;
-  dart.addTypeTests(edge_insets._MixedEdgeInsets);
-  dart.addTypeCaches(edge_insets._MixedEdgeInsets);
-  dart.setMethodSignature(edge_insets._MixedEdgeInsets, () => ({
-    __proto__: dart.getMethods(edge_insets._MixedEdgeInsets.__proto__),
-    _negate: dart.fnType(edge_insets._MixedEdgeInsets, []),
-    '*': dart.fnType(edge_insets._MixedEdgeInsets, [core.double]),
-    '/': dart.fnType(edge_insets._MixedEdgeInsets, [core.double]),
-    '~/': dart.fnType(edge_insets._MixedEdgeInsets, [core.double]),
-    '%': dart.fnType(edge_insets._MixedEdgeInsets, [core.double]),
-    resolve: dart.fnType(edge_insets.EdgeInsets, [dart.nullable(ui.TextDirection)])
-  }));
-  dart.setLibraryUri(edge_insets._MixedEdgeInsets, I[1]);
-  dart.setFieldSignature(edge_insets._MixedEdgeInsets, () => ({
-    __proto__: dart.getFields(edge_insets._MixedEdgeInsets.__proto__),
-    [_left]: dart.finalFieldType(core.double),
-    [_right]: dart.finalFieldType(core.double),
-    [_start]: dart.finalFieldType(core.double),
-    [_end]: dart.finalFieldType(core.double),
-    [_top]: dart.finalFieldType(core.double),
-    [_bottom]: dart.finalFieldType(core.double)
-  }));
-  dart.trackLibraries("packages/flutter/src/painting/edge_insets.dart", {
-    "package:flutter/src/painting/edge_insets.dart": edge_insets
+  }).prototype = colors.ColorProperty.prototype;
+  dart.addTypeTests(colors.ColorProperty);
+  dart.addTypeCaches(colors.ColorProperty);
+  dart.setLibraryUri(colors.ColorProperty, I[1]);
+  colors._getHue = function _getHue(red, green, blue, max, delta) {
+    let hue = null;
+    function hue$35get() {
+      let t1;
+      t1 = hue;
+      return t1 == null ? dart.throw(new _internal.LateError.localNI("hue")) : t1;
+    }
+    dart.fn(hue$35get, T.VoidTodouble());
+    function hue$35set(t2) {
+      return hue = t2;
+    }
+    dart.fn(hue$35set, T.doubleTodynamic());
+    if (max === 0.0) {
+      hue$35set(0.0);
+    } else if (max === red) {
+      hue$35set(60.0 * ((green - blue) / delta)[$modulo](6));
+    } else if (max === green) {
+      hue$35set(60.0 * ((blue - red) / delta + 2));
+    } else if (max === blue) {
+      hue$35set(60.0 * ((red - green) / delta + 4));
+    }
+    hue$35set(hue$35get()[$isNaN] ? 0.0 : hue$35get());
+    return hue$35get();
+  };
+  colors._colorFromHue = function _colorFromHue(alpha, hue, chroma, secondary, match) {
+    let red = null;
+    let green = null;
+    let blue = null;
+    if (hue < 60.0) {
+      red = chroma;
+      green = secondary;
+      blue = 0.0;
+    } else if (hue < 120.0) {
+      red = secondary;
+      green = chroma;
+      blue = 0.0;
+    } else if (hue < 180.0) {
+      red = 0.0;
+      green = chroma;
+      blue = secondary;
+    } else if (hue < 240.0) {
+      red = 0.0;
+      green = secondary;
+      blue = chroma;
+    } else if (hue < 300.0) {
+      red = secondary;
+      green = 0.0;
+      blue = chroma;
+    } else {
+      red = chroma;
+      green = 0.0;
+      blue = secondary;
+    }
+    return new ui.Color.fromARGB((alpha * 255)[$round](), ((red + match) * 255)[$round](), ((green + match) * 255)[$round](), ((blue + match) * 255)[$round]());
+  };
+  dart.trackLibraries("packages/flutter/src/painting/colors.dart", {
+    "package:flutter/src/painting/colors.dart": colors
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["edge_insets.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/painting/edge_insets.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["colors.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/painting/colors.dart.lib.js"}');
   // Exports:
   return {
-    src__painting__edge_insets: edge_insets
+    src__painting__colors: colors
   };
 }));
 
-//# sourceMappingURL=edge_insets.dart.lib.js.map
+//# sourceMappingURL=colors.dart.lib.js.map
