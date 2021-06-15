@@ -228,57 +228,68 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            new RaisedButton(
-              child: text2,
-              color: Colors.blueGrey,
-              padding: const EdgeInsets.all(20.0),
-              onPressed: switchPlayer,
-            ),
-            Row(
-              children: [
-                Padding(padding: const EdgeInsets.all(2.0)),
-                Container(
-                  child: new FlatButton(
-                    child: new Text(
-                      "Select the player 1's Symbol :",
-                      style: new TextStyle(color: Colors.black, fontSize: 15.0),
-                    ),
-                    color: Colors.grey,
-                    padding: const EdgeInsets.all(20.0),
-                    onPressed: () {},
-                  ),
-                ),
-                Container(
-                  child: new RaisedButton(
-                    child: new Text("X",
-                        style:
-                            new TextStyle(color: Colors.white, fontSize: 20.0)),
-                    onPressed: x,
-                    padding: const EdgeInsets.all(20.0),
-                    color: Colors.red,
-                  ),
-                ),
-                Container(
-                  child: new RaisedButton(
-                    child: new Text("O",
-                        style:
-                            new TextStyle(color: Colors.white, fontSize: 20.0)),
-                    onPressed: o,
-                    padding: const EdgeInsets.all(20.0),
-                    color: Colors.black,
-                  ),
-                )
-              ],
-            ),
-            Padding(padding: const EdgeInsets.all(2.0)),
-            new RaisedButton(
-              child: new Text(
-                "Reset",
-                style: new TextStyle(color: Colors.white, fontSize: 20.0),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: new RaisedButton(
+                child: text2,
+                color: Colors.blueGrey,
+                padding: const EdgeInsets.all(20.0),
+                onPressed: switchPlayer,
               ),
-              color: Colors.indigo,
-              padding: const EdgeInsets.all(20.0),
-              onPressed: resetGame,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      height: 50.0,
+                      child: new Text(
+                        "Select the player 1's Symbol :",
+                        style:
+                            new TextStyle(color: Colors.black, fontSize: 15.0),
+                      ),
+                      color: Colors.grey,
+                      padding: const EdgeInsets.all(15.0),
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                    height: 50.0,
+                    child: new RaisedButton(
+                      child: new Text("X",
+                          style: new TextStyle(
+                              color: Colors.white, fontSize: 20.0)),
+                      onPressed: x,
+                      padding: const EdgeInsets.all(20.0),
+                      color: Colors.red,
+                    ),
+                  ),
+                  Container(
+                    height: 50.0,
+                    child: new RaisedButton(
+                      child: new Text("O",
+                          style: new TextStyle(
+                              color: Colors.white, fontSize: 20.0)),
+                      onPressed: o,
+                      padding: const EdgeInsets.all(20.0),
+                      color: Colors.black,
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: new RaisedButton(
+                child: new Text(
+                  "Reset",
+                  style: new TextStyle(color: Colors.white, fontSize: 20.0),
+                ),
+                color: Colors.indigo,
+                padding: const EdgeInsets.all(20.0),
+                onPressed: resetGame,
+              ),
             )
           ],
         ));
