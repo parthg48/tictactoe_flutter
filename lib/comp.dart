@@ -9,8 +9,7 @@ class Computer extends StatelessWidget {
   final actionText2;
 
   Computer(this.title, this.content, this.callback1, this.callback2,
-      [this.actionText1 = "Player 1 First",
-      this.actionText2 = "Computer First"]);
+      [this.actionText1 = "Player 1", this.actionText2 = "Computer/Player2"]);
 
   @override
   Widget build(BuildContext context) {

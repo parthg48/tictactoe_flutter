@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/boxes.dart';
+import 'package:flutter_application_1/comp.dart';
 import 'package:flutter_application_1/dialog.dart';
 
 class HomePage extends StatefulWidget {
@@ -157,7 +158,10 @@ class _HomePageState extends State<HomePage> {
       flag = 1;
     else
       flag = 0;
-    resetGame();
+    showDialog(
+        context: context,
+        builder: (_) => new Computer("You have switched player mode",
+            "Select who should play first move :", p1, p2));
   }
 
   void x() {
@@ -168,6 +172,16 @@ class _HomePageState extends State<HomePage> {
   void o() {
     flagSymbol = 1;
     resetGame();
+  }
+
+  void p1() {
+    resetGame();
+    activePlayer = 1;
+  }
+
+  void p2() {
+    resetGame();
+    activePlayer = 2;
   }
 
   @override
