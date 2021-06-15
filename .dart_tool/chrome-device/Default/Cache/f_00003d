@@ -1,553 +1,490 @@
-define(['dart_sdk', 'packages/flutter/src/painting/alignment.dart', 'packages/flutter/src/painting/box_fit.dart', 'packages/flutter/src/foundation/object.dart', 'packages/flutter/src/painting/_network_image_web.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/painting/image_stream.dart', 'packages/flutter/src/painting/debug.dart', 'packages/flutter/src/scheduler/binding.dart'], (function load__packages__flutter__src__painting__decoration_image_dart(dart_sdk, packages__flutter__src__painting__alignment$46dart, packages__flutter__src__painting__box_fit$46dart, packages__flutter__src__foundation__object$46dart, packages__flutter__src__painting___network_image_web$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__painting__image_stream$46dart, packages__flutter__src__painting__debug$46dart, packages__flutter__src__scheduler__binding$46dart) {
+define(['dart_sdk', 'packages/flutter/src/painting/borders.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/painting/circle_border.dart', 'packages/flutter/src/painting/rounded_rectangle_border.dart', 'packages/flutter/src/painting/border_radius.dart', 'packages/flutter/src/foundation/object.dart'], (function load__packages__flutter__src__painting__stadium_border_dart(dart_sdk, packages__flutter__src__painting__borders$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__painting__circle_border$46dart, packages__flutter__src__painting__rounded_rectangle_border$46dart, packages__flutter__src__painting__border_radius$46dart, packages__flutter__src__foundation__object$46dart) {
   'use strict';
   const core = dart_sdk.core;
   const ui = dart_sdk.ui;
-  const _interceptors = dart_sdk._interceptors;
-  const collection = dart_sdk.collection;
-  const _engine = dart_sdk._engine;
-  const developer = dart_sdk.developer;
-  const _js_helper = dart_sdk._js_helper;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const alignment = packages__flutter__src__painting__alignment$46dart.src__painting__alignment;
-  const box_fit = packages__flutter__src__painting__box_fit$46dart.src__painting__box_fit;
+  const borders = packages__flutter__src__painting__borders$46dart.src__painting__borders;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const circle_border = packages__flutter__src__painting__circle_border$46dart.src__painting__circle_border;
+  const rounded_rectangle_border = packages__flutter__src__painting__rounded_rectangle_border$46dart.src__painting__rounded_rectangle_border;
+  const border_radius = packages__flutter__src__painting__border_radius$46dart.src__painting__border_radius;
   const object = packages__flutter__src__foundation__object$46dart.src__foundation__object;
-  const image_provider = packages__flutter__src__painting___network_image_web$46dart.src__painting__image_provider;
-  const assertions = packages__flutter__src__foundation__debug$46dart.src__foundation__assertions;
-  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
-  const image_stream = packages__flutter__src__painting__image_stream$46dart.src__painting__image_stream;
-  const debug = packages__flutter__src__painting__debug$46dart.src__painting__debug;
-  const binding = packages__flutter__src__scheduler__binding$46dart.src__scheduler__binding;
-  var decoration_image = Object.create(dart.library);
+  var stadium_border = Object.create(dart.library);
   var $runtimeType = dartx.runtimeType;
-  var $_equals = dartx._equals;
-  var $add = dartx.add;
-  var $join = dartx.join;
-  var $isNotEmpty = dartx.isNotEmpty;
-  var $toDouble = dartx.toDouble;
-  var $truncate = dartx.truncate;
-  var $toInt = dartx.toInt;
-  var $_get = dartx._get;
-  var $_set = dartx._set;
-  var $values = dartx.values;
-  var $toSet = dartx.toSet;
-  var $isEmpty = dartx.isEmpty;
-  var $floor = dartx.floor;
-  var $ceil = dartx.ceil;
+  var $toStringAsFixed = dartx.toStringAsFixed;
   dart._checkModuleNullSafetyMode(true);
-  var T = {
-    JSArrayOfString: () => (T.JSArrayOfString = dart.constFn(_interceptors.JSArray$(core.String)))(),
-    DiagnosticsPropertyOfDecorationImage: () => (T.DiagnosticsPropertyOfDecorationImage = dart.constFn(diagnostics.DiagnosticsProperty$(decoration_image.DecorationImage)))(),
-    DiagnosticsPropertyOfImageConfiguration: () => (T.DiagnosticsPropertyOfImageConfiguration = dart.constFn(diagnostics.DiagnosticsProperty$(image_provider.ImageConfiguration)))(),
-    JSArrayOfDiagnosticsNode: () => (T.JSArrayOfDiagnosticsNode = dart.constFn(_interceptors.JSArray$(diagnostics.DiagnosticsNode)))(),
-    VoidTobool: () => (T.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))(),
-    LinkedHashSetOfImageSizeInfo: () => (T.LinkedHashSetOfImageSizeInfo = dart.constFn(collection.LinkedHashSet$(debug.ImageSizeInfo)))(),
-    IdentityMapOfString$Object: () => (T.IdentityMapOfString$Object = dart.constFn(_js_helper.IdentityMap$(core.String, core.Object)))(),
-    IdentityMapOfString$ImageSizeInfo: () => (T.IdentityMapOfString$ImageSizeInfo = dart.constFn(_js_helper.IdentityMap$(core.String, debug.ImageSizeInfo)))(),
-    DurationTovoid: () => (T.DurationTovoid = dart.constFn(dart.fnType(dart.void, [core.Duration])))(),
-    SyncIterableOfRect: () => (T.SyncIterableOfRect = dart.constFn(_js_helper.SyncIterable$(ui.Rect)))()
-  };
   const CT = Object.create({
     _: () => (C, CT)
   });
   dart.defineLazy(CT, {
-    get C0() {
-      return C[0] = dart.const({
-        __proto__: decoration_image.ImageRepeat.prototype,
-        [_name$]: "ImageRepeat.repeat",
-        index: 0
-      });
-    },
     get C1() {
       return C[1] = dart.const({
-        __proto__: decoration_image.ImageRepeat.prototype,
-        [_name$]: "ImageRepeat.repeatX",
-        index: 1
+        __proto__: borders.BorderStyle.prototype,
+        [_name]: "BorderStyle.none",
+        index: 0
       });
     },
     get C2() {
       return C[2] = dart.const({
-        __proto__: decoration_image.ImageRepeat.prototype,
-        [_name$]: "ImageRepeat.repeatY",
-        index: 2
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4278190080.0
+      });
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: borders.BorderSide.prototype,
+        [BorderSide_style]: C[1] || CT.C1,
+        [BorderSide_width]: 0,
+        [BorderSide_color]: C[2] || CT.C2
       });
     },
     get C3() {
       return C[3] = dart.const({
-        __proto__: decoration_image.ImageRepeat.prototype,
-        [_name$]: "ImageRepeat.noRepeat",
-        index: 3
-      });
-    },
-    get C4() {
-      return C[4] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2, C[3] || CT.C3], decoration_image.ImageRepeat);
-    },
-    get C5() {
-      return C[5] = dart.const({
-        __proto__: alignment.Alignment.prototype,
-        [Alignment_y]: 0,
-        [Alignment_x]: 0
-      });
-    },
-    get C6() {
-      return C[6] = dart.const({
-        __proto__: ui.FilterQuality.prototype,
-        [_name]: "FilterQuality.low",
+        __proto__: borders.BorderStyle.prototype,
+        [_name]: "BorderStyle.solid",
         index: 1
       });
     },
-    get C8() {
-      return C[8] = dart.constList([-1, 0, 0, 0, 255, 0, -1, 0, 0, 255, 0, 0, -1, 0, 255, 0, 0, 0, 1, 0], core.double);
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: ui.Radius.prototype,
+        [Radius_y]: 0,
+        [Radius_x]: 0
+      });
     },
-    get C7() {
-      return C[7] = dart.const({
-        __proto__: _engine._CkMatrixColorFilter.prototype,
-        [_CkMatrixColorFilter_matrix]: C[8] || CT.C8
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: border_radius.BorderRadius.prototype,
+        [BorderRadius_bottomRight]: C[5] || CT.C5,
+        [BorderRadius_bottomLeft]: C[5] || CT.C5,
+        [BorderRadius_topRight]: C[5] || CT.C5,
+        [BorderRadius_topLeft]: C[5] || CT.C5
       });
     }
   }, false);
-  var C = Array(9).fill(void 0);
+  var C = Array(6).fill(void 0);
   var I = [
-    "package:flutter/src/painting/decoration_image.dart",
-    "file:///C:/flutter_windows_2.2.1-stable/flutter/packages/flutter/lib/src/painting/decoration_image.dart"
+    "file:///C:/flutter_windows_2.2.1-stable/flutter/packages/flutter/lib/src/painting/stadium_border.dart",
+    "package:flutter/src/painting/stadium_border.dart"
   ];
-  var _name$ = dart.privateName(decoration_image, "_name");
-  decoration_image.ImageRepeat = class ImageRepeat extends core.Object {
-    toString() {
-      return this[_name$];
+  var _name = dart.privateName(borders, "_name");
+  var BorderSide_style = dart.privateName(borders, "BorderSide.style");
+  var BorderSide_width = dart.privateName(borders, "BorderSide.width");
+  var Color_value = dart.privateName(ui, "Color.value");
+  var BorderSide_color = dart.privateName(borders, "BorderSide.color");
+  stadium_border.StadiumBorder = class StadiumBorder extends borders.OutlinedBorder {
+    get dimensions() {
+      return new edge_insets.EdgeInsets.all(this.side.width);
     }
-  };
-  (decoration_image.ImageRepeat.new = function(index, _name) {
-    this.index = index;
-    this[_name$] = _name;
-    ;
-  }).prototype = decoration_image.ImageRepeat.prototype;
-  dart.addTypeTests(decoration_image.ImageRepeat);
-  dart.addTypeCaches(decoration_image.ImageRepeat);
-  dart.setLibraryUri(decoration_image.ImageRepeat, I[0]);
-  dart.setFieldSignature(decoration_image.ImageRepeat, () => ({
-    __proto__: dart.getFields(decoration_image.ImageRepeat.__proto__),
-    index: dart.finalFieldType(core.int),
-    [_name$]: dart.finalFieldType(core.String)
-  }));
-  dart.defineExtensionMethods(decoration_image.ImageRepeat, ['toString']);
-  decoration_image.ImageRepeat.repeat = C[0] || CT.C0;
-  decoration_image.ImageRepeat.repeatX = C[1] || CT.C1;
-  decoration_image.ImageRepeat.repeatY = C[2] || CT.C2;
-  decoration_image.ImageRepeat.noRepeat = C[3] || CT.C3;
-  decoration_image.ImageRepeat.values = C[4] || CT.C4;
-  var image$ = dart.privateName(decoration_image, "DecorationImage.image");
-  var onError$ = dart.privateName(decoration_image, "DecorationImage.onError");
-  var colorFilter$ = dart.privateName(decoration_image, "DecorationImage.colorFilter");
-  var fit$ = dart.privateName(decoration_image, "DecorationImage.fit");
-  var alignment$ = dart.privateName(decoration_image, "DecorationImage.alignment");
-  var centerSlice$ = dart.privateName(decoration_image, "DecorationImage.centerSlice");
-  var repeat$ = dart.privateName(decoration_image, "DecorationImage.repeat");
-  var matchTextDirection$ = dart.privateName(decoration_image, "DecorationImage.matchTextDirection");
-  var scale$ = dart.privateName(decoration_image, "DecorationImage.scale");
-  var Alignment_y = dart.privateName(alignment, "Alignment.y");
-  var Alignment_x = dart.privateName(alignment, "Alignment.x");
-  decoration_image.DecorationImage = class DecorationImage extends core.Object {
-    get image() {
-      return this[image$];
+    scale(t) {
+      return new stadium_border.StadiumBorder.new({side: this.side.scale(t)});
     }
-    set image(value) {
-      super.image = value;
+    lerpFrom(a, t) {
+      if (!(t !== null)) dart.assertFailed(null, I[0], 44, 12, "t != null");
+      if (stadium_border.StadiumBorder.is(a)) return new stadium_border.StadiumBorder.new({side: borders.BorderSide.lerp(a.side, this.side, t)});
+      if (circle_border.CircleBorder.is(a)) {
+        return new stadium_border._StadiumToCircleBorder.new({side: borders.BorderSide.lerp(a.side, this.side, t), circleness: 1.0 - t});
+      }
+      if (rounded_rectangle_border.RoundedRectangleBorder.is(a)) {
+        return new stadium_border._StadiumToRoundedRectangleBorder.new({side: borders.BorderSide.lerp(a.side, this.side, t), borderRadius: border_radius.BorderRadius.as(a.borderRadius), rectness: 1.0 - t});
+      }
+      return super.lerpFrom(a, t);
     }
-    get onError() {
-      return this[onError$];
+    lerpTo(b, t) {
+      if (!(t !== null)) dart.assertFailed(null, I[0], 65, 12, "t != null");
+      if (stadium_border.StadiumBorder.is(b)) return new stadium_border.StadiumBorder.new({side: borders.BorderSide.lerp(this.side, b.side, t)});
+      if (circle_border.CircleBorder.is(b)) {
+        return new stadium_border._StadiumToCircleBorder.new({side: borders.BorderSide.lerp(this.side, b.side, t), circleness: t});
+      }
+      if (rounded_rectangle_border.RoundedRectangleBorder.is(b)) {
+        return new stadium_border._StadiumToRoundedRectangleBorder.new({side: borders.BorderSide.lerp(this.side, b.side, t), borderRadius: border_radius.BorderRadius.as(b.borderRadius), rectness: t});
+      }
+      return super.lerpTo(b, t);
     }
-    set onError(value) {
-      super.onError = value;
+    copyWith(opts) {
+      let t0;
+      let side = opts && 'side' in opts ? opts.side : null;
+      return new stadium_border.StadiumBorder.new({side: (t0 = side, t0 == null ? this.side : t0)});
     }
-    get colorFilter() {
-      return this[colorFilter$];
+    getInnerPath(rect, opts) {
+      let t0;
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      let radius = new ui.Radius.circular(rect.shortestSide / 2.0);
+      t0 = ui.Path.new();
+      return (() => {
+        t0.addRRect(new ui.RRect.fromRectAndRadius(rect, radius).deflate(this.side.width));
+        return t0;
+      })();
     }
-    set colorFilter(value) {
-      super.colorFilter = value;
+    getOuterPath(rect, opts) {
+      let t0;
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      let radius = new ui.Radius.circular(rect.shortestSide / 2.0);
+      t0 = ui.Path.new();
+      return (() => {
+        t0.addRRect(new ui.RRect.fromRectAndRadius(rect, radius));
+        return t0;
+      })();
     }
-    get fit() {
-      return this[fit$];
-    }
-    set fit(value) {
-      super.fit = value;
-    }
-    get alignment() {
-      return this[alignment$];
-    }
-    set alignment(value) {
-      super.alignment = value;
-    }
-    get centerSlice() {
-      return this[centerSlice$];
-    }
-    set centerSlice(value) {
-      super.centerSlice = value;
-    }
-    get repeat() {
-      return this[repeat$];
-    }
-    set repeat(value) {
-      super.repeat = value;
-    }
-    get matchTextDirection() {
-      return this[matchTextDirection$];
-    }
-    set matchTextDirection(value) {
-      super.matchTextDirection = value;
-    }
-    get scale() {
-      return this[scale$];
-    }
-    set scale(value) {
-      super.scale = value;
-    }
-    createPainter(onChanged) {
-      if (!(onChanged !== null)) dart.assertFailed(null, I[1], 150, 12, "onChanged != null");
-      return new decoration_image.DecorationImagePainter.__(this, onChanged);
+    paint(canvas, rect, opts) {
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      switch (this.side.style) {
+        case C[1] || CT.C1:
+        {
+          break;
+        }
+        case C[3] || CT.C3:
+        {
+          let radius = new ui.Radius.circular(rect.shortestSide / 2.0);
+          canvas.drawRRect(new ui.RRect.fromRectAndRadius(rect, radius).deflate(this.side.width / 2.0), this.side.toPaint());
+        }
+      }
     }
     _equals(other) {
       if (other == null) return false;
-      if (this === other) return true;
       if (!other[$runtimeType]._equals(this[$runtimeType])) return false;
-      return decoration_image.DecorationImage.is(other) && other.image[$_equals](this.image) && dart.equals(other.colorFilter, this.colorFilter) && other.fit == this.fit && other.alignment._equals(this.alignment) && dart.equals(other.centerSlice, this.centerSlice) && other.repeat === this.repeat && other.matchTextDirection === this.matchTextDirection && other.scale === this.scale;
+      return stadium_border.StadiumBorder.is(other) && other.side._equals(this.side);
     }
     get hashCode() {
-      return ui.hashValues(this.image, this.colorFilter, this.fit, this.alignment, this.centerSlice, this.repeat, this.matchTextDirection, this.scale);
+      return this.side.hashCode;
     }
     toString() {
-      let properties = (() => {
-        let t0 = T.JSArrayOfString().of([dart.str(this.image)]);
-        if (this.colorFilter != null) t0[$add](dart.str(this.colorFilter));
-        if (this.fit != null && !(this.fit === box_fit.BoxFit.fill && this.centerSlice != null) && !(this.fit === box_fit.BoxFit.scaleDown && this.centerSlice == null)) t0[$add](dart.str(this.fit));
-        t0[$add](dart.str(this.alignment));
-        if (this.centerSlice != null) t0[$add]("centerSlice: " + dart.str(this.centerSlice));
-        if (this.repeat !== decoration_image.ImageRepeat.noRepeat) t0[$add](dart.str(this.repeat));
-        if (this.matchTextDirection) t0[$add]("match text direction");
-        t0[$add]("scale: " + dart.str(this.scale));
+      return object.objectRuntimeType(this, "StadiumBorder") + "(" + dart.str(this.side) + ")";
+    }
+  };
+  (stadium_border.StadiumBorder.new = function(opts) {
+    let side = opts && 'side' in opts ? opts.side : C[0] || CT.C0;
+    if (!(side !== null)) dart.assertFailed(null, I[0], 32, 71, "side != null");
+    stadium_border.StadiumBorder.__proto__.new.call(this, {side: side});
+    ;
+  }).prototype = stadium_border.StadiumBorder.prototype;
+  dart.addTypeTests(stadium_border.StadiumBorder);
+  dart.addTypeCaches(stadium_border.StadiumBorder);
+  dart.setMethodSignature(stadium_border.StadiumBorder, () => ({
+    __proto__: dart.getMethods(stadium_border.StadiumBorder.__proto__),
+    scale: dart.fnType(borders.ShapeBorder, [core.double]),
+    copyWith: dart.fnType(stadium_border.StadiumBorder, [], {side: dart.nullable(borders.BorderSide)}, {}),
+    getInnerPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
+    getOuterPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
+    paint: dart.fnType(dart.void, [ui.Canvas, ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {})
+  }));
+  dart.setGetterSignature(stadium_border.StadiumBorder, () => ({
+    __proto__: dart.getGetters(stadium_border.StadiumBorder.__proto__),
+    dimensions: edge_insets.EdgeInsetsGeometry
+  }));
+  dart.setLibraryUri(stadium_border.StadiumBorder, I[1]);
+  dart.defineExtensionMethods(stadium_border.StadiumBorder, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(stadium_border.StadiumBorder, ['hashCode']);
+  var circleness$ = dart.privateName(stadium_border, "_StadiumToCircleBorder.circleness");
+  var _adjustRect = dart.privateName(stadium_border, "_adjustRect");
+  var _adjustBorderRadius = dart.privateName(stadium_border, "_adjustBorderRadius");
+  stadium_border._StadiumToCircleBorder = class _StadiumToCircleBorder extends borders.OutlinedBorder {
+    get circleness() {
+      return this[circleness$];
+    }
+    set circleness(value) {
+      super.circleness = value;
+    }
+    get dimensions() {
+      return new edge_insets.EdgeInsets.all(this.side.width);
+    }
+    scale(t) {
+      return new stadium_border._StadiumToCircleBorder.new({side: this.side.scale(t), circleness: t});
+    }
+    lerpFrom(a, t) {
+      if (!(t !== null)) dart.assertFailed(null, I[0], 160, 12, "t != null");
+      if (stadium_border.StadiumBorder.is(a)) {
+        return new stadium_border._StadiumToCircleBorder.new({side: borders.BorderSide.lerp(a.side, this.side, t), circleness: this.circleness * t});
+      }
+      if (circle_border.CircleBorder.is(a)) {
+        return new stadium_border._StadiumToCircleBorder.new({side: borders.BorderSide.lerp(a.side, this.side, t), circleness: this.circleness + (1.0 - this.circleness) * (1.0 - t)});
+      }
+      if (stadium_border._StadiumToCircleBorder.is(a)) {
+        return new stadium_border._StadiumToCircleBorder.new({side: borders.BorderSide.lerp(a.side, this.side, t), circleness: dart.nullCheck(ui.lerpDouble(a.circleness, this.circleness, t))});
+      }
+      return super.lerpFrom(a, t);
+    }
+    lerpTo(b, t) {
+      if (!(t !== null)) dart.assertFailed(null, I[0], 184, 12, "t != null");
+      if (stadium_border.StadiumBorder.is(b)) {
+        return new stadium_border._StadiumToCircleBorder.new({side: borders.BorderSide.lerp(this.side, b.side, t), circleness: this.circleness * (1.0 - t)});
+      }
+      if (circle_border.CircleBorder.is(b)) {
+        return new stadium_border._StadiumToCircleBorder.new({side: borders.BorderSide.lerp(this.side, b.side, t), circleness: this.circleness + (1.0 - this.circleness) * t});
+      }
+      if (stadium_border._StadiumToCircleBorder.is(b)) {
+        return new stadium_border._StadiumToCircleBorder.new({side: borders.BorderSide.lerp(this.side, b.side, t), circleness: dart.nullCheck(ui.lerpDouble(this.circleness, b.circleness, t))});
+      }
+      return super.lerpTo(b, t);
+    }
+    [_adjustRect](rect) {
+      if (this.circleness === 0.0 || rect.width === rect.height) return rect;
+      if (rect.width < rect.height) {
+        let delta = this.circleness * (rect.height - rect.width) / 2.0;
+        return new ui.Rect.fromLTRB(rect.left, rect.top + delta, rect.right, rect.bottom - delta);
+      } else {
+        let delta = this.circleness * (rect.width - rect.height) / 2.0;
+        return new ui.Rect.fromLTRB(rect.left + delta, rect.top, rect.right - delta, rect.bottom);
+      }
+    }
+    [_adjustBorderRadius](rect) {
+      return new border_radius.BorderRadius.circular(rect.shortestSide / 2.0);
+    }
+    getInnerPath(rect, opts) {
+      let t0;
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      t0 = ui.Path.new();
+      return (() => {
+        t0.addRRect(this[_adjustBorderRadius](rect).toRRect(this[_adjustRect](rect)).deflate(this.side.width));
         return t0;
       })();
-      return object.objectRuntimeType(this, "DecorationImage") + "(" + properties[$join](", ") + ")";
     }
-  };
-  (decoration_image.DecorationImage.new = function(opts) {
-    let image = opts && 'image' in opts ? opts.image : null;
-    let onError = opts && 'onError' in opts ? opts.onError : null;
-    let colorFilter = opts && 'colorFilter' in opts ? opts.colorFilter : null;
-    let fit = opts && 'fit' in opts ? opts.fit : null;
-    let alignment = opts && 'alignment' in opts ? opts.alignment : C[5] || CT.C5;
-    let centerSlice = opts && 'centerSlice' in opts ? opts.centerSlice : null;
-    let repeat = opts && 'repeat' in opts ? opts.repeat : C[3] || CT.C3;
-    let matchTextDirection = opts && 'matchTextDirection' in opts ? opts.matchTextDirection : false;
-    let scale = opts && 'scale' in opts ? opts.scale : 1;
-    this[image$] = image;
-    this[onError$] = onError;
-    this[colorFilter$] = colorFilter;
-    this[fit$] = fit;
-    this[alignment$] = alignment;
-    this[centerSlice$] = centerSlice;
-    this[repeat$] = repeat;
-    this[matchTextDirection$] = matchTextDirection;
-    this[scale$] = scale;
-    if (!(image !== null)) dart.assertFailed(null, I[1], 55, 15, "image != null");
-    if (!(alignment !== null)) dart.assertFailed(null, I[1], 56, 15, "alignment != null");
-    if (!(repeat !== null)) dart.assertFailed(null, I[1], 57, 15, "repeat != null");
-    if (!(matchTextDirection !== null)) dart.assertFailed(null, I[1], 58, 15, "matchTextDirection != null");
-    if (!(scale !== null)) dart.assertFailed(null, I[1], 59, 15, "scale != null");
-    ;
-  }).prototype = decoration_image.DecorationImage.prototype;
-  dart.addTypeTests(decoration_image.DecorationImage);
-  dart.addTypeCaches(decoration_image.DecorationImage);
-  dart.setMethodSignature(decoration_image.DecorationImage, () => ({
-    __proto__: dart.getMethods(decoration_image.DecorationImage.__proto__),
-    createPainter: dart.fnType(decoration_image.DecorationImagePainter, [dart.fnType(dart.void, [])])
-  }));
-  dart.setLibraryUri(decoration_image.DecorationImage, I[0]);
-  dart.setFieldSignature(decoration_image.DecorationImage, () => ({
-    __proto__: dart.getFields(decoration_image.DecorationImage.__proto__),
-    image: dart.finalFieldType(image_provider.ImageProvider$(core.Object)),
-    onError: dart.finalFieldType(dart.nullable(dart.fnType(dart.void, [core.Object, dart.nullable(core.StackTrace)]))),
-    colorFilter: dart.finalFieldType(dart.nullable(ui.ColorFilter)),
-    fit: dart.finalFieldType(dart.nullable(box_fit.BoxFit)),
-    alignment: dart.finalFieldType(alignment.AlignmentGeometry),
-    centerSlice: dart.finalFieldType(dart.nullable(ui.Rect)),
-    repeat: dart.finalFieldType(decoration_image.ImageRepeat),
-    matchTextDirection: dart.finalFieldType(core.bool),
-    scale: dart.finalFieldType(core.double)
-  }));
-  dart.defineExtensionMethods(decoration_image.DecorationImage, ['_equals', 'toString']);
-  dart.defineExtensionAccessors(decoration_image.DecorationImage, ['hashCode']);
-  var _imageStream = dart.privateName(decoration_image, "_imageStream");
-  var _image = dart.privateName(decoration_image, "_image");
-  var _details$ = dart.privateName(decoration_image, "_details");
-  var _onChanged$ = dart.privateName(decoration_image, "_onChanged");
-  var _handleImage = dart.privateName(decoration_image, "_handleImage");
-  decoration_image.DecorationImagePainter = class DecorationImagePainter extends core.Object {
-    paint(canvas, rect, clipPath, configuration) {
-      let t1, t1$;
-      if (!(canvas !== null)) dart.assertFailed(null, I[1], 232, 12, "canvas != null");
-      if (!(rect !== null)) dart.assertFailed(null, I[1], 233, 12, "rect != null");
-      if (!(configuration !== null)) dart.assertFailed(null, I[1], 234, 12, "configuration != null");
-      let flipHorizontally = false;
-      if (this[_details$].matchTextDirection) {
-        if (!dart.fn(() => {
-          if (configuration.textDirection == null) {
-            dart.throw(new assertions.FlutterError.fromParts(T.JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("DecorationImage.matchTextDirection can only be used when a TextDirection is available."), new assertions.ErrorDescription.new("When DecorationImagePainter.paint() was called, there was no text direction provided " + "in the ImageConfiguration object to match."), new (T.DiagnosticsPropertyOfDecorationImage()).new("The DecorationImage was", this[_details$], {style: diagnostics.DiagnosticsTreeStyle.errorProperty}), new (T.DiagnosticsPropertyOfImageConfiguration()).new("The ImageConfiguration was", configuration, {style: diagnostics.DiagnosticsTreeStyle.errorProperty})])));
+    getOuterPath(rect, opts) {
+      let t0;
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      t0 = ui.Path.new();
+      return (() => {
+        t0.addRRect(this[_adjustBorderRadius](rect).toRRect(this[_adjustRect](rect)));
+        return t0;
+      })();
+    }
+    copyWith(opts) {
+      let t0, t0$;
+      let side = opts && 'side' in opts ? opts.side : null;
+      let circleness = opts && 'circleness' in opts ? opts.circleness : null;
+      return new stadium_border._StadiumToCircleBorder.new({side: (t0 = side, t0 == null ? this.side : t0), circleness: (t0$ = circleness, t0$ == null ? this.circleness : t0$)});
+    }
+    paint(canvas, rect, opts) {
+      let t0;
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      switch (this.side.style) {
+        case C[1] || CT.C1:
+        {
+          break;
+        }
+        case C[3] || CT.C3:
+        {
+          let width = this.side.width;
+          if (width === 0.0) {
+            canvas.drawRRect(this[_adjustBorderRadius](rect).toRRect(this[_adjustRect](rect)), this.side.toPaint());
+          } else {
+            let outer = this[_adjustBorderRadius](rect).toRRect(this[_adjustRect](rect));
+            let inner = outer.deflate(width);
+            let paint = (t0 = ui.Paint.new(), (() => {
+              t0.color = this.side.color;
+              return t0;
+            })());
+            canvas.drawDRRect(outer, inner, paint);
           }
-          return true;
-        }, T.VoidTobool())()) dart.assertFailed(null, I[1], 238, 14, "() {\r\n        // We check this first so that the assert will fire immediately, not just\r\n        // when the image is ready.\r\n        if (configuration.textDirection == null) {\r\n          throw FlutterError.fromParts(<DiagnosticsNode>[\r\n            ErrorSummary('DecorationImage.matchTextDirection can only be used when a TextDirection is available.'),\r\n            ErrorDescription(\r\n              'When DecorationImagePainter.paint() was called, there was no text direction provided '\r\n              'in the ImageConfiguration object to match.',\r\n            ),\r\n            DiagnosticsProperty<DecorationImage>('The DecorationImage was', _details, style: DiagnosticsTreeStyle.errorProperty),\r\n            DiagnosticsProperty<ImageConfiguration>('The ImageConfiguration was', configuration, style: DiagnosticsTreeStyle.errorProperty),\r\n          ]);\r\n        }\r\n        return true;\r\n      }()");
-        if (configuration.textDirection === ui.TextDirection.rtl) flipHorizontally = true;
+        }
       }
-      let newImageStream = this[_details$].image.resolve(configuration);
-      if (!newImageStream.key[$_equals]((t1 = this[_imageStream], t1 == null ? null : t1.key))) {
-        let listener = new image_stream.ImageStreamListener.new(dart.bind(this, _handleImage), {onError: this[_details$].onError});
-        t1$ = this[_imageStream];
-        t1$ == null ? null : t1$.removeListener(listener);
-        this[_imageStream] = newImageStream;
-        dart.nullCheck(this[_imageStream]).addListener(listener);
-      }
-      if (this[_image] == null) return;
-      if (clipPath != null) {
-        canvas.save();
-        canvas.clipPath(clipPath);
-      }
-      decoration_image.paintImage({canvas: canvas, rect: rect, image: dart.nullCheck(this[_image]).image, debugImageLabel: dart.nullCheck(this[_image]).debugLabel, scale: this[_details$].scale * dart.nullCheck(this[_image]).scale, colorFilter: this[_details$].colorFilter, fit: this[_details$].fit, alignment: this[_details$].alignment.resolve(configuration.textDirection), centerSlice: this[_details$].centerSlice, repeat: this[_details$].repeat, flipHorizontally: flipHorizontally, filterQuality: ui.FilterQuality.low});
-      if (clipPath != null) canvas.restore();
     }
-    [_handleImage](value, synchronousCall) {
-      let t1;
-      if (dart.equals(this[_image], value)) return;
-      if (this[_image] != null && dart.nullCheck(this[_image]).isCloneOf(value)) {
-        value.dispose();
-        return;
-      }
-      t1 = this[_image];
-      t1 == null ? null : t1.dispose();
-      this[_image] = value;
-      if (!(this[_onChanged$] !== null)) dart.assertFailed(null, I[1], 304, 12, "_onChanged != null");
-      if (!synchronousCall) this[_onChanged$]();
+    _equals(other) {
+      if (other == null) return false;
+      if (!other[$runtimeType]._equals(this[$runtimeType])) return false;
+      return stadium_border._StadiumToCircleBorder.is(other) && other.side._equals(this.side) && other.circleness === this.circleness;
     }
-    dispose() {
-      let t1, t1$;
-      t1 = this[_imageStream];
-      t1 == null ? null : t1.removeListener(new image_stream.ImageStreamListener.new(dart.bind(this, _handleImage), {onError: this[_details$].onError}));
-      t1$ = this[_image];
-      t1$ == null ? null : t1$.dispose();
-      this[_image] = null;
+    get hashCode() {
+      return ui.hashValues(this.side, this.circleness);
     }
     toString() {
-      return object.objectRuntimeType(this, "DecorationImagePainter") + "(stream: " + dart.str(this[_imageStream]) + ", image: " + dart.str(this[_image]) + ") for " + dart.str(this[_details$]);
+      return "StadiumBorder(" + dart.str(this.side) + ", " + (this.circleness * 100)[$toStringAsFixed](1) + "% " + "of the way to being a CircleBorder)";
     }
   };
-  (decoration_image.DecorationImagePainter.__ = function(_details, _onChanged) {
-    this[_imageStream] = null;
-    this[_image] = null;
-    this[_details$] = _details;
-    this[_onChanged$] = _onChanged;
-    if (!(_details !== null)) dart.assertFailed(null, I[1], 209, 69, "_details != null");
+  (stadium_border._StadiumToCircleBorder.new = function(opts) {
+    let side = opts && 'side' in opts ? opts.side : C[0] || CT.C0;
+    let circleness = opts && 'circleness' in opts ? opts.circleness : 0;
+    this[circleness$] = circleness;
+    if (!(side !== null)) dart.assertFailed(null, I[0], 139, 15, "side != null");
+    if (!(circleness !== null)) dart.assertFailed(null, I[0], 140, 15, "circleness != null");
+    stadium_border._StadiumToCircleBorder.__proto__.new.call(this, {side: side});
     ;
-  }).prototype = decoration_image.DecorationImagePainter.prototype;
-  dart.addTypeTests(decoration_image.DecorationImagePainter);
-  dart.addTypeCaches(decoration_image.DecorationImagePainter);
-  dart.setMethodSignature(decoration_image.DecorationImagePainter, () => ({
-    __proto__: dart.getMethods(decoration_image.DecorationImagePainter.__proto__),
-    paint: dart.fnType(dart.void, [ui.Canvas, ui.Rect, dart.nullable(ui.Path), image_provider.ImageConfiguration]),
-    [_handleImage]: dart.fnType(dart.void, [image_stream.ImageInfo, core.bool]),
-    dispose: dart.fnType(dart.void, [])
+  }).prototype = stadium_border._StadiumToCircleBorder.prototype;
+  dart.addTypeTests(stadium_border._StadiumToCircleBorder);
+  dart.addTypeCaches(stadium_border._StadiumToCircleBorder);
+  dart.setMethodSignature(stadium_border._StadiumToCircleBorder, () => ({
+    __proto__: dart.getMethods(stadium_border._StadiumToCircleBorder.__proto__),
+    scale: dart.fnType(borders.ShapeBorder, [core.double]),
+    [_adjustRect]: dart.fnType(ui.Rect, [ui.Rect]),
+    [_adjustBorderRadius]: dart.fnType(border_radius.BorderRadius, [ui.Rect]),
+    getInnerPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
+    getOuterPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
+    copyWith: dart.fnType(stadium_border._StadiumToCircleBorder, [], {circleness: dart.nullable(core.double), side: dart.nullable(borders.BorderSide)}, {}),
+    paint: dart.fnType(dart.void, [ui.Canvas, ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {})
   }));
-  dart.setLibraryUri(decoration_image.DecorationImagePainter, I[0]);
-  dart.setFieldSignature(decoration_image.DecorationImagePainter, () => ({
-    __proto__: dart.getFields(decoration_image.DecorationImagePainter.__proto__),
-    [_details$]: dart.finalFieldType(decoration_image.DecorationImage),
-    [_onChanged$]: dart.finalFieldType(dart.fnType(dart.void, [])),
-    [_imageStream]: dart.fieldType(dart.nullable(image_stream.ImageStream)),
-    [_image]: dart.fieldType(dart.nullable(image_stream.ImageInfo))
+  dart.setGetterSignature(stadium_border._StadiumToCircleBorder, () => ({
+    __proto__: dart.getGetters(stadium_border._StadiumToCircleBorder.__proto__),
+    dimensions: edge_insets.EdgeInsetsGeometry
   }));
-  dart.defineExtensionMethods(decoration_image.DecorationImagePainter, ['toString']);
-  var _name = dart.privateName(ui, "_name");
-  var _CkMatrixColorFilter_matrix = dart.privateName(_engine, "_CkMatrixColorFilter.matrix");
-  decoration_image.debugFlushLastFrameImageSizeInfo = function debugFlushLastFrameImageSizeInfo() {
-    if (!dart.fn(() => {
-      decoration_image._lastFrameImageSizeInfo = T.LinkedHashSetOfImageSizeInfo().new();
-      return true;
-    }, T.VoidTobool())()) dart.assertFailed(null, I[1], 343, 10, "() {\r\n    _lastFrameImageSizeInfo = <ImageSizeInfo>{};\r\n    return true;\r\n  }()");
-  };
-  decoration_image.paintImage = function paintImage(opts) {
-    let t1, t1$, t1$0, t1$1, t1$2;
-    let canvas = opts && 'canvas' in opts ? opts.canvas : null;
-    let rect = opts && 'rect' in opts ? opts.rect : null;
-    let image = opts && 'image' in opts ? opts.image : null;
-    let debugImageLabel = opts && 'debugImageLabel' in opts ? opts.debugImageLabel : null;
-    let scale = opts && 'scale' in opts ? opts.scale : 1;
-    let colorFilter = opts && 'colorFilter' in opts ? opts.colorFilter : null;
-    let fit = opts && 'fit' in opts ? opts.fit : null;
-    let alignment = opts && 'alignment' in opts ? opts.alignment : C[5] || CT.C5;
-    let centerSlice = opts && 'centerSlice' in opts ? opts.centerSlice : null;
-    let repeat = opts && 'repeat' in opts ? opts.repeat : C[3] || CT.C3;
-    let flipHorizontally = opts && 'flipHorizontally' in opts ? opts.flipHorizontally : false;
-    let invertColors = opts && 'invertColors' in opts ? opts.invertColors : false;
-    let filterQuality = opts && 'filterQuality' in opts ? opts.filterQuality : C[6] || CT.C6;
-    let isAntiAlias = opts && 'isAntiAlias' in opts ? opts.isAntiAlias : false;
-    if (!(canvas !== null)) dart.assertFailed(null, I[1], 433, 10, "canvas != null");
-    if (!(image !== null)) dart.assertFailed(null, I[1], 434, 10, "image != null");
-    if (!(alignment !== null)) dart.assertFailed(null, I[1], 435, 10, "alignment != null");
-    if (!(repeat !== null)) dart.assertFailed(null, I[1], 436, 10, "repeat != null");
-    if (!(flipHorizontally !== null)) dart.assertFailed(null, I[1], 437, 10, "flipHorizontally != null");
-    if (!(isAntiAlias !== null)) dart.assertFailed(null, I[1], 438, 10, "isAntiAlias != null");
-    if (!dart.test((t1$ = (t1 = image.debugGetOpenHandleStackTraces(), t1 == null ? null : t1[$isNotEmpty]), t1$ == null ? true : t1$))) dart.assertFailed("Cannot paint an image that is disposed.\n" + "The caller of paintImage is expected to wait to dispose the image until " + "after painting has completed.", I[1], 440, 5, "image.debugGetOpenHandleStackTraces()?.isNotEmpty ?? true");
-    if (rect.isEmpty) return;
-    let outputSize = rect.size;
-    let inputSize = new ui.Size.new(image.width[$toDouble](), image.height[$toDouble]());
-    let sliceBorder = null;
-    if (centerSlice != null) {
-      sliceBorder = ui.Offset.as(inputSize['/'](scale)['-'](centerSlice.size));
-      outputSize = ui.Size.as(outputSize['-'](sliceBorder));
-      inputSize = ui.Size.as(inputSize['-'](sliceBorder['*'](scale)));
+  dart.setLibraryUri(stadium_border._StadiumToCircleBorder, I[1]);
+  dart.setFieldSignature(stadium_border._StadiumToCircleBorder, () => ({
+    __proto__: dart.getFields(stadium_border._StadiumToCircleBorder.__proto__),
+    circleness: dart.finalFieldType(core.double)
+  }));
+  dart.defineExtensionMethods(stadium_border._StadiumToCircleBorder, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(stadium_border._StadiumToCircleBorder, ['hashCode']);
+  var borderRadius$ = dart.privateName(stadium_border, "_StadiumToRoundedRectangleBorder.borderRadius");
+  var rectness$ = dart.privateName(stadium_border, "_StadiumToRoundedRectangleBorder.rectness");
+  var Radius_y = dart.privateName(ui, "Radius.y");
+  var Radius_x = dart.privateName(ui, "Radius.x");
+  var BorderRadius_bottomRight = dart.privateName(border_radius, "BorderRadius.bottomRight");
+  var BorderRadius_bottomLeft = dart.privateName(border_radius, "BorderRadius.bottomLeft");
+  var BorderRadius_topRight = dart.privateName(border_radius, "BorderRadius.topRight");
+  var BorderRadius_topLeft = dart.privateName(border_radius, "BorderRadius.topLeft");
+  stadium_border._StadiumToRoundedRectangleBorder = class _StadiumToRoundedRectangleBorder extends borders.OutlinedBorder {
+    get borderRadius() {
+      return this[borderRadius$];
     }
-    fit == null ? fit = centerSlice == null ? box_fit.BoxFit.scaleDown : box_fit.BoxFit.fill : null;
-    if (!(centerSlice == null || fit !== box_fit.BoxFit.none && fit !== box_fit.BoxFit.cover)) dart.assertFailed(null, I[1], 456, 10, "centerSlice == null || (fit != BoxFit.none && fit != BoxFit.cover)");
-    let fittedSizes = box_fit.applyBoxFit(fit, inputSize['/'](scale), outputSize);
-    let sourceSize = fittedSizes.source['*'](scale);
-    let destinationSize = fittedSizes.destination;
-    if (centerSlice != null) {
-      outputSize = outputSize['+'](dart.nullCheck(sliceBorder));
-      destinationSize = destinationSize['+'](sliceBorder);
-      if (!sourceSize._equals(inputSize)) dart.assertFailed("centerSlice was used with a BoxFit that does not guarantee that the image is fully visible.", I[1], 465, 12, "sourceSize == inputSize");
+    set borderRadius(value) {
+      super.borderRadius = value;
     }
-    if (repeat !== decoration_image.ImageRepeat.noRepeat && destinationSize._equals(outputSize)) {
-      repeat = decoration_image.ImageRepeat.noRepeat;
+    get rectness() {
+      return this[rectness$];
     }
-    let paint = (t1$0 = ui.Paint.new(), (() => {
-      t1$0.isAntiAlias = isAntiAlias;
-      return t1$0;
-    })());
-    if (colorFilter != null) paint.colorFilter = colorFilter;
-    paint.filterQuality = filterQuality;
-    paint.invertColors = invertColors;
-    let halfWidthDelta = (outputSize.width - destinationSize.width) / 2.0;
-    let halfHeightDelta = (outputSize.height - destinationSize.height) / 2.0;
-    let dx = halfWidthDelta + (flipHorizontally ? -alignment.x : alignment.x) * halfWidthDelta;
-    let dy = halfHeightDelta + alignment.y * halfHeightDelta;
-    let destinationPosition = rect.topLeft.translate(dx, dy);
-    let destinationRect = destinationPosition['&'](destinationSize);
-    let invertedCanvas = false;
-    if (!false) {
-      let sizeInfo = new debug.ImageSizeInfo.new({source: (t1$1 = debugImageLabel, t1$1 == null ? "<Unknown Image(" + dart.str(image.width) + "×" + dart.str(image.height) + ")>" : t1$1), imageSize: new ui.Size.new(image.width[$toDouble](), image.height[$toDouble]()), displaySize: outputSize});
-      if (!dart.fn(() => {
-        let t1;
-        if (debug.debugInvertOversizedImages && sizeInfo.decodedSizeInBytes > sizeInfo.displaySizeInBytes + debug.debugImageOverheadAllowance) {
-          let overheadInKilobytes = ((sizeInfo.decodedSizeInBytes - sizeInfo.displaySizeInBytes) / 1024)[$truncate]();
-          let outputWidth = outputSize.width[$toInt]();
-          let outputHeight = outputSize.height[$toInt]();
-          assertions.FlutterError.reportError(new assertions.FlutterErrorDetails.new({exception: "Image " + dart.str(debugImageLabel) + " has a display size of " + dart.str(outputWidth) + "×" + dart.str(outputHeight) + " but a decode size of " + dart.str(image.width) + "×" + dart.str(image.height) + ", which uses an additional " + dart.str(overheadInKilobytes) + "KB.\n\n" + "Consider resizing the asset ahead of time, supplying a cacheWidth " + "parameter of " + dart.str(outputWidth) + ", a cacheHeight parameter of " + dart.str(outputHeight) + ", or using a ResizeImage.", library: "painting library", context: new assertions.ErrorDescription.new("while painting an image")}));
-          canvas.saveLayer(destinationRect, (t1 = ui.Paint.new(), (() => {
-            t1.colorFilter = C[7] || CT.C7;
-            return t1;
-          })()));
-          let dy = -(rect.top + rect.height / 2.0);
-          canvas.translate(0.0, -dy);
-          canvas.scale(1.0, -1.0);
-          canvas.translate(0.0, dy);
-          invertedCanvas = true;
+    set rectness(value) {
+      super.rectness = value;
+    }
+    get dimensions() {
+      return new edge_insets.EdgeInsets.all(this.side.width);
+    }
+    scale(t) {
+      return new stadium_border._StadiumToRoundedRectangleBorder.new({side: this.side.scale(t), borderRadius: this.borderRadius['*'](t), rectness: t});
+    }
+    lerpFrom(a, t) {
+      if (!(t !== null)) dart.assertFailed(null, I[0], 321, 12, "t != null");
+      if (stadium_border.StadiumBorder.is(a)) {
+        return new stadium_border._StadiumToRoundedRectangleBorder.new({side: borders.BorderSide.lerp(a.side, this.side, t), borderRadius: this.borderRadius, rectness: this.rectness * t});
+      }
+      if (rounded_rectangle_border.RoundedRectangleBorder.is(a)) {
+        return new stadium_border._StadiumToRoundedRectangleBorder.new({side: borders.BorderSide.lerp(a.side, this.side, t), borderRadius: this.borderRadius, rectness: this.rectness + (1.0 - this.rectness) * (1.0 - t)});
+      }
+      if (stadium_border._StadiumToRoundedRectangleBorder.is(a)) {
+        return new stadium_border._StadiumToRoundedRectangleBorder.new({side: borders.BorderSide.lerp(a.side, this.side, t), borderRadius: dart.nullCheck(border_radius.BorderRadius.lerp(a.borderRadius, this.borderRadius, t)), rectness: dart.nullCheck(ui.lerpDouble(a.rectness, this.rectness, t))});
+      }
+      return super.lerpFrom(a, t);
+    }
+    lerpTo(b, t) {
+      if (!(t !== null)) dart.assertFailed(null, I[0], 348, 12, "t != null");
+      if (stadium_border.StadiumBorder.is(b)) {
+        return new stadium_border._StadiumToRoundedRectangleBorder.new({side: borders.BorderSide.lerp(this.side, b.side, t), borderRadius: this.borderRadius, rectness: this.rectness * (1.0 - t)});
+      }
+      if (rounded_rectangle_border.RoundedRectangleBorder.is(b)) {
+        return new stadium_border._StadiumToRoundedRectangleBorder.new({side: borders.BorderSide.lerp(this.side, b.side, t), borderRadius: this.borderRadius, rectness: this.rectness + (1.0 - this.rectness) * t});
+      }
+      if (stadium_border._StadiumToRoundedRectangleBorder.is(b)) {
+        return new stadium_border._StadiumToRoundedRectangleBorder.new({side: borders.BorderSide.lerp(this.side, b.side, t), borderRadius: dart.nullCheck(border_radius.BorderRadius.lerp(this.borderRadius, b.borderRadius, t)), rectness: dart.nullCheck(ui.lerpDouble(this.rectness, b.rectness, t))});
+      }
+      return super.lerpTo(b, t);
+    }
+    [_adjustBorderRadius](rect) {
+      return dart.nullCheck(border_radius.BorderRadius.lerp(this.borderRadius, new border_radius.BorderRadius.all(new ui.Radius.circular(rect.shortestSide / 2.0)), 1.0 - this.rectness));
+    }
+    getInnerPath(rect, opts) {
+      let t0;
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      t0 = ui.Path.new();
+      return (() => {
+        t0.addRRect(this[_adjustBorderRadius](rect).toRRect(rect).deflate(this.side.width));
+        return t0;
+      })();
+    }
+    getOuterPath(rect, opts) {
+      let t0;
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      t0 = ui.Path.new();
+      return (() => {
+        t0.addRRect(this[_adjustBorderRadius](rect).toRRect(rect));
+        return t0;
+      })();
+    }
+    copyWith(opts) {
+      let t0, t0$, t0$0;
+      let side = opts && 'side' in opts ? opts.side : null;
+      let borderRadius = opts && 'borderRadius' in opts ? opts.borderRadius : null;
+      let rectness = opts && 'rectness' in opts ? opts.rectness : null;
+      return new stadium_border._StadiumToRoundedRectangleBorder.new({side: (t0 = side, t0 == null ? this.side : t0), borderRadius: (t0$ = borderRadius, t0$ == null ? this.borderRadius : t0$), rectness: (t0$0 = rectness, t0$0 == null ? this.rectness : t0$0)});
+    }
+    paint(canvas, rect, opts) {
+      let t0;
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      switch (this.side.style) {
+        case C[1] || CT.C1:
+        {
+          break;
         }
-        return true;
-      }, T.VoidTobool())()) dart.assertFailed(null, I[1], 495, 12, "() {\r\n      if (debugInvertOversizedImages &&\r\n          sizeInfo.decodedSizeInBytes > sizeInfo.displaySizeInBytes + debugImageOverheadAllowance) {\r\n        final int overheadInKilobytes = (sizeInfo.decodedSizeInBytes - sizeInfo.displaySizeInBytes) ~/ 1024;\r\n        final int outputWidth = outputSize.width.toInt();\r\n        final int outputHeight = outputSize.height.toInt();\r\n        FlutterError.reportError(FlutterErrorDetails(\r\n          exception: 'Image $debugImageLabel has a display size of '\r\n            '$outputWidth×$outputHeight but a decode size of '\r\n            '${image.width}×${image.height}, which uses an additional '\r\n            '${overheadInKilobytes}KB.\\n\\n'\r\n            'Consider resizing the asset ahead of time, supplying a cacheWidth '\r\n            'parameter of $outputWidth, a cacheHeight parameter of '\r\n            '$outputHeight, or using a ResizeImage.',\r\n          library: 'painting library',\r\n          context: ErrorDescription('while painting an image'),\r\n        ));\r\n        // Invert the colors of the canvas.\r\n        canvas.saveLayer(\r\n          destinationRect,\r\n          Paint()..colorFilter = const ColorFilter.matrix(<double>[\r\n            -1,  0,  0, 0, 255,\r\n             0, -1,  0, 0, 255,\r\n             0,  0, -1, 0, 255,\r\n             0,  0,  0, 1,   0,\r\n          ]),\r\n        );\r\n        // Flip the canvas vertically.\r\n        final double dy = -(rect.top + rect.height / 2.0);\r\n        canvas.translate(0.0, -dy);\r\n        canvas.scale(1.0, -1.0);\r\n        canvas.translate(0.0, dy);\r\n        invertedCanvas = true;\r\n      }\r\n      return true;\r\n    }()");
-      if (!decoration_image._lastFrameImageSizeInfo.contains(sizeInfo)) {
-        let existingSizeInfo = decoration_image._pendingImageSizeInfo[$_get](sizeInfo.source);
-        if (existingSizeInfo == null || existingSizeInfo.displaySizeInBytes < sizeInfo.displaySizeInBytes) {
-          decoration_image._pendingImageSizeInfo[$_set](dart.nullCheck(sizeInfo.source), sizeInfo);
-        }
-        t1$2 = debug.debugOnPaintImage;
-        t1$2 == null ? null : t1$2(sizeInfo);
-        dart.nullCheck(binding.SchedulerBinding.instance).addPostFrameCallback(dart.fn(timeStamp => {
-          decoration_image._lastFrameImageSizeInfo = decoration_image._pendingImageSizeInfo[$values][$toSet]();
-          if (decoration_image._pendingImageSizeInfo[$isEmpty]) {
-            return;
+        case C[3] || CT.C3:
+        {
+          let width = this.side.width;
+          if (width === 0.0) {
+            canvas.drawRRect(this[_adjustBorderRadius](rect).toRRect(rect), this.side.toPaint());
+          } else {
+            let outer = this[_adjustBorderRadius](rect).toRRect(rect);
+            let inner = outer.deflate(width);
+            let paint = (t0 = ui.Paint.new(), (() => {
+              t0.color = this.side.color;
+              return t0;
+            })());
+            canvas.drawDRRect(outer, inner, paint);
           }
-          developer.postEvent("Flutter.ImageSizesForFrame", (() => {
-            let t1 = new (T.IdentityMapOfString$Object()).new();
-            for (let imageSizeInfo of decoration_image._pendingImageSizeInfo[$values])
-              t1[$_set](dart.nullCheck(imageSizeInfo.source), imageSizeInfo.toJson());
-            return t1;
-          })());
-          decoration_image._pendingImageSizeInfo = new (T.IdentityMapOfString$ImageSizeInfo()).new();
-        }, T.DurationTovoid()));
+        }
       }
     }
-    let needSave = centerSlice != null || repeat !== decoration_image.ImageRepeat.noRepeat || flipHorizontally;
-    if (needSave) canvas.save();
-    if (repeat !== decoration_image.ImageRepeat.noRepeat) canvas.clipRect(rect);
-    if (flipHorizontally) {
-      let dx = -(rect.left + rect.width / 2.0);
-      canvas.translate(-dx, 0.0);
-      canvas.scale(-1.0, 1.0);
-      canvas.translate(dx, 0.0);
+    _equals(other) {
+      if (other == null) return false;
+      if (!other[$runtimeType]._equals(this[$runtimeType])) return false;
+      return stadium_border._StadiumToRoundedRectangleBorder.is(other) && other.side._equals(this.side) && other.borderRadius._equals(this.borderRadius) && other.rectness === this.rectness;
     }
-    if (centerSlice == null) {
-      let sourceRect = alignment.inscribe(sourceSize, ui.Offset.zero['&'](inputSize));
-      if (repeat === decoration_image.ImageRepeat.noRepeat) {
-        canvas.drawImageRect(image, sourceRect, destinationRect, paint);
-      } else {
-        for (let tileRect of decoration_image._generateImageTileRects(rect, destinationRect, repeat))
-          canvas.drawImageRect(image, sourceRect, tileRect, paint);
-      }
-    } else {
-      canvas.scale(1 / scale);
-      if (repeat === decoration_image.ImageRepeat.noRepeat) {
-        canvas.drawImageNine(image, decoration_image._scaleRect(centerSlice, scale), decoration_image._scaleRect(destinationRect, scale), paint);
-      } else {
-        for (let tileRect of decoration_image._generateImageTileRects(rect, destinationRect, repeat))
-          canvas.drawImageNine(image, decoration_image._scaleRect(centerSlice, scale), decoration_image._scaleRect(tileRect, scale), paint);
-      }
+    get hashCode() {
+      return ui.hashValues(this.side, this.borderRadius, this.rectness);
     }
-    if (needSave) canvas.restore();
-    if (invertedCanvas) {
-      canvas.restore();
+    toString() {
+      return "StadiumBorder(" + dart.str(this.side) + ", " + dart.str(this.borderRadius) + ", " + (this.rectness * 100)[$toStringAsFixed](1) + "% of the way to being a " + "RoundedRectangleBorder)";
     }
   };
-  decoration_image._generateImageTileRects = function _generateImageTileRects(outputRect, fundamentalRect, repeat) {
-    return new (T.SyncIterableOfRect()).new(function* _generateImageTileRects() {
-      let startX = 0;
-      let startY = 0;
-      let stopX = 0;
-      let stopY = 0;
-      let strideX = fundamentalRect.width;
-      let strideY = fundamentalRect.height;
-      if (repeat === decoration_image.ImageRepeat.repeat || repeat === decoration_image.ImageRepeat.repeatX) {
-        startX = ((outputRect.left - fundamentalRect.left) / strideX)[$floor]();
-        stopX = ((outputRect.right - fundamentalRect.right) / strideX)[$ceil]();
-      }
-      if (repeat === decoration_image.ImageRepeat.repeat || repeat === decoration_image.ImageRepeat.repeatY) {
-        startY = ((outputRect.top - fundamentalRect.top) / strideY)[$floor]();
-        stopY = ((outputRect.bottom - fundamentalRect.bottom) / strideY)[$ceil]();
-      }
-      for (let i = startX; i <= stopX; i = i + 1) {
-        for (let j = startY; j <= stopY; j = j + 1)
-          yield fundamentalRect.shift(new ui.Offset.new(i * strideX, j * strideY));
-      }
-    });
-  };
-  decoration_image._scaleRect = function _scaleRect(rect, scale) {
-    return new ui.Rect.fromLTRB(rect.left * scale, rect.top * scale, rect.right * scale, rect.bottom * scale);
-  };
-  dart.defineLazy(decoration_image, {
-    /*decoration_image._pendingImageSizeInfo*/get _pendingImageSizeInfo() {
-      return new (T.IdentityMapOfString$ImageSizeInfo()).new();
-    },
-    set _pendingImageSizeInfo(_) {},
-    /*decoration_image._lastFrameImageSizeInfo*/get _lastFrameImageSizeInfo() {
-      return T.LinkedHashSetOfImageSizeInfo().new();
-    },
-    set _lastFrameImageSizeInfo(_) {}
-  }, false);
-  dart.trackLibraries("packages/flutter/src/painting/decoration_image.dart", {
-    "package:flutter/src/painting/decoration_image.dart": decoration_image
+  (stadium_border._StadiumToRoundedRectangleBorder.new = function(opts) {
+    let side = opts && 'side' in opts ? opts.side : C[0] || CT.C0;
+    let borderRadius = opts && 'borderRadius' in opts ? opts.borderRadius : C[4] || CT.C4;
+    let rectness = opts && 'rectness' in opts ? opts.rectness : 0;
+    this[borderRadius$] = borderRadius;
+    this[rectness$] = rectness;
+    if (!(side !== null)) dart.assertFailed(null, I[0], 296, 15, "side != null");
+    if (!(borderRadius !== null)) dart.assertFailed(null, I[0], 297, 15, "borderRadius != null");
+    if (!(rectness !== null)) dart.assertFailed(null, I[0], 298, 15, "rectness != null");
+    stadium_border._StadiumToRoundedRectangleBorder.__proto__.new.call(this, {side: side});
+    ;
+  }).prototype = stadium_border._StadiumToRoundedRectangleBorder.prototype;
+  dart.addTypeTests(stadium_border._StadiumToRoundedRectangleBorder);
+  dart.addTypeCaches(stadium_border._StadiumToRoundedRectangleBorder);
+  dart.setMethodSignature(stadium_border._StadiumToRoundedRectangleBorder, () => ({
+    __proto__: dart.getMethods(stadium_border._StadiumToRoundedRectangleBorder.__proto__),
+    scale: dart.fnType(borders.ShapeBorder, [core.double]),
+    [_adjustBorderRadius]: dart.fnType(border_radius.BorderRadius, [ui.Rect]),
+    getInnerPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
+    getOuterPath: dart.fnType(ui.Path, [ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {}),
+    copyWith: dart.fnType(stadium_border._StadiumToRoundedRectangleBorder, [], {borderRadius: dart.nullable(border_radius.BorderRadius), rectness: dart.nullable(core.double), side: dart.nullable(borders.BorderSide)}, {}),
+    paint: dart.fnType(dart.void, [ui.Canvas, ui.Rect], {textDirection: dart.nullable(ui.TextDirection)}, {})
+  }));
+  dart.setGetterSignature(stadium_border._StadiumToRoundedRectangleBorder, () => ({
+    __proto__: dart.getGetters(stadium_border._StadiumToRoundedRectangleBorder.__proto__),
+    dimensions: edge_insets.EdgeInsetsGeometry
+  }));
+  dart.setLibraryUri(stadium_border._StadiumToRoundedRectangleBorder, I[1]);
+  dart.setFieldSignature(stadium_border._StadiumToRoundedRectangleBorder, () => ({
+    __proto__: dart.getFields(stadium_border._StadiumToRoundedRectangleBorder.__proto__),
+    borderRadius: dart.finalFieldType(border_radius.BorderRadius),
+    rectness: dart.finalFieldType(core.double)
+  }));
+  dart.defineExtensionMethods(stadium_border._StadiumToRoundedRectangleBorder, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(stadium_border._StadiumToRoundedRectangleBorder, ['hashCode']);
+  dart.trackLibraries("packages/flutter/src/painting/stadium_border.dart", {
+    "package:flutter/src/painting/stadium_border.dart": stadium_border
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["decoration_image.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/painting/decoration_image.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["stadium_border.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/painting/stadium_border.dart.lib.js"}');
   // Exports:
   return {
-    src__painting__decoration_image: decoration_image
+    src__painting__stadium_border: stadium_border
   };
 }));
 
-//# sourceMappingURL=decoration_image.dart.lib.js.map
+//# sourceMappingURL=stadium_border.dart.lib.js.map

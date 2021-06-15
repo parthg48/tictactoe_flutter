@@ -1,10 +1,10 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/boxes.dart';
 import 'package:flutter_application_1/dialog.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
-
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -61,9 +61,27 @@ class _HomePageState extends State<HomePage> {
               context: context,
               builder: (_) => new DialogClass("Game Tied",
                   "Press the restart button to start again", resetGame));
+        } else {
+          activePlayer == 2 ? autoPlay() : null;
         }
       }
     });
+  }
+
+  void autoPlay() {
+    var emptyCells = [];
+    var list = new List.generate(9, (index) => index + 1);
+    for (var cellID in list) {
+      if (!(player1.contains(cellID) || player2.contains(cellID))) {
+        emptyCells.add(cellID);
+      }
+    }
+
+    var r = new Random();
+    var randIndex = r.nextInt(emptyCells.length - 1);
+    var cellID = emptyCells[randIndex];
+    int i = buttonsList.indexWhere((p) => p.id == cellID);
+    playGame(buttonsList[i]);
   }
 
   int checkWinner() {

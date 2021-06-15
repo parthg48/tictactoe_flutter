@@ -1,228 +1,315 @@
-define(['dart_sdk', 'packages/flutter/src/painting/borders.dart', 'packages/flutter/src/painting/colors.dart', 'packages/flutter/src/foundation/debug.dart'], (function load__packages__flutter__src__material__floating_action_button_theme_dart(dart_sdk, packages__flutter__src__painting__borders$46dart, packages__flutter__src__painting__colors$46dart, packages__flutter__src__foundation__debug$46dart) {
+define(['dart_sdk', 'packages/flutter/src/foundation/object.dart'], (function load__packages__flutter__src__foundation__stack_frame_dart(dart_sdk, packages__flutter__src__foundation__object$46dart) {
   'use strict';
   const core = dart_sdk.core;
   const ui = dart_sdk.ui;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const borders = packages__flutter__src__painting__borders$46dart.src__painting__borders;
-  const colors = packages__flutter__src__painting__colors$46dart.src__painting__colors;
-  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
-  var floating_action_button_theme = Object.create(dart.library);
+  const object = packages__flutter__src__foundation__object$46dart.src__foundation__object;
+  var stack_frame = Object.create(dart.library);
+  var $trim = dartx.trim;
+  var $split = dartx.split;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $where = dartx.where;
+  var $map = dartx.map;
+  var $whereType = dartx.whereType;
+  var $toList = dartx.toList;
+  var $startsWith = dartx.startsWith;
+  var $_get = dartx._get;
+  var $replaceFirst = dartx.replaceFirst;
+  var $length = dartx.length;
+  var $first = dartx.first;
+  var $skip = dartx.skip;
+  var $join = dartx.join;
+  var $single = dartx.single;
+  var $replaceAll = dartx.replaceAll;
+  var $contains = dartx.contains;
   var $runtimeType = dartx.runtimeType;
   dart._checkModuleNullSafetyMode(true);
   var T = {
-    DiagnosticsPropertyOfShapeBorder: () => (T.DiagnosticsPropertyOfShapeBorder = dart.constFn(diagnostics.DiagnosticsProperty$(borders.ShapeBorder)))()
+    StringTobool: () => (T.StringTobool = dart.constFn(dart.fnType(core.bool, [core.String])))(),
+    StackFrameN: () => (T.StackFrameN = dart.constFn(dart.nullable(stack_frame.StackFrame)))(),
+    StringToStackFrameN: () => (T.StringToStackFrameN = dart.constFn(dart.fnType(T.StackFrameN(), [core.String])))()
   };
   const CT = Object.create({
     _: () => (C, CT)
   });
   dart.defineLazy(CT, {
     get C0() {
-      return C[0] = dart.const({
-        __proto__: floating_action_button_theme.FloatingActionButtonThemeData.prototype,
-        [shape$]: null,
-        [highlightElevation$]: null,
-        [disabledElevation$]: null,
-        [hoverElevation$]: null,
-        [focusElevation$]: null,
-        [elevation$]: null,
-        [splashColor$]: null,
-        [hoverColor$]: null,
-        [focusColor$]: null,
-        [backgroundColor$]: null,
-        [foregroundColor$]: null
+      return C[0] = dart.fn(stack_frame.StackFrame.fromStackTraceLine, T.StringToStackFrameN());
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: stack_frame.StackFrame.prototype,
+        [isConstructor$]: false,
+        [method$]: "asynchronous suspension",
+        [className$]: "",
+        [column$]: -1,
+        [line$]: -1,
+        [packagePath$]: "",
+        [$package$]: "",
+        [packageScheme$]: "",
+        [number$]: -1,
+        [source$]: "<asynchronous suspension>"
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: stack_frame.StackFrame.prototype,
+        [isConstructor$]: false,
+        [method$]: "...",
+        [className$]: "",
+        [column$]: -1,
+        [line$]: -1,
+        [packagePath$]: "",
+        [$package$]: "",
+        [packageScheme$]: "",
+        [number$]: -1,
+        [source$]: "..."
       });
     }
   }, false);
-  var C = [void 0];
+  var C = Array(3).fill(void 0);
   var I = [
-    "file:///C:/flutter_windows_2.2.1-stable/flutter/packages/flutter/lib/src/material/floating_action_button_theme.dart",
-    "package:flutter/src/material/floating_action_button_theme.dart"
+    "file:///C:/flutter_windows_2.2.1-stable/flutter/packages/flutter/lib/src/foundation/stack_frame.dart",
+    "package:flutter/src/foundation/stack_frame.dart"
   ];
-  var foregroundColor$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.foregroundColor");
-  var backgroundColor$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.backgroundColor");
-  var focusColor$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.focusColor");
-  var hoverColor$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.hoverColor");
-  var splashColor$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.splashColor");
-  var elevation$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.elevation");
-  var focusElevation$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.focusElevation");
-  var hoverElevation$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.hoverElevation");
-  var disabledElevation$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.disabledElevation");
-  var highlightElevation$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.highlightElevation");
-  var shape$ = dart.privateName(floating_action_button_theme, "FloatingActionButtonThemeData.shape");
-  const Object_Diagnosticable$36 = class Object_Diagnosticable extends core.Object {};
-  (Object_Diagnosticable$36.new = function() {
-  }).prototype = Object_Diagnosticable$36.prototype;
-  dart.applyMixin(Object_Diagnosticable$36, diagnostics.Diagnosticable);
-  floating_action_button_theme.FloatingActionButtonThemeData = class FloatingActionButtonThemeData extends Object_Diagnosticable$36 {
-    get foregroundColor() {
-      return this[foregroundColor$];
+  var source$ = dart.privateName(stack_frame, "StackFrame.source");
+  var number$ = dart.privateName(stack_frame, "StackFrame.number");
+  var packageScheme$ = dart.privateName(stack_frame, "StackFrame.packageScheme");
+  var $package$ = dart.privateName(stack_frame, "StackFrame.package");
+  var packagePath$ = dart.privateName(stack_frame, "StackFrame.packagePath");
+  var line$ = dart.privateName(stack_frame, "StackFrame.line");
+  var column$ = dart.privateName(stack_frame, "StackFrame.column");
+  var className$ = dart.privateName(stack_frame, "StackFrame.className");
+  var method$ = dart.privateName(stack_frame, "StackFrame.method");
+  var isConstructor$ = dart.privateName(stack_frame, "StackFrame.isConstructor");
+  stack_frame.StackFrame = class StackFrame extends core.Object {
+    get source() {
+      return this[source$];
     }
-    set foregroundColor(value) {
-      super.foregroundColor = value;
+    set source(value) {
+      super.source = value;
     }
-    get backgroundColor() {
-      return this[backgroundColor$];
+    get number() {
+      return this[number$];
     }
-    set backgroundColor(value) {
-      super.backgroundColor = value;
+    set number(value) {
+      super.number = value;
     }
-    get focusColor() {
-      return this[focusColor$];
+    get packageScheme() {
+      return this[packageScheme$];
     }
-    set focusColor(value) {
-      super.focusColor = value;
+    set packageScheme(value) {
+      super.packageScheme = value;
     }
-    get hoverColor() {
-      return this[hoverColor$];
+    get package() {
+      return this[$package$];
     }
-    set hoverColor(value) {
-      super.hoverColor = value;
+    set package(value) {
+      super.package = value;
     }
-    get splashColor() {
-      return this[splashColor$];
+    get packagePath() {
+      return this[packagePath$];
     }
-    set splashColor(value) {
-      super.splashColor = value;
+    set packagePath(value) {
+      super.packagePath = value;
     }
-    get elevation() {
-      return this[elevation$];
+    get line() {
+      return this[line$];
     }
-    set elevation(value) {
-      super.elevation = value;
+    set line(value) {
+      super.line = value;
     }
-    get focusElevation() {
-      return this[focusElevation$];
+    get column() {
+      return this[column$];
     }
-    set focusElevation(value) {
-      super.focusElevation = value;
+    set column(value) {
+      super.column = value;
     }
-    get hoverElevation() {
-      return this[hoverElevation$];
+    get className() {
+      return this[className$];
     }
-    set hoverElevation(value) {
-      super.hoverElevation = value;
+    set className(value) {
+      super.className = value;
     }
-    get disabledElevation() {
-      return this[disabledElevation$];
+    get method() {
+      return this[method$];
     }
-    set disabledElevation(value) {
-      super.disabledElevation = value;
+    set method(value) {
+      super.method = value;
     }
-    get highlightElevation() {
-      return this[highlightElevation$];
+    get isConstructor() {
+      return this[isConstructor$];
     }
-    set highlightElevation(value) {
-      super.highlightElevation = value;
+    set isConstructor(value) {
+      super.isConstructor = value;
     }
-    get shape() {
-      return this[shape$];
+    static fromStackTrace(stack) {
+      if (!(stack !== null)) dart.assertFailed(null, I[0], 79, 12, "stack != null");
+      return stack_frame.StackFrame.fromStackString(stack.toString());
     }
-    set shape(value) {
-      super.shape = value;
+    static fromStackString(stack) {
+      if (!(stack !== null)) dart.assertFailed(null, I[0], 85, 12, "stack != null");
+      return stack[$trim]()[$split]("\n")[$where](dart.fn(line => line[$isNotEmpty], T.StringTobool()))[$map](T.StackFrameN(), C[0] || CT.C0)[$whereType](stack_frame.StackFrame)[$toList]();
     }
-    copyWith(opts) {
-      let t0, t0$, t0$0, t0$1, t0$2, t0$3, t0$4, t0$5, t0$6, t0$7, t0$8;
-      let foregroundColor = opts && 'foregroundColor' in opts ? opts.foregroundColor : null;
-      let backgroundColor = opts && 'backgroundColor' in opts ? opts.backgroundColor : null;
-      let focusColor = opts && 'focusColor' in opts ? opts.focusColor : null;
-      let hoverColor = opts && 'hoverColor' in opts ? opts.hoverColor : null;
-      let splashColor = opts && 'splashColor' in opts ? opts.splashColor : null;
-      let elevation = opts && 'elevation' in opts ? opts.elevation : null;
-      let focusElevation = opts && 'focusElevation' in opts ? opts.focusElevation : null;
-      let hoverElevation = opts && 'hoverElevation' in opts ? opts.hoverElevation : null;
-      let disabledElevation = opts && 'disabledElevation' in opts ? opts.disabledElevation : null;
-      let highlightElevation = opts && 'highlightElevation' in opts ? opts.highlightElevation : null;
-      let shape = opts && 'shape' in opts ? opts.shape : null;
-      return new floating_action_button_theme.FloatingActionButtonThemeData.new({foregroundColor: (t0 = foregroundColor, t0 == null ? this.foregroundColor : t0), backgroundColor: (t0$ = backgroundColor, t0$ == null ? this.backgroundColor : t0$), focusColor: (t0$0 = focusColor, t0$0 == null ? this.focusColor : t0$0), hoverColor: (t0$1 = hoverColor, t0$1 == null ? this.hoverColor : t0$1), splashColor: (t0$2 = splashColor, t0$2 == null ? this.splashColor : t0$2), elevation: (t0$3 = elevation, t0$3 == null ? this.elevation : t0$3), focusElevation: (t0$4 = focusElevation, t0$4 == null ? this.focusElevation : t0$4), hoverElevation: (t0$5 = hoverElevation, t0$5 == null ? this.hoverElevation : t0$5), disabledElevation: (t0$6 = disabledElevation, t0$6 == null ? this.disabledElevation : t0$6), highlightElevation: (t0$7 = highlightElevation, t0$7 == null ? this.highlightElevation : t0$7), shape: (t0$8 = shape, t0$8 == null ? this.shape : t0$8)});
+    static _parseWebFrame(line) {
+      if (true) {
+        return stack_frame.StackFrame._parseWebDebugFrame(line);
+      } else {
+        return stack_frame.StackFrame._parseWebNonDebugFrame(line);
+      }
     }
-    static lerp(a, b, t) {
-      let t0, t0$, t0$0, t0$1, t0$2, t0$3, t0$4, t0$5, t0$6, t0$7, t0$8, t0$9, t0$10, t0$11, t0$12, t0$13, t0$14, t0$15, t0$16, t0$17, t0$18, t0$19;
-      if (!(t !== null)) dart.assertFailed(null, I[0], 128, 12, "t != null");
-      if (a == null && b == null) return null;
-      return new floating_action_button_theme.FloatingActionButtonThemeData.new({foregroundColor: ui.Color.lerp((t0 = a, t0 == null ? null : t0.foregroundColor), (t0$ = b, t0$ == null ? null : t0$.foregroundColor), t), backgroundColor: ui.Color.lerp((t0$0 = a, t0$0 == null ? null : t0$0.backgroundColor), (t0$1 = b, t0$1 == null ? null : t0$1.backgroundColor), t), focusColor: ui.Color.lerp((t0$2 = a, t0$2 == null ? null : t0$2.focusColor), (t0$3 = b, t0$3 == null ? null : t0$3.focusColor), t), hoverColor: ui.Color.lerp((t0$4 = a, t0$4 == null ? null : t0$4.hoverColor), (t0$5 = b, t0$5 == null ? null : t0$5.hoverColor), t), splashColor: ui.Color.lerp((t0$6 = a, t0$6 == null ? null : t0$6.splashColor), (t0$7 = b, t0$7 == null ? null : t0$7.splashColor), t), elevation: ui.lerpDouble((t0$8 = a, t0$8 == null ? null : t0$8.elevation), (t0$9 = b, t0$9 == null ? null : t0$9.elevation), t), focusElevation: ui.lerpDouble((t0$10 = a, t0$10 == null ? null : t0$10.focusElevation), (t0$11 = b, t0$11 == null ? null : t0$11.focusElevation), t), hoverElevation: ui.lerpDouble((t0$12 = a, t0$12 == null ? null : t0$12.hoverElevation), (t0$13 = b, t0$13 == null ? null : t0$13.hoverElevation), t), disabledElevation: ui.lerpDouble((t0$14 = a, t0$14 == null ? null : t0$14.disabledElevation), (t0$15 = b, t0$15 == null ? null : t0$15.disabledElevation), t), highlightElevation: ui.lerpDouble((t0$16 = a, t0$16 == null ? null : t0$16.highlightElevation), (t0$17 = b, t0$17 == null ? null : t0$17.highlightElevation), t), shape: borders.ShapeBorder.lerp((t0$18 = a, t0$18 == null ? null : t0$18.shape), (t0$19 = b, t0$19 == null ? null : t0$19.shape), t)});
+    static _parseWebDebugFrame(line) {
+      let hasPackage = line[$startsWith]("package");
+      let parser = hasPackage ? core.RegExp.new("^(package.+) (\\d+):(\\d+)\\s+(.+)$") : core.RegExp.new("^(.+) (\\d+):(\\d+)\\s+(.+)$");
+      let match = parser.firstMatch(line);
+      if (!(match != null)) dart.assertFailed("Expected " + line + " to match " + dart.str(parser) + ".", I[0], 114, 12, "match != null");
+      match = dart.nullCheck(match);
+      let $package = "<unknown>";
+      let packageScheme = "<unknown>";
+      let packagePath = "<unknown>";
+      if (hasPackage) {
+        packageScheme = "package";
+        let packageUri = core.Uri.parse(dart.nullCheck(match.group(1)));
+        $package = packageUri.pathSegments[$_get](0);
+        packagePath = packageUri.path[$replaceFirst](packageUri.pathSegments[$_get](0) + "/", "");
+      }
+      return new stack_frame.StackFrame.new({number: -1, packageScheme: packageScheme, package: $package, packagePath: packagePath, line: core.int.parse(dart.nullCheck(match.group(2))), column: core.int.parse(dart.nullCheck(match.group(3))), className: "<unknown>", method: dart.nullCheck(match.group(4)), source: line});
+    }
+    static _parseWebNonDebugFrame(line) {
+      let match = stack_frame.StackFrame._webNonDebugFramePattern.firstMatch(line);
+      if (match == null) {
+        return null;
+      }
+      let classAndMethod = dart.nullCheck(match.group(1))[$split](".");
+      let className = classAndMethod[$length] > 1 ? classAndMethod[$first] : "<unknown>";
+      let method = classAndMethod[$length] > 1 ? classAndMethod[$skip](1)[$join](".") : classAndMethod[$single];
+      return new stack_frame.StackFrame.new({number: -1, packageScheme: "<unknown>", package: "<unknown>", packagePath: "<unknown>", line: -1, column: -1, className: className, method: method, source: line});
+    }
+    static fromStackTraceLine(line) {
+      if (!(line !== null)) dart.assertFailed(null, I[0], 186, 12, "line != null");
+      if (line === "<asynchronous suspension>") {
+        return stack_frame.StackFrame.asynchronousSuspension;
+      } else if (line === "...") {
+        return stack_frame.StackFrame.stackOverFlowElision;
+      }
+      if (!(line !== "===== asynchronous gap ===========================")) dart.assertFailed("Got a stack frame from package:stack_trace, where a vm or web frame was expected. " + "This can happen if FlutterError.demangleStackTrace was not set in an environment " + "that propagates non-standard stack traces to the framework, such as during tests.", I[0], 194, 7, "line != '===== asynchronous gap ==========================='");
+      if (!line[$startsWith]("#")) {
+        return stack_frame.StackFrame._parseWebFrame(line);
+      }
+      let parser = core.RegExp.new("^#(\\d+) +(.+) \\((.+?):?(\\d+){0,1}:?(\\d+){0,1}\\)$");
+      let match = parser.firstMatch(line);
+      if (!(match != null)) dart.assertFailed("Expected " + line + " to match " + dart.str(parser) + ".", I[0], 207, 12, "match != null");
+      match = dart.nullCheck(match);
+      let isConstructor = false;
+      let className = "";
+      let method = dart.nullCheck(match.group(2))[$replaceAll](".<anonymous closure>", "");
+      if (method[$startsWith]("new")) {
+        let methodParts = method[$split](" ");
+        className = methodParts[$length] > 1 ? method[$split](" ")[$_get](1) : "<unknown>";
+        method = "";
+        if (className[$contains](".")) {
+          let parts = className[$split](".");
+          className = parts[$_get](0);
+          method = parts[$_get](1);
+        }
+        isConstructor = true;
+      } else if (method[$contains](".")) {
+        let parts = method[$split](".");
+        className = parts[$_get](0);
+        method = parts[$_get](1);
+      }
+      let packageUri = core.Uri.parse(dart.nullCheck(match.group(3)));
+      let $package = "<unknown>";
+      let packagePath = packageUri.path;
+      if (packageUri.scheme === "dart" || packageUri.scheme === "package") {
+        $package = packageUri.pathSegments[$_get](0);
+        packagePath = packageUri.path[$replaceFirst](packageUri.pathSegments[$_get](0) + "/", "");
+      }
+      return new stack_frame.StackFrame.new({number: core.int.parse(dart.nullCheck(match.group(1))), className: className, method: method, packageScheme: packageUri.scheme, package: $package, packagePath: packagePath, line: match.group(4) == null ? -1 : core.int.parse(dart.nullCheck(match.group(4))), column: match.group(5) == null ? -1 : core.int.parse(dart.nullCheck(match.group(5))), isConstructor: isConstructor, source: line});
     }
     get hashCode() {
-      return ui.hashValues(this.foregroundColor, this.backgroundColor, this.focusColor, this.hoverColor, this.splashColor, this.elevation, this.focusElevation, this.hoverElevation, this.disabledElevation, this.highlightElevation, this.shape);
+      return ui.hashValues(this.number, this.package, this.line, this.column, this.className, this.method, this.source);
     }
     _equals(other) {
       if (other == null) return false;
-      if (this === other) return true;
       if (!other[$runtimeType]._equals(this[$runtimeType])) return false;
-      return floating_action_button_theme.FloatingActionButtonThemeData.is(other) && dart.equals(other.foregroundColor, this.foregroundColor) && dart.equals(other.backgroundColor, this.backgroundColor) && dart.equals(other.focusColor, this.focusColor) && dart.equals(other.hoverColor, this.hoverColor) && dart.equals(other.splashColor, this.splashColor) && other.elevation == this.elevation && other.focusElevation == this.focusElevation && other.hoverElevation == this.hoverElevation && other.disabledElevation == this.disabledElevation && other.highlightElevation == this.highlightElevation && dart.equals(other.shape, this.shape);
+      return stack_frame.StackFrame.is(other) && other.number === this.number && other.package === this.package && other.line === this.line && other.column === this.column && other.className === this.className && other.method === this.method && other.source === this.source;
     }
-    debugFillProperties(properties) {
-      super.debugFillProperties(properties);
-      let defaultData = C[0] || CT.C0;
-      properties.add(new colors.ColorProperty.new("foregroundColor", this.foregroundColor, {defaultValue: defaultData.foregroundColor}));
-      properties.add(new colors.ColorProperty.new("backgroundColor", this.backgroundColor, {defaultValue: defaultData.backgroundColor}));
-      properties.add(new colors.ColorProperty.new("focusColor", this.focusColor, {defaultValue: defaultData.focusColor}));
-      properties.add(new colors.ColorProperty.new("hoverColor", this.hoverColor, {defaultValue: defaultData.hoverColor}));
-      properties.add(new colors.ColorProperty.new("splashColor", this.splashColor, {defaultValue: defaultData.splashColor}));
-      properties.add(new diagnostics.DoubleProperty.new("elevation", this.elevation, {defaultValue: defaultData.elevation}));
-      properties.add(new diagnostics.DoubleProperty.new("focusElevation", this.focusElevation, {defaultValue: defaultData.focusElevation}));
-      properties.add(new diagnostics.DoubleProperty.new("hoverElevation", this.hoverElevation, {defaultValue: defaultData.hoverElevation}));
-      properties.add(new diagnostics.DoubleProperty.new("disabledElevation", this.disabledElevation, {defaultValue: defaultData.disabledElevation}));
-      properties.add(new diagnostics.DoubleProperty.new("highlightElevation", this.highlightElevation, {defaultValue: defaultData.highlightElevation}));
-      properties.add(new (T.DiagnosticsPropertyOfShapeBorder()).new("shape", this.shape, {defaultValue: defaultData.shape}));
+    toString() {
+      return object.objectRuntimeType(this, "StackFrame") + "(#" + dart.str(this.number) + ", " + this.packageScheme + ":" + this.package + "/" + this.packagePath + ":" + dart.str(this.line) + ":" + dart.str(this.column) + ", className: " + this.className + ", method: " + this.method + ")";
     }
   };
-  (floating_action_button_theme.FloatingActionButtonThemeData.new = function(opts) {
-    let foregroundColor = opts && 'foregroundColor' in opts ? opts.foregroundColor : null;
-    let backgroundColor = opts && 'backgroundColor' in opts ? opts.backgroundColor : null;
-    let focusColor = opts && 'focusColor' in opts ? opts.focusColor : null;
-    let hoverColor = opts && 'hoverColor' in opts ? opts.hoverColor : null;
-    let splashColor = opts && 'splashColor' in opts ? opts.splashColor : null;
-    let elevation = opts && 'elevation' in opts ? opts.elevation : null;
-    let focusElevation = opts && 'focusElevation' in opts ? opts.focusElevation : null;
-    let hoverElevation = opts && 'hoverElevation' in opts ? opts.hoverElevation : null;
-    let disabledElevation = opts && 'disabledElevation' in opts ? opts.disabledElevation : null;
-    let highlightElevation = opts && 'highlightElevation' in opts ? opts.highlightElevation : null;
-    let shape = opts && 'shape' in opts ? opts.shape : null;
-    this[foregroundColor$] = foregroundColor;
-    this[backgroundColor$] = backgroundColor;
-    this[focusColor$] = focusColor;
-    this[hoverColor$] = hoverColor;
-    this[splashColor$] = splashColor;
-    this[elevation$] = elevation;
-    this[focusElevation$] = focusElevation;
-    this[hoverElevation$] = hoverElevation;
-    this[disabledElevation$] = disabledElevation;
-    this[highlightElevation$] = highlightElevation;
-    this[shape$] = shape;
+  (stack_frame.StackFrame.new = function(opts) {
+    let number = opts && 'number' in opts ? opts.number : null;
+    let column = opts && 'column' in opts ? opts.column : null;
+    let line = opts && 'line' in opts ? opts.line : null;
+    let packageScheme = opts && 'packageScheme' in opts ? opts.packageScheme : null;
+    let $package = opts && 'package' in opts ? opts.package : null;
+    let packagePath = opts && 'packagePath' in opts ? opts.packagePath : null;
+    let className = opts && 'className' in opts ? opts.className : "";
+    let method = opts && 'method' in opts ? opts.method : null;
+    let isConstructor = opts && 'isConstructor' in opts ? opts.isConstructor : false;
+    let source = opts && 'source' in opts ? opts.source : null;
+    this[number$] = number;
+    this[column$] = column;
+    this[line$] = line;
+    this[packageScheme$] = packageScheme;
+    this[$package$] = $package;
+    this[packagePath$] = packagePath;
+    this[className$] = className;
+    this[method$] = method;
+    this[isConstructor$] = isConstructor;
+    this[source$] = source;
+    if (!(number !== null)) dart.assertFailed(null, I[0], 40, 16, "number != null");
+    if (!(column !== null)) dart.assertFailed(null, I[0], 41, 16, "column != null");
+    if (!(line !== null)) dart.assertFailed(null, I[0], 42, 16, "line != null");
+    if (!(method !== null)) dart.assertFailed(null, I[0], 43, 16, "method != null");
+    if (!(packageScheme !== null)) dart.assertFailed(null, I[0], 44, 16, "packageScheme != null");
+    if (!($package !== null)) dart.assertFailed(null, I[0], 45, 16, "package != null");
+    if (!(packagePath !== null)) dart.assertFailed(null, I[0], 46, 16, "packagePath != null");
+    if (!(className !== null)) dart.assertFailed(null, I[0], 47, 16, "className != null");
+    if (!(isConstructor !== null)) dart.assertFailed(null, I[0], 48, 16, "isConstructor != null");
+    if (!(source !== null)) dart.assertFailed(null, I[0], 49, 16, "source != null");
     ;
-  }).prototype = floating_action_button_theme.FloatingActionButtonThemeData.prototype;
-  dart.addTypeTests(floating_action_button_theme.FloatingActionButtonThemeData);
-  dart.addTypeCaches(floating_action_button_theme.FloatingActionButtonThemeData);
-  dart.setMethodSignature(floating_action_button_theme.FloatingActionButtonThemeData, () => ({
-    __proto__: dart.getMethods(floating_action_button_theme.FloatingActionButtonThemeData.__proto__),
-    copyWith: dart.fnType(floating_action_button_theme.FloatingActionButtonThemeData, [], {backgroundColor: dart.nullable(ui.Color), disabledElevation: dart.nullable(core.double), elevation: dart.nullable(core.double), focusColor: dart.nullable(ui.Color), focusElevation: dart.nullable(core.double), foregroundColor: dart.nullable(ui.Color), highlightElevation: dart.nullable(core.double), hoverColor: dart.nullable(ui.Color), hoverElevation: dart.nullable(core.double), shape: dart.nullable(borders.ShapeBorder), splashColor: dart.nullable(ui.Color)}, {})
+  }).prototype = stack_frame.StackFrame.prototype;
+  dart.addTypeTests(stack_frame.StackFrame);
+  dart.addTypeCaches(stack_frame.StackFrame);
+  dart.setLibraryUri(stack_frame.StackFrame, I[1]);
+  dart.setFieldSignature(stack_frame.StackFrame, () => ({
+    __proto__: dart.getFields(stack_frame.StackFrame.__proto__),
+    source: dart.finalFieldType(core.String),
+    number: dart.finalFieldType(core.int),
+    packageScheme: dart.finalFieldType(core.String),
+    package: dart.finalFieldType(core.String),
+    packagePath: dart.finalFieldType(core.String),
+    line: dart.finalFieldType(core.int),
+    column: dart.finalFieldType(core.int),
+    className: dart.finalFieldType(core.String),
+    method: dart.finalFieldType(core.String),
+    isConstructor: dart.finalFieldType(core.bool)
   }));
-  dart.setLibraryUri(floating_action_button_theme.FloatingActionButtonThemeData, I[1]);
-  dart.setFieldSignature(floating_action_button_theme.FloatingActionButtonThemeData, () => ({
-    __proto__: dart.getFields(floating_action_button_theme.FloatingActionButtonThemeData.__proto__),
-    foregroundColor: dart.finalFieldType(dart.nullable(ui.Color)),
-    backgroundColor: dart.finalFieldType(dart.nullable(ui.Color)),
-    focusColor: dart.finalFieldType(dart.nullable(ui.Color)),
-    hoverColor: dart.finalFieldType(dart.nullable(ui.Color)),
-    splashColor: dart.finalFieldType(dart.nullable(ui.Color)),
-    elevation: dart.finalFieldType(dart.nullable(core.double)),
-    focusElevation: dart.finalFieldType(dart.nullable(core.double)),
-    hoverElevation: dart.finalFieldType(dart.nullable(core.double)),
-    disabledElevation: dart.finalFieldType(dart.nullable(core.double)),
-    highlightElevation: dart.finalFieldType(dart.nullable(core.double)),
-    shape: dart.finalFieldType(dart.nullable(borders.ShapeBorder))
-  }));
-  dart.defineExtensionMethods(floating_action_button_theme.FloatingActionButtonThemeData, ['_equals']);
-  dart.defineExtensionAccessors(floating_action_button_theme.FloatingActionButtonThemeData, ['hashCode']);
-  dart.trackLibraries("packages/flutter/src/material/floating_action_button_theme.dart", {
-    "package:flutter/src/material/floating_action_button_theme.dart": floating_action_button_theme
+  dart.defineExtensionMethods(stack_frame.StackFrame, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(stack_frame.StackFrame, ['hashCode']);
+  dart.defineLazy(stack_frame.StackFrame, {
+    /*stack_frame.StackFrame.asynchronousSuspension*/get asynchronousSuspension() {
+      return C[1] || CT.C1;
+    },
+    /*stack_frame.StackFrame.stackOverFlowElision*/get stackOverFlowElision() {
+      return C[2] || CT.C2;
+    },
+    /*stack_frame.StackFrame._webNonDebugFramePattern*/get _webNonDebugFramePattern() {
+      return core.RegExp.new("^\\s*at ([^\\s]+).*$");
+    }
+  }, false);
+  dart.trackLibraries("packages/flutter/src/foundation/stack_frame.dart", {
+    "package:flutter/src/foundation/stack_frame.dart": stack_frame
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["floating_action_button_theme.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/material/floating_action_button_theme.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["stack_frame.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/flutter/src/foundation/stack_frame.dart.lib.js"}');
   // Exports:
   return {
-    src__material__floating_action_button_theme: floating_action_button_theme
+    src__foundation__stack_frame: stack_frame
   };
 }));
 
-//# sourceMappingURL=floating_action_button_theme.dart.lib.js.map
+//# sourceMappingURL=stack_frame.dart.lib.js.map

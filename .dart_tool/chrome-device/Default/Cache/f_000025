@@ -1,466 +1,353 @@
-define(['dart_sdk', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/foundation/debug.dart'], (function load__packages__flutter__src__widgets__safe_area_dart(dart_sdk, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__foundation__debug$46dart) {
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/animation/animation_controller.dart', 'packages/flutter/src/cupertino/text_theme.dart', 'packages/flutter/src/painting/basic_types.dart', 'packages/flutter/src/services/haptic_feedback.dart'], (function load__packages__flutter__src__cupertino__scrollbar_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__animation__animation_controller$46dart, packages__flutter__src__cupertino__text_theme$46dart, packages__flutter__src__painting__basic_types$46dart, packages__flutter__src__services__haptic_feedback$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const math = dart_sdk.math;
+  const ui = dart_sdk.ui;
+  const _internal = dart_sdk._internal;
+  const async = dart_sdk.async;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
-  const debug = packages__flutter__src__widgets__widget_span$46dart.src__widgets__debug;
-  const media_query = packages__flutter__src__widgets__widget_span$46dart.src__widgets__media_query;
+  const scroll_notification = packages__flutter__src__widgets__widget_span$46dart.src__widgets__scroll_notification;
+  const scrollbar = packages__flutter__src__widgets__widget_span$46dart.src__widgets__scrollbar;
   const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
-  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
-  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
-  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
-  var safe_area = Object.create(dart.library);
+  const media_query = packages__flutter__src__widgets__widget_span$46dart.src__widgets__media_query;
+  const animation_controller = packages__flutter__src__animation__animation_controller$46dart.src__animation__animation_controller;
+  const colors = packages__flutter__src__cupertino__text_theme$46dart.src__cupertino__colors;
+  const basic_types = packages__flutter__src__painting__basic_types$46dart.src__painting__basic_types;
+  const haptic_feedback = packages__flutter__src__services__haptic_feedback$46dart.src__services__haptic_feedback;
+  var scrollbar$ = Object.create(dart.library);
+  var $abs = dartx.abs;
   dart._checkModuleNullSafetyMode(true);
+  var T = {
+    ScrollNotificationTobool: () => (T.ScrollNotificationTobool = dart.constFn(dart.fnType(core.bool, [scroll_notification.ScrollNotification])))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    FutureOfvoid: () => (T.FutureOfvoid = dart.constFn(async.Future$(dart.void)))(),
+    voidToFutureOfvoid: () => (T.voidToFutureOfvoid = dart.constFn(dart.fnType(T.FutureOfvoid(), [dart.void])))()
+  };
   const CT = Object.create({
     _: () => (C, CT)
   });
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: edge_insets.EdgeInsets.prototype,
-        [EdgeInsets_bottom]: 0,
-        [EdgeInsets_right]: 0,
-        [EdgeInsets_top]: 0,
-        [EdgeInsets_left]: 0
+        __proto__: ui.Radius.prototype,
+        [Radius_y]: 1.5,
+        [Radius_x]: 1.5
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: ui.Radius.prototype,
+        [Radius_y]: 4,
+        [Radius_x]: 4
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 100000
       });
     },
     get C3() {
-      return C[3] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "context",
-        [_Location_column]: 9,
-        [_Location_line]: 112,
-        [_Location_file]: null
-      });
+      return C[3] = dart.fn(scroll_notification.defaultScrollNotificationPredicate, T.ScrollNotificationTobool());
     },
     get C4() {
       return C[4] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "removeLeft",
-        [_Location_column]: 9,
-        [_Location_line]: 113,
-        [_Location_file]: null
+        __proto__: basic_types.Axis.prototype,
+        [_name]: "Axis.vertical",
+        index: 1
       });
     },
     get C5() {
       return C[5] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "removeTop",
-        [_Location_column]: 9,
-        [_Location_line]: 114,
-        [_Location_file]: null
+        __proto__: basic_types.Axis.prototype,
+        [_name]: "Axis.horizontal",
+        index: 0
       });
     },
     get C6() {
       return C[6] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "removeRight",
-        [_Location_column]: 9,
-        [_Location_line]: 115,
-        [_Location_file]: null
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 1200000
       });
     },
     get C7() {
       return C[7] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "removeBottom",
-        [_Location_column]: 9,
-        [_Location_line]: 116,
-        [_Location_file]: null
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 250000
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 2164260863.0
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 1493172224
       });
     },
     get C8() {
       return C[8] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 9,
-        [_Location_line]: 117,
-        [_Location_file]: null
-      });
-    },
-    get C2() {
-      return C[2] = dart.constList([C[3] || CT.C3, C[4] || CT.C4, C[5] || CT.C5, C[6] || CT.C6, C[7] || CT.C7, C[8] || CT.C8], widget_inspector._Location);
-    },
-    get C1() {
-      return C[1] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[2] || CT.C2,
-        [_Location_name]: null,
-        [_Location_column]: 25,
-        [_Location_line]: 111,
-        [_Location_file]: "file:///C:/flutter_windows_2.2.1-stable/flutter/packages/flutter/lib/src/widgets/safe_area.dart"
-      });
-    },
-    get C11() {
-      return C[11] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "padding",
-        [_Location_column]: 7,
-        [_Location_line]: 105,
-        [_Location_file]: null
-      });
-    },
-    get C12() {
-      return C[12] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 7,
-        [_Location_line]: 111,
-        [_Location_file]: null
-      });
-    },
-    get C10() {
-      return C[10] = dart.constList([C[11] || CT.C11, C[12] || CT.C12], widget_inspector._Location);
-    },
-    get C9() {
-      return C[9] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[10] || CT.C10,
-        [_Location_name]: null,
-        [_Location_column]: 12,
-        [_Location_line]: 104,
-        [_Location_file]: "file:///C:/flutter_windows_2.2.1-stable/flutter/packages/flutter/lib/src/widgets/safe_area.dart"
-      });
-    },
-    get C15() {
-      return C[15] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "context",
-        [_Location_column]: 9,
-        [_Location_line]: 206,
-        [_Location_file]: null
-      });
-    },
-    get C16() {
-      return C[16] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "removeLeft",
-        [_Location_column]: 9,
-        [_Location_line]: 207,
-        [_Location_file]: null
-      });
-    },
-    get C17() {
-      return C[17] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "removeTop",
-        [_Location_column]: 9,
-        [_Location_line]: 208,
-        [_Location_file]: null
-      });
-    },
-    get C18() {
-      return C[18] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "removeRight",
-        [_Location_column]: 9,
-        [_Location_line]: 209,
-        [_Location_file]: null
-      });
-    },
-    get C19() {
-      return C[19] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "removeBottom",
-        [_Location_column]: 9,
-        [_Location_line]: 210,
-        [_Location_file]: null
-      });
-    },
-    get C20() {
-      return C[20] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 9,
-        [_Location_line]: 211,
-        [_Location_file]: null
-      });
-    },
-    get C14() {
-      return C[14] = dart.constList([C[15] || CT.C15, C[16] || CT.C16, C[17] || CT.C17, C[18] || CT.C18, C[19] || CT.C19, C[20] || CT.C20], widget_inspector._Location);
-    },
-    get C13() {
-      return C[13] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[14] || CT.C14,
-        [_Location_name]: null,
-        [_Location_column]: 26,
-        [_Location_line]: 205,
-        [_Location_file]: "file:///C:/flutter_windows_2.2.1-stable/flutter/packages/flutter/lib/src/widgets/safe_area.dart"
-      });
-    },
-    get C23() {
-      return C[23] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "padding",
-        [_Location_column]: 7,
-        [_Location_line]: 199,
-        [_Location_file]: null
-      });
-    },
-    get C24() {
-      return C[24] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "sliver",
-        [_Location_column]: 7,
-        [_Location_line]: 205,
-        [_Location_file]: null
-      });
-    },
-    get C22() {
-      return C[22] = dart.constList([C[23] || CT.C23, C[24] || CT.C24], widget_inspector._Location);
-    },
-    get C21() {
-      return C[21] = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C[22] || CT.C22,
-        [_Location_name]: null,
-        [_Location_column]: 12,
-        [_Location_line]: 198,
-        [_Location_file]: "file:///C:/flutter_windows_2.2.1-stable/flutter/packages/flutter/lib/src/widgets/safe_area.dart"
+        __proto__: colors.CupertinoDynamicColor.prototype,
+        [Color_value]: 0,
+        [CupertinoDynamicColor_darkHighContrastElevatedColor]: C[9] || CT.C9,
+        [CupertinoDynamicColor_highContrastElevatedColor]: C[10] || CT.C10,
+        [CupertinoDynamicColor_darkElevatedColor]: C[9] || CT.C9,
+        [CupertinoDynamicColor_elevatedColor]: C[10] || CT.C10,
+        [CupertinoDynamicColor_darkHighContrastColor]: C[9] || CT.C9,
+        [CupertinoDynamicColor_highContrastColor]: C[10] || CT.C10,
+        [CupertinoDynamicColor_darkColor]: C[9] || CT.C9,
+        [CupertinoDynamicColor_color]: C[10] || CT.C10,
+        [CupertinoDynamicColor__debugResolveContext]: null,
+        [CupertinoDynamicColor__debugLabel]: null,
+        [CupertinoDynamicColor__effectiveColor]: C[10] || CT.C10
       });
     }
   }, false);
-  var C = Array(25).fill(void 0);
+  var C = Array(11).fill(void 0);
   var I = [
-    "file:///C:/flutter_windows_2.2.1-stable/flutter/packages/flutter/lib/src/widgets/safe_area.dart",
-    "package:flutter/src/widgets/safe_area.dart"
+    "file:///C:/flutter_windows_2.2.1-stable/flutter/packages/flutter/lib/src/cupertino/scrollbar.dart",
+    "package:flutter/src/cupertino/scrollbar.dart"
   ];
-  var left$ = dart.privateName(safe_area, "SafeArea.left");
-  var top$ = dart.privateName(safe_area, "SafeArea.top");
-  var right$ = dart.privateName(safe_area, "SafeArea.right");
-  var bottom$ = dart.privateName(safe_area, "SafeArea.bottom");
-  var minimum$ = dart.privateName(safe_area, "SafeArea.minimum");
-  var maintainBottomViewPadding$ = dart.privateName(safe_area, "SafeArea.maintainBottomViewPadding");
-  var child$ = dart.privateName(safe_area, "SafeArea.child");
-  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
-  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
-  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
-  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
-  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
-  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
-  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
-  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
-  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
-  safe_area.SafeArea = class SafeArea extends framework.StatelessWidget {
-    get left() {
-      return this[left$];
+  var thicknessWhileDragging$ = dart.privateName(scrollbar$, "CupertinoScrollbar.thicknessWhileDragging");
+  var radiusWhileDragging$ = dart.privateName(scrollbar$, "CupertinoScrollbar.radiusWhileDragging");
+  var Radius_y = dart.privateName(ui, "Radius.y");
+  var Radius_x = dart.privateName(ui, "Radius.x");
+  var Duration__duration = dart.privateName(core, "Duration._duration");
+  scrollbar$.CupertinoScrollbar = class CupertinoScrollbar extends scrollbar.RawScrollbar {
+    get thicknessWhileDragging() {
+      return this[thicknessWhileDragging$];
     }
-    set left(value) {
-      super.left = value;
+    set thicknessWhileDragging(value) {
+      super.thicknessWhileDragging = value;
     }
-    get top() {
-      return this[top$];
+    get radiusWhileDragging() {
+      return this[radiusWhileDragging$];
     }
-    set top(value) {
-      super.top = value;
+    set radiusWhileDragging(value) {
+      super.radiusWhileDragging = value;
     }
-    get right() {
-      return this[right$];
-    }
-    set right(value) {
-      super.right = value;
-    }
-    get bottom() {
-      return this[bottom$];
-    }
-    set bottom(value) {
-      super.bottom = value;
-    }
-    get minimum() {
-      return this[minimum$];
-    }
-    set minimum(value) {
-      super.minimum = value;
-    }
-    get maintainBottomViewPadding() {
-      return this[maintainBottomViewPadding$];
-    }
-    set maintainBottomViewPadding(value) {
-      super.maintainBottomViewPadding = value;
-    }
-    get child() {
-      return this[child$];
-    }
-    set child(value) {
-      super.child = value;
-    }
-    build(context) {
-      if (!debug.debugCheckHasMediaQuery(context)) dart.assertFailed(null, I[0], 97, 12, "debugCheckHasMediaQuery(context)");
-      let data = media_query.MediaQuery.of(context);
-      let padding = data.padding;
-      if (data.padding.bottom === 0.0 && data.viewInsets.bottom !== 0.0 && this.maintainBottomViewPadding) padding = padding.copyWith({bottom: data.viewPadding.bottom});
-      return new basic.Padding.new({padding: new edge_insets.EdgeInsets.only({left: math.max(core.double, this.left ? padding.left : 0.0, this.minimum.left), top: math.max(core.double, this.top ? padding.top : 0.0, this.minimum.top), right: math.max(core.double, this.right ? padding.right : 0.0, this.minimum.right), bottom: math.max(core.double, this.bottom ? padding.bottom : 0.0, this.minimum.bottom)}), child: media_query.MediaQuery.removePadding({context: context, removeLeft: this.left, removeTop: this.top, removeRight: this.right, removeBottom: this.bottom, child: this.child, $creationLocationd_0dea112b090073317d4: C[1] || CT.C1}), $creationLocationd_0dea112b090073317d4: C[9] || CT.C9});
-    }
-    debugFillProperties(properties) {
-      super.debugFillProperties(properties);
-      properties.add(new diagnostics.FlagProperty.new("left", {value: this.left, ifTrue: "avoid left padding"}));
-      properties.add(new diagnostics.FlagProperty.new("top", {value: this.top, ifTrue: "avoid top padding"}));
-      properties.add(new diagnostics.FlagProperty.new("right", {value: this.right, ifTrue: "avoid right padding"}));
-      properties.add(new diagnostics.FlagProperty.new("bottom", {value: this.bottom, ifTrue: "avoid bottom padding"}));
+    createState() {
+      return new scrollbar$._CupertinoScrollbarState.new();
     }
   };
-  (safe_area.SafeArea.new = function(opts) {
+  (scrollbar$.CupertinoScrollbar.new = function(opts) {
+    let t0;
     let key = opts && 'key' in opts ? opts.key : null;
-    let left = opts && 'left' in opts ? opts.left : true;
-    let top = opts && 'top' in opts ? opts.top : true;
-    let right = opts && 'right' in opts ? opts.right : true;
-    let bottom = opts && 'bottom' in opts ? opts.bottom : true;
-    let minimum = opts && 'minimum' in opts ? opts.minimum : C[0] || CT.C0;
-    let maintainBottomViewPadding = opts && 'maintainBottomViewPadding' in opts ? opts.maintainBottomViewPadding : false;
     let child = opts && 'child' in opts ? opts.child : null;
+    let controller = opts && 'controller' in opts ? opts.controller : null;
+    let isAlwaysShown = opts && 'isAlwaysShown' in opts ? opts.isAlwaysShown : false;
+    let thickness = opts && 'thickness' in opts ? opts.thickness : 3;
+    let thicknessWhileDragging = opts && 'thicknessWhileDragging' in opts ? opts.thicknessWhileDragging : 8;
+    let radius = opts && 'radius' in opts ? opts.radius : C[0] || CT.C0;
+    let radiusWhileDragging = opts && 'radiusWhileDragging' in opts ? opts.radiusWhileDragging : C[1] || CT.C1;
+    let notificationPredicate = opts && 'notificationPredicate' in opts ? opts.notificationPredicate : null;
     let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[left$] = left;
-    this[top$] = top;
-    this[right$] = right;
-    this[bottom$] = bottom;
-    this[minimum$] = minimum;
-    this[maintainBottomViewPadding$] = maintainBottomViewPadding;
-    this[child$] = child;
-    if (!(left !== null)) dart.assertFailed(null, I[0], 50, 15, "left != null");
-    if (!(top !== null)) dart.assertFailed(null, I[0], 51, 15, "top != null");
-    if (!(right !== null)) dart.assertFailed(null, I[0], 52, 15, "right != null");
-    if (!(bottom !== null)) dart.assertFailed(null, I[0], 53, 15, "bottom != null");
-    safe_area.SafeArea.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    this[thicknessWhileDragging$] = thicknessWhileDragging;
+    this[radiusWhileDragging$] = radiusWhileDragging;
+    if (!(thickness !== null)) dart.assertFailed(null, I[0], 65, 15, "thickness != null");
+    if (!(thickness < 1 / 0)) dart.assertFailed(null, I[0], 66, 15, "thickness < double.infinity");
+    if (!(thicknessWhileDragging !== null)) dart.assertFailed(null, I[0], 67, 15, "thicknessWhileDragging != null");
+    if (!(thicknessWhileDragging < 1 / 0)) dart.assertFailed(null, I[0], 68, 15, "thicknessWhileDragging < double.infinity");
+    if (!(radius !== null)) dart.assertFailed(null, I[0], 69, 15, "radius != null");
+    if (!(radiusWhileDragging !== null)) dart.assertFailed(null, I[0], 70, 15, "radiusWhileDragging != null");
+    scrollbar$.CupertinoScrollbar.__proto__.new.call(this, {key: key, child: child, controller: controller, isAlwaysShown: isAlwaysShown, thickness: thickness, radius: radius, fadeDuration: scrollbar$._kScrollbarFadeDuration, timeToFade: scrollbar$._kScrollbarTimeToFade, pressDuration: C[2] || CT.C2, notificationPredicate: (t0 = notificationPredicate, t0 == null ? C[3] || CT.C3 : t0), $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
     ;
-  }).prototype = safe_area.SafeArea.prototype;
-  dart.addTypeTests(safe_area.SafeArea);
-  dart.addTypeCaches(safe_area.SafeArea);
-  dart.setMethodSignature(safe_area.SafeArea, () => ({
-    __proto__: dart.getMethods(safe_area.SafeArea.__proto__),
-    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }).prototype = scrollbar$.CupertinoScrollbar.prototype;
+  dart.addTypeTests(scrollbar$.CupertinoScrollbar);
+  dart.addTypeCaches(scrollbar$.CupertinoScrollbar);
+  dart.setMethodSignature(scrollbar$.CupertinoScrollbar, () => ({
+    __proto__: dart.getMethods(scrollbar$.CupertinoScrollbar.__proto__),
+    createState: dart.fnType(scrollbar$._CupertinoScrollbarState, [])
   }));
-  dart.setLibraryUri(safe_area.SafeArea, I[1]);
-  dart.setFieldSignature(safe_area.SafeArea, () => ({
-    __proto__: dart.getFields(safe_area.SafeArea.__proto__),
-    left: dart.finalFieldType(core.bool),
-    top: dart.finalFieldType(core.bool),
-    right: dart.finalFieldType(core.bool),
-    bottom: dart.finalFieldType(core.bool),
-    minimum: dart.finalFieldType(edge_insets.EdgeInsets),
-    maintainBottomViewPadding: dart.finalFieldType(core.bool),
-    child: dart.finalFieldType(framework.Widget)
+  dart.setLibraryUri(scrollbar$.CupertinoScrollbar, I[1]);
+  dart.setFieldSignature(scrollbar$.CupertinoScrollbar, () => ({
+    __proto__: dart.getFields(scrollbar$.CupertinoScrollbar.__proto__),
+    thicknessWhileDragging: dart.finalFieldType(core.double),
+    radiusWhileDragging: dart.finalFieldType(ui.Radius)
   }));
-  var left$0 = dart.privateName(safe_area, "SliverSafeArea.left");
-  var top$0 = dart.privateName(safe_area, "SliverSafeArea.top");
-  var right$0 = dart.privateName(safe_area, "SliverSafeArea.right");
-  var bottom$0 = dart.privateName(safe_area, "SliverSafeArea.bottom");
-  var minimum$0 = dart.privateName(safe_area, "SliverSafeArea.minimum");
-  var sliver$ = dart.privateName(safe_area, "SliverSafeArea.sliver");
-  safe_area.SliverSafeArea = class SliverSafeArea extends framework.StatelessWidget {
-    get left() {
-      return this[left$0];
+  dart.defineLazy(scrollbar$.CupertinoScrollbar, {
+    /*scrollbar$.CupertinoScrollbar.defaultThickness*/get defaultThickness() {
+      return 3;
+    },
+    /*scrollbar$.CupertinoScrollbar.defaultThicknessWhileDragging*/get defaultThicknessWhileDragging() {
+      return 8;
+    },
+    /*scrollbar$.CupertinoScrollbar.defaultRadius*/get defaultRadius() {
+      return C[0] || CT.C0;
+    },
+    /*scrollbar$.CupertinoScrollbar.defaultRadiusWhileDragging*/get defaultRadiusWhileDragging() {
+      return C[1] || CT.C1;
     }
-    set left(value) {
-      super.left = value;
+  }, false);
+  var ___CupertinoScrollbarState__thicknessAnimationController = dart.privateName(scrollbar$, "_#_CupertinoScrollbarState#_thicknessAnimationController");
+  var _pressStartAxisPosition = dart.privateName(scrollbar$, "_pressStartAxisPosition");
+  var _thicknessAnimationController = dart.privateName(scrollbar$, "_thicknessAnimationController");
+  var _thickness = dart.privateName(scrollbar$, "_thickness");
+  var _radius = dart.privateName(scrollbar$, "_radius");
+  var _name = dart.privateName(basic_types, "_name");
+  scrollbar$._CupertinoScrollbarState = class _CupertinoScrollbarState extends scrollbar.RawScrollbarState$(scrollbar$.CupertinoScrollbar) {
+    get [_thicknessAnimationController]() {
+      let t0;
+      t0 = this[___CupertinoScrollbarState__thicknessAnimationController];
+      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("_thicknessAnimationController")) : t0;
     }
-    get top() {
-      return this[top$0];
+    set [_thicknessAnimationController](t0) {
+      this[___CupertinoScrollbarState__thicknessAnimationController] = t0;
     }
-    set top(value) {
-      super.top = value;
+    get [_thickness]() {
+      return dart.nullCheck(this.widget.thickness) + this[_thicknessAnimationController].value * (this.widget.thicknessWhileDragging - dart.nullCheck(this.widget.thickness));
     }
-    get right() {
-      return this[right$0];
+    get [_radius]() {
+      return dart.nullCheck(ui.Radius.lerp(this.widget.radius, this.widget.radiusWhileDragging, this[_thicknessAnimationController].value));
     }
-    set right(value) {
-      super.right = value;
+    initState() {
+      super.initState();
+      this[_thicknessAnimationController] = new animation_controller.AnimationController.new({vsync: this, duration: scrollbar$._kScrollbarResizeDuration});
+      this[_thicknessAnimationController].addListener(dart.fn(() => {
+        this.updateScrollbarPainter();
+      }, T.VoidTovoid()));
     }
-    get bottom() {
-      return this[bottom$0];
+    updateScrollbarPainter() {
+      let t1;
+      t1 = this.scrollbarPainter;
+      (() => {
+        t1.color = colors.CupertinoDynamicColor.resolve(scrollbar$._kScrollbarColor, this.context);
+        t1.textDirection = basic.Directionality.of(this.context);
+        t1.thickness = this[_thickness];
+        t1.mainAxisMargin = 3;
+        t1.crossAxisMargin = 3;
+        t1.radius = this[_radius];
+        t1.padding = media_query.MediaQuery.of(this.context).padding;
+        t1.minLength = 36;
+        t1.minOverscrollLength = 8;
+        return t1;
+      })();
     }
-    set bottom(value) {
-      super.bottom = value;
+    handleThumbPressStart(localPosition) {
+      super.handleThumbPressStart(localPosition);
+      let direction = dart.nullCheck(this.getScrollbarDirection());
+      switch (direction) {
+        case C[4] || CT.C4:
+        {
+          this[_pressStartAxisPosition] = localPosition.dy;
+          break;
+        }
+        case C[5] || CT.C5:
+        {
+          this[_pressStartAxisPosition] = localPosition.dx;
+          break;
+        }
+      }
     }
-    get minimum() {
-      return this[minimum$0];
+    handleThumbPress() {
+      if (this.getScrollbarDirection() == null) {
+        return;
+      }
+      super.handleThumbPress();
+      this[_thicknessAnimationController].forward().then(dart.void, dart.fn(_ => haptic_feedback.HapticFeedback.mediumImpact(), T.voidToFutureOfvoid()));
     }
-    set minimum(value) {
-      super.minimum = value;
+    handleThumbPressEnd(localPosition, velocity) {
+      let direction = this.getScrollbarDirection();
+      if (direction == null) {
+        return;
+      }
+      this[_thicknessAnimationController].reverse();
+      super.handleThumbPressEnd(localPosition, velocity);
+      switch (direction) {
+        case C[4] || CT.C4:
+        {
+          if (velocity.pixelsPerSecond.dy[$abs]() < 10 && (localPosition.dy - this[_pressStartAxisPosition])[$abs]() > 0) {
+            haptic_feedback.HapticFeedback.mediumImpact();
+          }
+          break;
+        }
+        case C[5] || CT.C5:
+        {
+          if (velocity.pixelsPerSecond.dx[$abs]() < 10 && (localPosition.dx - this[_pressStartAxisPosition])[$abs]() > 0) {
+            haptic_feedback.HapticFeedback.mediumImpact();
+          }
+          break;
+        }
+      }
     }
-    get sliver() {
-      return this[sliver$];
-    }
-    set sliver(value) {
-      super.sliver = value;
-    }
-    build(context) {
-      if (!debug.debugCheckHasMediaQuery(context)) dart.assertFailed(null, I[0], 196, 12, "debugCheckHasMediaQuery(context)");
-      let padding = media_query.MediaQuery.of(context).padding;
-      return new basic.SliverPadding.new({padding: new edge_insets.EdgeInsets.only({left: math.max(core.double, this.left ? padding.left : 0.0, this.minimum.left), top: math.max(core.double, this.top ? padding.top : 0.0, this.minimum.top), right: math.max(core.double, this.right ? padding.right : 0.0, this.minimum.right), bottom: math.max(core.double, this.bottom ? padding.bottom : 0.0, this.minimum.bottom)}), sliver: media_query.MediaQuery.removePadding({context: context, removeLeft: this.left, removeTop: this.top, removeRight: this.right, removeBottom: this.bottom, child: this.sliver, $creationLocationd_0dea112b090073317d4: C[13] || CT.C13}), $creationLocationd_0dea112b090073317d4: C[21] || CT.C21});
-    }
-    debugFillProperties(properties) {
-      super.debugFillProperties(properties);
-      properties.add(new diagnostics.FlagProperty.new("left", {value: this.left, ifTrue: "avoid left padding"}));
-      properties.add(new diagnostics.FlagProperty.new("top", {value: this.top, ifTrue: "avoid top padding"}));
-      properties.add(new diagnostics.FlagProperty.new("right", {value: this.right, ifTrue: "avoid right padding"}));
-      properties.add(new diagnostics.FlagProperty.new("bottom", {value: this.bottom, ifTrue: "avoid bottom padding"}));
+    dispose() {
+      this[_thicknessAnimationController].dispose();
+      super.dispose();
     }
   };
-  (safe_area.SliverSafeArea.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let left = opts && 'left' in opts ? opts.left : true;
-    let top = opts && 'top' in opts ? opts.top : true;
-    let right = opts && 'right' in opts ? opts.right : true;
-    let bottom = opts && 'bottom' in opts ? opts.bottom : true;
-    let minimum = opts && 'minimum' in opts ? opts.minimum : C[0] || CT.C0;
-    let sliver = opts && 'sliver' in opts ? opts.sliver : null;
-    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    this[left$0] = left;
-    this[top$0] = top;
-    this[right$0] = right;
-    this[bottom$0] = bottom;
-    this[minimum$0] = minimum;
-    this[sliver$] = sliver;
-    if (!(left !== null)) dart.assertFailed(null, I[0], 164, 15, "left != null");
-    if (!(top !== null)) dart.assertFailed(null, I[0], 165, 15, "top != null");
-    if (!(right !== null)) dart.assertFailed(null, I[0], 166, 15, "right != null");
-    if (!(bottom !== null)) dart.assertFailed(null, I[0], 167, 15, "bottom != null");
-    safe_area.SliverSafeArea.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+  (scrollbar$._CupertinoScrollbarState.new = function() {
+    this[___CupertinoScrollbarState__thicknessAnimationController] = null;
+    this[_pressStartAxisPosition] = 0.0;
+    scrollbar$._CupertinoScrollbarState.__proto__.new.call(this);
     ;
-  }).prototype = safe_area.SliverSafeArea.prototype;
-  dart.addTypeTests(safe_area.SliverSafeArea);
-  dart.addTypeCaches(safe_area.SliverSafeArea);
-  dart.setMethodSignature(safe_area.SliverSafeArea, () => ({
-    __proto__: dart.getMethods(safe_area.SliverSafeArea.__proto__),
-    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }).prototype = scrollbar$._CupertinoScrollbarState.prototype;
+  dart.addTypeTests(scrollbar$._CupertinoScrollbarState);
+  dart.addTypeCaches(scrollbar$._CupertinoScrollbarState);
+  dart.setGetterSignature(scrollbar$._CupertinoScrollbarState, () => ({
+    __proto__: dart.getGetters(scrollbar$._CupertinoScrollbarState.__proto__),
+    [_thicknessAnimationController]: animation_controller.AnimationController,
+    [_thickness]: core.double,
+    [_radius]: ui.Radius
   }));
-  dart.setLibraryUri(safe_area.SliverSafeArea, I[1]);
-  dart.setFieldSignature(safe_area.SliverSafeArea, () => ({
-    __proto__: dart.getFields(safe_area.SliverSafeArea.__proto__),
-    left: dart.finalFieldType(core.bool),
-    top: dart.finalFieldType(core.bool),
-    right: dart.finalFieldType(core.bool),
-    bottom: dart.finalFieldType(core.bool),
-    minimum: dart.finalFieldType(edge_insets.EdgeInsets),
-    sliver: dart.finalFieldType(framework.Widget)
+  dart.setSetterSignature(scrollbar$._CupertinoScrollbarState, () => ({
+    __proto__: dart.getSetters(scrollbar$._CupertinoScrollbarState.__proto__),
+    [_thicknessAnimationController]: animation_controller.AnimationController
   }));
-  dart.trackLibraries("packages/flutter/src/widgets/safe_area.dart", {
-    "package:flutter/src/widgets/safe_area.dart": safe_area
+  dart.setLibraryUri(scrollbar$._CupertinoScrollbarState, I[1]);
+  dart.setFieldSignature(scrollbar$._CupertinoScrollbarState, () => ({
+    __proto__: dart.getFields(scrollbar$._CupertinoScrollbarState.__proto__),
+    [___CupertinoScrollbarState__thicknessAnimationController]: dart.fieldType(dart.nullable(animation_controller.AnimationController)),
+    [_pressStartAxisPosition]: dart.fieldType(core.double)
+  }));
+  var Color_value = dart.privateName(ui, "Color.value");
+  var CupertinoDynamicColor_darkHighContrastElevatedColor = dart.privateName(colors, "CupertinoDynamicColor.darkHighContrastElevatedColor");
+  var CupertinoDynamicColor_highContrastElevatedColor = dart.privateName(colors, "CupertinoDynamicColor.highContrastElevatedColor");
+  var CupertinoDynamicColor_darkElevatedColor = dart.privateName(colors, "CupertinoDynamicColor.darkElevatedColor");
+  var CupertinoDynamicColor_elevatedColor = dart.privateName(colors, "CupertinoDynamicColor.elevatedColor");
+  var CupertinoDynamicColor_darkHighContrastColor = dart.privateName(colors, "CupertinoDynamicColor.darkHighContrastColor");
+  var CupertinoDynamicColor_highContrastColor = dart.privateName(colors, "CupertinoDynamicColor.highContrastColor");
+  var CupertinoDynamicColor_darkColor = dart.privateName(colors, "CupertinoDynamicColor.darkColor");
+  var CupertinoDynamicColor_color = dart.privateName(colors, "CupertinoDynamicColor.color");
+  var CupertinoDynamicColor__debugResolveContext = dart.privateName(colors, "CupertinoDynamicColor._debugResolveContext");
+  var CupertinoDynamicColor__debugLabel = dart.privateName(colors, "CupertinoDynamicColor._debugLabel");
+  var CupertinoDynamicColor__effectiveColor = dart.privateName(colors, "CupertinoDynamicColor._effectiveColor");
+  dart.defineLazy(scrollbar$, {
+    /*scrollbar$._kScrollbarMinLength*/get _kScrollbarMinLength() {
+      return 36;
+    },
+    /*scrollbar$._kScrollbarMinOverscrollLength*/get _kScrollbarMinOverscrollLength() {
+      return 8;
+    },
+    /*scrollbar$._kScrollbarTimeToFade*/get _kScrollbarTimeToFade() {
+      return C[6] || CT.C6;
+    },
+    /*scrollbar$._kScrollbarFadeDuration*/get _kScrollbarFadeDuration() {
+      return C[7] || CT.C7;
+    },
+    /*scrollbar$._kScrollbarResizeDuration*/get _kScrollbarResizeDuration() {
+      return C[2] || CT.C2;
+    },
+    /*scrollbar$._kScrollbarColor*/get _kScrollbarColor() {
+      return C[8] || CT.C8;
+    },
+    /*scrollbar$._kScrollbarMainAxisMargin*/get _kScrollbarMainAxisMargin() {
+      return 3;
+    },
+    /*scrollbar$._kScrollbarCrossAxisMargin*/get _kScrollbarCrossAxisMargin() {
+      return 3;
+    }
+  }, false);
+  dart.trackLibraries("packages/flutter/src/cupertino/scrollbar.dart", {
+    "package:flutter/src/cupertino/scrollbar.dart": scrollbar$
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["safe_area.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAwDa;;;;;;IAIA;;;;;;IAGA;;;;;;IAGA;;;;;;IAKM;;;;;;IAaN;;;;;;IAQE;;;;;;UAGa;AACxB,WAAO,8BAAwB,OAAO;AACjB,iBAAkB,0BAAG,OAAO;AACtC,oBAAU,AAAK,IAAD;AAEzB,UAAI,AAAK,AAAQ,AAAO,IAAhB,oBAAmB,OAAO,AAAK,AAAW,IAAZ,uBAAsB,OAAO,gCACjE,AAA2D,UAAjD,AAAQ,OAAD,mBAAkB,AAAK,AAAY,IAAb;AAEzC,YAAO,iCACe,uCACZ,sBAAS,YAAO,AAAQ,OAAD,QAAQ,KAAK,AAAQ,yBAC7C,sBAAS,WAAM,AAAQ,OAAD,OAAO,KAAK,AAAQ,0BACxC,sBAAS,aAAQ,AAAQ,OAAD,SAAS,KAAK,AAAQ,6BAC7C,sBAAS,cAAS,AAAQ,OAAD,UAAU,KAAK,AAAQ,+BAExC,+CACP,OAAO,cACJ,sBACD,uBACE,0BACC,oBACP;IAGb;wBAGqD;AACd,MAA/B,0BAAoB,UAAU;AAC2C,MAA/E,AAAW,UAAD,KAAK,iCAAa,gBAAe,mBAAc;AACmB,MAA5E,AAAW,UAAD,KAAK,iCAAa,eAAc,kBAAa;AAC2B,MAAlF,AAAW,UAAD,KAAK,iCAAa,iBAAgB,oBAAe;AAC0B,MAArF,AAAW,UAAD,KAAK,iCAAa,kBAAiB,qBAAgB;IAC/D;;;QAvFO;QACA;QACA;QACA;QACA;QACA;QACA;QACS;;IANT;IACA;IACA;IACA;IACA;IACA;IACS;UACJ,AAAK,IAAD;UACJ,AAAI,GAAD;UACH,AAAM,KAAD;UACL,AAAO,MAAD;AACb,sDAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;IAqHT;;;;;;IAIA;;;;;;IAGA;;;;;;IAGA;;;;;;IAKM;;;;;;IAMJ;;;;;;UAGa;AACxB,WAAO,8BAAwB,OAAO;AACrB,oBAAqB,AAAY,0BAAT,OAAO;AAChD,YAAO,uCACe,uCACZ,sBAAS,YAAO,AAAQ,OAAD,QAAQ,KAAK,AAAQ,yBAC7C,sBAAS,WAAM,AAAQ,OAAD,OAAO,KAAK,AAAQ,0BACxC,sBAAS,aAAQ,AAAQ,OAAD,SAAS,KAAK,AAAQ,6BAC7C,sBAAS,cAAS,AAAQ,OAAD,UAAU,KAAK,AAAQ,gCAEvC,+CACR,OAAO,cACJ,sBACD,uBACE,0BACC,oBACP;IAGb;wBAGqD;AACd,MAA/B,0BAAoB,UAAU;AAC2C,MAA/E,AAAW,UAAD,KAAK,iCAAa,gBAAe,mBAAc;AACmB,MAA5E,AAAW,UAAD,KAAK,iCAAa,eAAc,kBAAa;AAC2B,MAAlF,AAAW,UAAD,KAAK,iCAAa,iBAAgB,oBAAe;AAC0B,MAArF,AAAW,UAAD,KAAK,iCAAa,kBAAiB,qBAAgB;IAC/D;;;QAlEO;QACA;QACA;QACA;QACA;QACA;QACS;;IALT;IACA;IACA;IACA;IACA;IACS;UACJ,AAAK,IAAD;UACJ,AAAI,GAAD;UACH,AAAM,KAAD;UACL,AAAO,MAAD;AACb,4DAAW,GAAG;;EAAC","file":"../../../../../../../packages/flutter/src/widgets/safe_area.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["scrollbar.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAsGe;;;;;;IAQA;;;;;;;AAG6B;IAA0B;;;;QA1D7D;QACW;QACE;QACb;QACE;QACF;QACE;QACF;QACwB;;IAHxB;IAEA;UAEK,AAAU,SAAD;UACT,AAAU,SAAD;UACT,AAAuB,sBAAD;UACtB,AAAuB,sBAAD;UACtB,AAAO,MAAD;UACN,AAAoB,mBAAD;AAC1B,iEACO,GAAG,SACD,KAAK,cACA,UAAU,iBACP,aAAa,aACjB,SAAS,UACZ,MAAM,gBACA,gDACF,wFAEiC,KAAtB,qBAAqB,EAArB;;EACxB;;;;;;;;;;;;;;MAGc,8CAAgB;;;MAIhB,2DAA6B;;;MAG7B,2CAAa;;;MAIb,wDAA0B;;;;;;;;;;;;;AAsBrB;;IAA6B;;AAA7B;IAA6B;;AAGpD,YAAuB,AAAE,gBAAlB,AAAO,yBAAa,AAA8B,AAAM,6CAAG,AAAO,AAAuB,qCAAkB,eAAhB,AAAO;IAC3G;;AAGE,YAAkG,gBAApF,eAAK,AAAO,oBAAQ,AAAO,iCAAqB,AAA8B;IAC9F;;AAImB,MAAX;AAIL,MAHD,sCAAgC,yDACvB,gBACG;AAIV,MAFF,AAA8B,gDAAY;AAChB,QAAxB;;IAEJ;;;AAa0D,WATxD;;AACI,mBAA8B,qCAAQ,6BAAkB;AACxD,2BAA+B,wBAAG;AAClC,uBAAY;AACZ;AACA;AACA,oBAAS;AACT,qBAAqB,AAAY,0BAAT;AACxB;AACA;;;IACN;0BAQkC;AACU,MAApC,4BAAsB,aAAa;AAC9B,sBAAmC,eAAvB;AACvB,cAAQ,SAAS;;;AAE6B,UAA1C,gCAA0B,AAAc,aAAD;AACvC;;;;AAE0C,UAA1C,gCAA0B,AAAc,aAAD;AACvC;;;IAEN;;AAIE,UAAI,AAAwB;AAC1B;;AAEsB,MAAlB;AAGL,MAFD,AAA8B,AAAU,8DAClC,QAAC,KAAqB;IAE9B;wBAGgC,eAAwB;AAC1C,sBAAY;AACxB,UAAI,AAAU,SAAD;AACX;;AAEqC,MAAvC,AAA8B;AACoB,MAA5C,0BAAoB,aAAa,EAAE,QAAQ;AACjD,cAAO,SAAS;;;AAEZ,cAAI,AAAS,AAAgB,AAAG,AAAM,QAA1B,8BAA4B,MACO,AAAM,CAAlD,AAAc,AAAG,aAAJ,MAAM,yCAAiC;AACxB,YAAd;;AAEjB;;;;AAEA,cAAI,AAAS,AAAgB,AAAG,AAAM,QAA1B,8BAA4B,MACO,AAAM,CAAlD,AAAc,AAAG,aAAJ,MAAM,yCAAiC;AACxB,YAAd;;AAEjB;;;IAEN;;AAIyC,MAAvC,AAA8B;AACf,MAAT;IACR;;;qEA9FyB;IAoClB,gCAA0B;;;EA2DnC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;MA1Ma,+BAAoB;;;MACpB,yCAA8B;;;MAC5B,gCAAqB;;;MACrB,kCAAuB;;;MACvB,oCAAyB;;;MAG5B,2BAAgB;;;MASf,oCAAyB;;;MACzB,qCAA0B","file":"../../../../../../../packages/flutter/src/cupertino/scrollbar.dart.lib.js"}');
   // Exports:
   return {
-    src__widgets__safe_area: safe_area
+    src__cupertino__scrollbar: scrollbar$
   };
 }));
 
-//# sourceMappingURL=safe_area.dart.lib.js.map
+//# sourceMappingURL=scrollbar.dart.lib.js.map
