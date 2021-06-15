@@ -232,7 +232,7 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.all(8.0),
               child: new RaisedButton(
                 child: text2,
-                color: Colors.blueGrey,
+                color: Colors.teal[200],
                 padding: const EdgeInsets.all(20.0),
                 onPressed: switchPlayer,
               ),
@@ -249,8 +249,8 @@ class _HomePageState extends State<HomePage> {
                         style:
                             new TextStyle(color: Colors.black, fontSize: 15.0),
                       ),
-                      color: Colors.grey,
-                      padding: const EdgeInsets.all(15.0),
+                      color: Colors.teal[100],
+                      padding: const EdgeInsets.all(5.0),
                     ),
                   ),
                   Container(
@@ -286,7 +286,7 @@ class _HomePageState extends State<HomePage> {
                   "Reset",
                   style: new TextStyle(color: Colors.white, fontSize: 20.0),
                 ),
-                color: Colors.indigo,
+                color: Colors.tealAccent[700],
                 padding: const EdgeInsets.all(20.0),
                 onPressed: resetGame,
               ),
