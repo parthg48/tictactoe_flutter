@@ -173,7 +173,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     var text2 = new Text(
-      flag == 1 ? "1 Player mode" : "2 Player mode ",
+      flag == 1 ? "Current Game Mode: 1 Player" : "Current Game Mode: 2 Player",
       style: new TextStyle(color: Colors.white, fontSize: 20.0),
     );
     return new Scaffold(
@@ -222,7 +222,7 @@ class _HomePageState extends State<HomePage> {
             ),
             Row(
               children: [
-                Padding(padding: 10.0)
+                Padding(padding: const EdgeInsets.all(2.0)),
                 Container(
                   child: new FlatButton(
                     child: new Text(
@@ -256,6 +256,7 @@ class _HomePageState extends State<HomePage> {
                 )
               ],
             ),
+            Padding(padding: const EdgeInsets.all(2.0)),
             new RaisedButton(
               child: new Text(
                 "Reset",
