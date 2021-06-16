@@ -182,6 +182,7 @@ class _HomePageState extends State<HomePage> {
   void p2() {
     resetGame();
     activePlayer = 2;
+    autoPlay();
   }
 
   @override
