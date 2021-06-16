@@ -19,16 +19,16 @@ define("main_module.bootstrap", ["web_entrypoint.dart", "dart_sdk"], function(ap
          main();
       });
     }
-    window.$dartAppId = "CGHkChaBYwQ3TRX1shCV1w==";
+    window.$dartAppId = "ffBlzX2OlsqOFOqxc1t1YQ==";
 window.$dartReloadConfiguration = "ReloadConfiguration.none";
 window.$dartModuleStrategy = "require-js";
 window.$loadModuleConfig = require;
 window.$dwdsVersion = "11.0.2";
-window.$dwdsDevHandlerPath = "http://localhost:50721/$dwdsSseHandler";
+window.$dwdsDevHandlerPath = "http://localhost:50573/$dwdsSseHandler";
 window.$dwdsEnableDevtoolsLaunch = true;
 window.$dartEntrypointPath = "main_module.bootstrap.js";
 window.$requireLoader.forceLoadModule("dwds/src/injected/client");
-window.$dartExtensionUri = "http://127.0.0.1:50723/$debug";
+window.$dartExtensionUri = "http://127.0.0.1:50575/$debug";
 
   } else {
     if(window.$dartMainExecuted){
@@ -441,6 +441,7 @@ let modulePaths = {
  "packages/flutter/src/material/app.dart": "packages/flutter/src/material/app.dart.lib",
  "packages/flutter/src/material/animated_icons.dart": "packages/flutter/src/material/animated_icons.dart.lib",
  "packages/flutter/src/material/about.dart": "packages/flutter/src/material/about.dart.lib",
+ "packages/flutter_application_1/comp.dart": "packages/flutter_application_1/comp.dart.lib",
  "packages/flutter_application_1/boxes.dart": "packages/flutter_application_1/boxes.dart.lib"
 };
 let moduleNames = {
@@ -804,6 +805,7 @@ let moduleNames = {
  "packages/flutter/src/material/app.dart.lib": "packages/flutter/src/material/app.dart",
  "packages/flutter/src/material/animated_icons.dart.lib": "packages/flutter/src/material/animated_icons.dart",
  "packages/flutter/src/material/about.dart.lib": "packages/flutter/src/material/about.dart",
+ "packages/flutter_application_1/comp.dart.lib": "packages/flutter_application_1/comp.dart",
  "packages/flutter_application_1/boxes.dart.lib": "packages/flutter_application_1/boxes.dart"
 };
 if(!window.$requireLoader) {
